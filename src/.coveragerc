@@ -8,5 +8,4 @@
 
 [coverage:run]
   omit =
-     */node_modules/*
      manage.py
