@@ -1,7 +1,7 @@
 Django
 ipython
 django-environ
-
+django-authtools
 
 coverage
 django_coverage_plugin
