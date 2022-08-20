@@ -21,7 +21,9 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'authtools',
 ]
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'profiles.apps.ProfilesConfig',
+]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
@@ -93,4 +95,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom User Profile
 # django-authtools
 # https://github.com/fusionbox/django-authtools
-AUTH_USER_MODEL = 'authtools.User'
+AUTH_USER_MODEL = 'profiles.User'
