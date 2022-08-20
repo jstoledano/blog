@@ -2,6 +2,7 @@ Django
 ipython
 django-environ
 django-authtools
+markdown
 
 coverage
 django_coverage_plugin
