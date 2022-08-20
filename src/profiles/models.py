@@ -1,5 +1,12 @@
 # coding: utf-8
 
+#         app: org.toledano.blog
+#      module: profiles.models
+# description: Custom user models for toledano.blog
+#      author: Javier Sanchez Toledano
+#        date: 19/08/2022
+#     license: MIT
+
 import uuid
 
 from authtools.models import AbstractNamedUser
