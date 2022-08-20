@@ -18,8 +18,12 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-THIRD_PARTY_APPS = []
-LOCAL_APPS = []
+THIRD_PARTY_APPS = [
+    'authtools',
+]
+LOCAL_APPS = [
+    'profiles.apps.ProfilesConfig',
+]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
@@ -86,3 +90,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Custom User Profile
+# django-authtools
+# https://github.com/fusionbox/django-authtools
+AUTH_USER_MODEL = 'profiles.User'
