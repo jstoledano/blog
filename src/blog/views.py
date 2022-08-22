@@ -27,3 +27,8 @@ class CategoryDetail(DetailView):
     paginate_by = 6
     allow_empty = True
     slug_field = 'slug'
+
+
+class EntryDetail(DetailView):
+    model = models.Entry
+    context_object_name = 'entry'

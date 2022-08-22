@@ -1,12 +1,14 @@
 import uuid
+from datetime import datetime
+from typing import List
 
 import markdown
-from django.db import models
-from django.urls import reverse
-from django.utils.translation import gettext_lazy as _
-from datetime import datetime
 from django.conf import settings
-
+from django.db import models
+from django.template.defaultfilters import truncatechars_html, striptags, safe
+from django.urls import reverse
+from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 from taggit.managers import TaggableManager
 
 MD_EXTENSIONS = [
@@ -95,6 +97,7 @@ class Entry(Traceability):
 
     # Fields to be filled with HTML output from Markdown
     summary_html = models.TextField(editable=False, blank=True)
+    summary_meta = models.TextField(editable=False, blank=True)
     body_html = models.TextField(editable=False, blank=True)
     extend_html = models.TextField(editable=False, blank=True)
 
@@ -107,7 +110,7 @@ class Entry(Traceability):
 
     # Taxonomy
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='entry_category')
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
 
     # Authoring metadata
     author = models.ForeignKey(
@@ -124,10 +127,10 @@ class Entry(Traceability):
         unique_together = ('slug', 'category')
         get_latest_by = 'pub_date'
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
 
-    def save(self, force_insert=False, force_update=False, **kwargs):
+    def save(self, force_insert=False, force_update=False, **kwargs) -> None:
 
         self.body_html = markdown.markdown(
             self.body,
@@ -140,10 +143,22 @@ class Entry(Traceability):
                 output_format='html',
                 extensions=MD_EXTENSIONS
             )
+            self.summary_meta = safe(striptags(self.summary_html))
+        else:
+            self.summary_html = safe(truncatechars_html(self.body_html, 250))
+            self.summary_meta = striptags(self.summary_html)
         if self.extend:
             self.extend_html = markdown.markdown(
                 self.extend,
                 output_format='html',
                 extensions=MD_EXTENSIONS
             )
+        if not self.slug:
+            self.slug = slugify(self.title)
         super(Entry, self).save(force_insert, force_update)
+
+    def get_absolute_url(self) -> str:
+        return reverse(
+            'blog:entry_detail',
+            kwargs={'category': self.category.slug, 'slug': self.slug}
+        )

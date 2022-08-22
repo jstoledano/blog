@@ -1,3 +1,13 @@
+# coding: utf-8
+
+#         app: org.toledano.blogApp
+#      module: blog.test
+# description: UnitTest for blog app
+#      author: Javier Sanchez Toledano
+#        date: 2022-08-21
+#     licence: MIT
+#      python: 3.10
+
 from datetime import datetime
 
 import factory
@@ -80,13 +90,15 @@ class CategoryFactory(factory.django.DjangoModelFactory):
 
 
 class EntryTest(TestCase):
+    maxDiff = None
+
     def setUp(self) -> None:
         super().__init__()
         self.user = UserFactory()
         self.category = CategoryFactory(slug='otro-slug')
         self.full_entry = Entry.objects.create(
-            title='Full entry Creation',
-            summary='This is a **full** entry',
+            title='Full Entry Creation',
+            summary='This is a **full entry**',
             slug='full-entry-creation-2',
             body='_Hello_ **World**',
             extend='## This is a test',
@@ -96,12 +108,17 @@ class EntryTest(TestCase):
             status=Entry.LIVE_STATUS,
             featured=True,
             category=self.category,
-            tags=[],
+            tags=['uno', 'dos', 'tres'],
             author=self.user
         )
         self.simple_entry = Entry.objects.create(
-            title='Simple entry Creation',
-            body='_Hello_ **World**',
+            title='Simple Entry Creation',
+            body='''
+Lorem ipsum dolor sit **amet**, consectetuer adipiscing elit. 
+Aenean commodo _ligula eget dolor_. masa aeneana. Cum 
+sociis natoque penatibus et **magnis** dis parturient montes, 
+nascetur ridiculus mus. Donec quam felis, ultricies nec, 
+pellentesque eu, pretium *quis, sem.*''',
             pub_date=make_aware(datetime(2022, 8, 21), pytz.timezone(settings.TIME_ZONE)),
             category=self.category,
             author=self.user
@@ -110,3 +127,32 @@ class EntryTest(TestCase):
     def test_entry_creation(self):
         self.assertEqual(self.full_entry.__class__, Entry)
         self.assertEqual(self.simple_entry.__class__, Entry)
+
+    def test_entry_string(self):
+        self.assertEqual(str(self.full_entry), 'Full Entry Creation')
+        self.assertEqual(str(self.simple_entry), 'Simple Entry Creation')
+
+    def test_entry_body_html(self):
+        self.assertEqual(self.full_entry.body_html, '<p><em>Hello</em> <strong>World</strong></p>')
+
+    def test_entry_short_summary_html(self):
+        self.assertEqual(self.full_entry.summary_html, '<p>This is a <strong>full entry</strong></p>')
+
+    def test_entry_short_summary(self):
+        self.assertEqual(self.full_entry.summary_meta, 'This is a full entry')
+
+    def test_entry_long_summary(self):
+        summary_length = len(self.simple_entry.summary_meta)
+        self.assertEqual(summary_length, 250)
+
+    def test_full_entry_absolute_url(self):
+        self.assertEqual(self.full_entry.get_absolute_url(), f'/{self.category.slug}/full-entry-creation-2')
+
+    def test_simple_entry_absolute_url(self):
+        self.assertEqual(self.simple_entry.get_absolute_url(), f'/{self.category.slug}/simple-entry-creation')
+
+    def test_entry_tags(self):
+        self.assertEqual(self.full_entry.tags, ['uno', 'dos', 'tres'])
+
+    def test_entry_with_no_tags(self):
+        self.assertEqual([tag.slug for tag in self.simple_entry.tags.all()], [])
