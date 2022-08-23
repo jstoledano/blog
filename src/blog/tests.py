@@ -18,6 +18,10 @@ from django.utils.timezone import make_aware
 
 from profiles.models import User
 from .models import Category, Traceability, Entry
+from django.contrib.admin.sites import AdminSite
+from django.contrib.messages.storage.fallback import FallbackStorage
+from django.test import RequestFactory
+from .admin import EntryAdmin, CategoryAdmin
 
 
 class CategoryTest(TestCase):
@@ -72,6 +76,45 @@ class CategoryTest(TestCase):
     def test_category_absolute_url(self):
         self.assertEqual(self.category_full.get_absolute_url(), '/category/web-development')
         self.assertEqual(self.category_simple.get_absolute_url(), '/category/simple')
+
+
+class CategoryAdmin(TestCase):
+    def setUp(self):
+        super().__init__()
+        self.mail = 'test@example.com'
+        self.location = 'Tlaxcala'
+        self.slug = 'javier'
+        self.user = User.objects.create_user(
+            email=self.mail
+        )
+        self.user.is_superuser = True
+        self.user.profile.location = self.location
+        self.user.profile.slug = self.slug
+        self.user.save()
+
+        self.category_full = Category.objects.create(
+            name='Web Development',
+            slug='web-development', icon='fa fa-code',
+            description='This is a **category**'
+        )
+        self.category_simple = Category.objects.create(
+            name="Simple Category",
+            slug="simple"
+        )
+
+        site = AdminSite()
+        self.admin = CategoryAdmin(Category, site)
+
+        request_factory = RequestFactory()
+        self.request = request_factory.get('/admin')
+        self.request.user = self.user
+
+        def test_category_admin_class(self):
+            self.assertEqual(self.admin.__class__, CategoryAdmin)
+
+        def test_category_admin_save(self):
+            self.assertEqual(self.admin.save_model(self.request, self.category_full, None, None), None)
+            self.assertEqual(self.admin.save_model(self.request, self.category_simple, None, None), None)
 
 
 class UserFactory(factory.django.DjangoModelFactory):

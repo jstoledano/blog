@@ -30,7 +30,7 @@ class UserTest(TestCase):
         self.assertEqual(self.profile.__str__(), self.mail)
 
 
-class MyAdminTest(TestCase):
+class ProfileTest(TestCase):
 
     def setUp(self):
         self.mail = 'test@example.com'
