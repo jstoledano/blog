@@ -19,9 +19,15 @@ from django.utils.timezone import make_aware
 from profiles.models import User
 from .models import Category, Traceability, Entry
 from django.contrib.admin.sites import AdminSite
-from django.contrib.messages.storage.fallback import FallbackStorage
 from django.test import RequestFactory
 from .admin import EntryAdmin, CategoryAdmin
+
+
+class UserFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = User
+
+    email = factory.Faker('email')
 
 
 class CategoryTest(TestCase):
@@ -78,50 +84,33 @@ class CategoryTest(TestCase):
         self.assertEqual(self.category_simple.get_absolute_url(), '/category/simple')
 
 
-class CategoryAdmin(TestCase):
+class CategoryAdminTest(TestCase):
     def setUp(self):
         super().__init__()
-        self.mail = 'test@example.com'
-        self.location = 'Tlaxcala'
-        self.slug = 'javier'
-        self.user = User.objects.create_user(
-            email=self.mail
-        )
-        self.user.is_superuser = True
-        self.user.profile.location = self.location
-        self.user.profile.slug = self.slug
-        self.user.save()
 
+        site = AdminSite()
+        self.admin = CategoryAdmin(Category, site)
+        request_factory = RequestFactory()
+        self.request = request_factory.get('/admin')
+        self.request.user = UserFactory(is_superuser=True)
+
+    def test_category_admin_class(self):
+        self.assertEqual(self.admin.__class__, CategoryAdmin)
+
+    def test_category_full_admin_save(self):
         self.category_full = Category.objects.create(
             name='Web Development',
             slug='web-development', icon='fa fa-code',
             description='This is a **category**'
         )
+        self.assertEqual(self.admin.save_model(self.request, self.category_full, None, None), None)
+
+    def test_category_simple_admin_save(self):
         self.category_simple = Category.objects.create(
             name="Simple Category",
             slug="simple"
         )
-
-        site = AdminSite()
-        self.admin = CategoryAdmin(Category, site)
-
-        request_factory = RequestFactory()
-        self.request = request_factory.get('/admin')
-        self.request.user = self.user
-
-        def test_category_admin_class(self):
-            self.assertEqual(self.admin.__class__, CategoryAdmin)
-
-        def test_category_admin_save(self):
-            self.assertEqual(self.admin.save_model(self.request, self.category_full, None, None), None)
-            self.assertEqual(self.admin.save_model(self.request, self.category_simple, None, None), None)
-
-
-class UserFactory(factory.django.DjangoModelFactory):
-    class Meta:
-        model = User
-
-    email = factory.Faker('email')
+        self.assertEqual(self.admin.save_model(self.request, self.category_simple, None, None), None)
 
 
 class CategoryFactory(factory.django.DjangoModelFactory):
@@ -199,3 +188,30 @@ pellentesque eu, pretium *quis, sem.*''',
 
     def test_entry_with_no_tags(self):
         self.assertEqual([tag.slug for tag in self.simple_entry.tags.all()], [])
+
+
+class EntryAdminTest(TestCase):
+    def setUp(self):
+        super().__init__()
+        self.author = UserFactory(is_superuser=True)
+        self.category = CategoryFactory(slug='slug-admin')
+
+        site = AdminSite()
+        self.admin = EntryAdmin(Entry, site)
+        request_factory = RequestFactory()
+        self.request = request_factory.get('/admin')
+        self.request.user = self.author
+
+        self.entry = Entry.objects.create(
+            title='Entry Admin Creation',
+            slug='entry-admin-creation',
+            body='_Hello_ **World**',
+            category=self.category,
+            author=self.author
+        )
+
+    def test_entry_admin_class(self):
+        self.assertEqual(self.admin.__class__, EntryAdmin)
+
+    def test_entry_admin_save(self):
+        self.assertEqual(self.admin.save_model(self.request, self.entry, None, None), None)
