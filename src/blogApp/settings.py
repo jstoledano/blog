@@ -4,7 +4,7 @@ env = environ.Env(DEBUG=(bool, False),)
 environ.Env.read_env('.env')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY =env('DJANGO_SECRET_KEY')
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 
@@ -20,6 +20,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'authtools',
+    'taggit'
 ]
 LOCAL_APPS = [
     'profiles.apps.ProfilesConfig',
@@ -97,3 +98,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # django-authtools
 # https://github.com/fusionbox/django-authtools
 AUTH_USER_MODEL = 'profiles.User'
+
+# Taggit
+# django-taggit
+# https://django-taggit.readthedocs.io/en/latest/index.html
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_STRIP_UNICODE_WHEN_SLUGIFYING = True
