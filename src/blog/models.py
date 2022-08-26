@@ -1,3 +1,12 @@
+# coding: utf-8
+
+#         app: org.toledano.blog
+#      module: blog.models
+# description: Models for blog app
+#      author: Javier Sanchez Toledano
+#        date: 2022-08-25
+#     licence: MIT
+#      python: 3.10
 import uuid
 from datetime import datetime
 from typing import List

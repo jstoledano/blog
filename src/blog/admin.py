@@ -8,7 +8,6 @@
 
 # Modulo de administración
 from django.contrib import admin
-from django.db import models
 
 # Módulos de la aplicación
 from .models import Entry, Category
@@ -34,6 +33,7 @@ class CategoryAdmin (admin.ModelAdmin):   # pylint: disable=R0904
 
     def save_model(self, request, obj, form, change):
         obj.save()
+
 
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(Category, CategoryAdmin)
