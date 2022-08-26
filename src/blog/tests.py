@@ -15,12 +15,14 @@ import pytz
 from django.conf import settings
 from django.test import TestCase
 from django.utils.timezone import make_aware
+from django.views.generic import TemplateView
 
 from profiles.models import User
 from .models import Category, Traceability, Entry
 from django.contrib.admin.sites import AdminSite
 from django.test import RequestFactory
 from .admin import EntryAdmin, CategoryAdmin
+from .views import IndexView
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -215,3 +217,9 @@ class EntryAdminTest(TestCase):
 
     def test_entry_admin_save(self):
         self.assertEqual(self.admin.save_model(self.request, self.entry, None, None), None)
+
+
+class IndexPageText(TestCase):
+
+    def test_index_view_instance(self):
+        self.assertTrue(issubclass(IndexView, TemplateView))
