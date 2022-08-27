@@ -23,6 +23,7 @@ from django.contrib.admin.sites import AdminSite
 from django.test import RequestFactory
 from .admin import EntryAdmin, CategoryAdmin
 from .views import IndexView
+from django.test import Client
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -221,5 +222,20 @@ class EntryAdminTest(TestCase):
 
 class IndexPageText(TestCase):
 
+    def setUp(self):
+        self.c = Client()
+        self.response = self.c.get('/')
+
     def test_index_view_instance(self):
         self.assertTrue(issubclass(IndexView, TemplateView))
+
+    def test_index_view_status_code(self):
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_index_template_name(self):
+        self.assertTemplateUsed(self.response, 'blog/index.html')
+
+    def test_index_page_title(self):
+        self.assertContains(self.response, 'toledano.org')
+
+
