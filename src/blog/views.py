@@ -14,7 +14,7 @@ from . import models
 
 
 class IndexView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'blog/index.html'
 
 
 class CategoryList(ListView):

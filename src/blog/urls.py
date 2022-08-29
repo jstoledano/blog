@@ -16,4 +16,5 @@ urlpatterns = [
     path('category/', views.CategoryList.as_view(), name='category_list'),
     path('category/<str:slug>', views.CategoryDetail.as_view(), name='category_detail'),
     path('<str:category>/<str:slug>', views.EntryDetail.as_view(), name='entry_detail'),
+    path('', views.IndexView.as_view(), name='index'),
 ]
