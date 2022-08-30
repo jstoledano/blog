@@ -15,12 +15,15 @@ import pytz
 from django.conf import settings
 from django.test import TestCase
 from django.utils.timezone import make_aware
+from django.views.generic import TemplateView
 
 from profiles.models import User
 from .models import Category, Traceability, Entry
 from django.contrib.admin.sites import AdminSite
 from django.test import RequestFactory
 from .admin import EntryAdmin, CategoryAdmin
+from .views import IndexView
+from django.test import Client
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -215,3 +218,24 @@ class EntryAdminTest(TestCase):
 
     def test_entry_admin_save(self):
         self.assertEqual(self.admin.save_model(self.request, self.entry, None, None), None)
+
+
+class IndexPageText(TestCase):
+
+    def setUp(self):
+        self.c = Client()
+        self.response = self.c.get('/')
+
+    def test_index_view_instance(self):
+        self.assertTrue(issubclass(IndexView, TemplateView))
+
+    def test_index_view_status_code(self):
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_index_template_name(self):
+        self.assertTemplateUsed(self.response, 'blog/index.html')
+
+    def test_index_page_title(self):
+        self.assertContains(self.response, 'toledano.org')
+
+

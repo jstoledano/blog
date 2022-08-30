@@ -19,6 +19,10 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from taggit.managers import TaggableManager
+from django.utils.timezone import make_aware
+import pytz
+from django.conf import settings
+
 
 MD_EXTENSIONS = [
     'markdown.extensions.codehilite',
@@ -164,6 +168,8 @@ class Entry(Traceability):
             )
         if not self.slug:
             self.slug = slugify(self.title)
+        if self.pub_date.tzinfo is None or self.pub_date.tzinfo.utcoffset(self.pub_date) is None:
+            self.pub_date = make_aware(self.pub_date, pytz.timezone('Mexico/General'))
         super(Entry, self).save(force_insert, force_update)
 
     def get_absolute_url(self) -> str:

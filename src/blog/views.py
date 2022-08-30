@@ -8,9 +8,13 @@
 #     licence: MIT
 #      python: 3.10
 
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 
 from . import models
+
+
+class IndexView(TemplateView):
+    template_name = 'blog/index.html'
 
 
 class CategoryList(ListView):
