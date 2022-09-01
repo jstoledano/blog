@@ -4,7 +4,7 @@
 
 <head>
     <link href="{% static 'blog/index.html' %}" rel="stylesheet">
-  <title>toledano.org | Sitio Personal</title>
+    <title>toledano.org | Sitio Personal</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,8 +14,7 @@
   <meta name="author" content="{{ author }}">
 
   <!-- Bootstrap v4.5.0 CSS via CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
 
   <!-- Theme style -->
@@ -67,39 +66,20 @@
 <!-- ======== @Region: body ======== -->
 
 <body class="page page-index-boxed navbar-layout-default page-boxed">
-  <a href="#content" id="top" class="sr-only">Skip to content</a>
+  <a href="#content" id="top" class="sr-only">Ir al contenido</a>
 
   <!-- ======== @Region: #header ======== -->
   <div id="header">
 
     <!--Header upper region-->
     <div class="header-upper">
-      <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.htm) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
       <div class="header-inner container">
-        <!--user menu-->
-        <div class="header-block-flex order-1 mr-auto">
-          <nav class="nav nav-sm header-block-flex">
-            <a class="nav-link d-md-none" href="login.html"><i class="fa fa-user"></i></a>
-            <a class="nav-link text-xs text-uppercase d-none d-md-block" href="#signup-modal" data-toggle="modal">Sign Up</a> <a class="nav-link text-xs text-uppercase d-none d-md-block" href="#login-modal" data-toggle="modal">Login</a>
-          </nav>
-          <div class="header-divider header-divider-sm"></div>
-          <!--language menu-->
-          <div class="dropdown dropdowns-no-carets">
-            <a href="#en" class="nav-link text-xs p-0 dropdown-toggle ml-1" data-toggle="dropdown"><i class="flag-icon flag-icon-gb"></i></a>
-            <div class="dropdown-menu dropdown-menu-sm rounded dropdown-menu-arrow border-w-2 ml-2-neg">
-              <a href="#es" class="dropdown-item lang-es"><i class="flag-icon flag-icon-es"></i> Spanish</a>
-              <a href="#pt" class="dropdown-item lang-pt"><i class="flag-icon flag-icon-pt"></i> Portguese</a>
-              <a href="#cn" class="dropdown-item lang-cn"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
-              <a href="#se" class="dropdown-item lang-se"><i class="flag-icon flag-icon-se"></i> Swedish</a>
-            </div>
-          </div>
-        </div>
         <!--social media icons-->
         <div class="nav nav-icons header-block order-12">
           <!--@todo: replace with company social media details-->
-          <a href="#" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span> </a>
-          <a href="#" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
-          <a href="#" class="nav-link"> <i class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
+          <a href="https://twitter.com/jstoledano" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span> </a>
+          <a href="https://www.facebook.com/yo.toledano" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
+          <a href="https://www.linkedin.com/in/javier-sanchez-toledano/" class="nav-link"> <i class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
         </div>
       </div>
     </div>
@@ -108,9 +88,9 @@
       <!--Header search region - hidden by default -->
       <div class="header-search collapse" id="search">
         <form class="search-form container">
-          <input type="text" name="search" class="form-control search" value="" placeholder="Search">
-          <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
-          <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
+          <input type="text" name="search" class="form-control search" value="" placeholder="Buscar">
+          <button type="button" class="btn btn-link"><span class="sr-only">Buscar </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+          <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Cerrar </span><i class="fa fa-times search-icon"></i></button>
         </form>
       </div>
 
@@ -120,13 +100,13 @@
         <div class="header-inner container">
           <!--branding/logo -->
           <div class="header-brand">
-            <a class="header-brand-text" href="index.html" title="Home">
+            <a class="header-brand-text" href="index.html" title="Portada">
               <h1 class="h2">
-                <span class="header-brand-text-alt">App</span>Strap<span class="header-brand-text-alt">.</span>
+                <span class="header-brand-text-alt">Javier Sanchez </span>Toledano<span class="header-brand-text-alt"></span>
               </h1>
             </a>
             <div class="header-divider d-none d-lg-block"></div>
-            <div class="header-slogan d-none d-lg-block">Bootstrap 4 Theme</div>
+            <div class="header-slogan d-none d-lg-block">Desarrollador Web</div>
           </div>
           <!-- other header content -->
           <div class="header-block order-12">
@@ -137,7 +117,13 @@
             <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
             <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
             <!--Show/hide trigger for #offcanvas-sidebar -->
-            <a href="#" title="Click me you'll get a surprise" class="btn btn-icon btn-link header-btn float-right order-last" data-toggle="off-canvas" data-target="#offcanvas-sidebar" data-settings='{"cloneTarget":false}'> <i class="ion-android-more-vertical"></i> </a>
+            <a
+                    href="#"
+                    title="Haz clic para ver una sorpresa"
+                    class="btn btn-icon btn-link header-btn float-right order-last"
+                    data-toggle="off-canvas" data-target="#offcanvas-sidebar"
+                    data-settings='{"cloneTarget":false}'>
+                <i class="ion-android-more-vertical"></i> </a>
           </div>
 
           <div class="navbar navbar-expand-md navbar-static-top">
@@ -150,8 +136,28 @@
                 <li class="nav-item dropdown dropdown-mega-menu active">
                   <a href="#" class="nav-link dropdown-toggle" id="indexs-drop" data-toggle="dropdown" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
                   <!-- Dropdown Menu - mega menu-->
+                    <div class="dropdown-menu">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <h4 class="dropdown-header d-none d-lg-block mt-0">
+                            Categorías
+                          </h4>
+                            <div class="row">
+                            <div class="col-lg-4">
+                                <a href="index.html" class="dropdown-item active">Céfiros y Trinos</a>
+                                <a href="intro.html" class="dropdown-item">Python</a>
+                                <a href="index-static.html" class="dropdown-item">Bases de Datos</a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="index-onepager-image.html" class="dropdown-item">Java y Spring</a>
+                                <a href="index-onepager-image-full-height.html" class="dropdown-item">C#</a>
+                                <a href="index-onepager-bg-slideshow.html" class="dropdown-item">Go Lang</a>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                    </div>
                 </li>
-
               </ul>
             </div>
             <!--/.navbar-collapse -->
@@ -161,104 +167,100 @@
     </div>
   </div>
 
-  <!-- ======== @Region: #highlighted ======== -->
-  <div id="highlighted">
-    <!-- Showshow - Slider Revolution see: plugins/slider-revolution/examples&sources for help invoke using data-toggle="slider-rev" options can be passed to the slider via HTML5 data- ie. data-startwidth="960" -->
-    <div class="slider-wrapper rev_slider_wrapper fullscreen-container bg-black" data-page-class="slider-appstrap-theme">
-      <div class="rev_slider fullscreenbanner" data-toggle="slider-rev" data-settings='{"startwidth":1100, "startheight":520, "delay":10000}'>
-        <ul>
-          <!-- SLIDE 1 -->
-          <li class="slide overlay overlay-op-4 overlay-gradient" data-transition="fadethroughdark" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{% static 'blog/img/slides/app_bg.jpg' %}" data-rotate="0" data-saveperformance="off" data-title="Slide" data-link="shop-list.html">
-            <img src="{% static 'blog/img/slide-dummy.png' %}" data-lazyload="{% static 'blog/img/slides/app_bg.jpg' %}" alt="background image" data-bgposition="center top" data-bgfit="cover" data-bgparallax="off" class="rev-slidebg" data-no-retina />
-            <!-- SLIDE 1 Content-->
-            <div class="slide-content container" style="z-index: 10;">
-              <!--elements within .slide-content are pushed below navbar on "behind"-->
-              <!-- Layer 1 -->
-              <div class="tp-caption text-grey" data-x="['left','left','left','left']" data-hoffset="['0','0','0','40']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['120','120','120','120']" data-fontsize="['52','52','52','52']" data-lineheight="['52','52','52','52']" data-width="420" data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide" data-responsive_offset="on" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1200,"to":"o:1;","delay":1300,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="left"> <span class="font-weight-bold text-uppercase text-white">Welcome to AppStrap</span>
-              </div>
-              <!-- Layer 3 -->
-              <div class="tp-caption text-grey" data-x="['left','left','left','left']" data-hoffset="['0','0','0','40']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['60','60','60','60']" data-fontsize="['20','20','20','30']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-basealign="slide" data-responsive_offset="on" data-frames='[{"delay":0,"speed":1200,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","delay":1400},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' data-textAlign="['center','center','center','center']"> A real crowd-pleaser of a Bootstrap 4 Theme
-              </div>
-              <!-- Layer 3 -->
-              <div class="tp-caption rs-parallaxlevel-8" data-frames='[{"from":"o:0;sX:3;sY:3;","speed":2000,"to":"o:0.20;sX:3;sY:3;","delay":1800,"ease":"default"},{"delay":"wait","speed":1200,"to":"x:[100%];","ease":"Power3.easeInOut"}]' data-x="left" data-y="bottom" data-hoffset="-200" data-voffset="0" data-width="none" data-height="none" data-type="image" data-basealign="slide"> <i class="fa fa-bullseye icon-20x icon-bg op-1 text-white"></i>
-              </div>
-              <!-- Layer 4 -->
-              <div class="tp-caption tp-resizeme bg-primary-bright" data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]' data-x="['left','left','left','left']" data-hoffset="['0','0','0','40']" data-y="bottom" data-voffset="100" data-width="380" data-height="4" data-basealign="slide"></div>
-            </div>
-          </li>
-          <!-- SLIDE 2 -->
-          <li class="slide" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-rotate="0" data-saveperformance="off" data-title="Slide">
-            <img src="{% static 'blog/img/slides/transparent.png' %}" class="rev-slidebg bg-white" alt="Background image" data-bgcolor="#ffffff" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" data-no-retina />
-            <!-- LAYERS -->
-            <!-- Layer 1 -->
-            <div class="tp-caption tp-resizeme rs-parallaxlevel-8" data-x="['left','left','left','left']" data-hoffset="['-364','-364','-420','-416']" data-y="['top','top','top','top']" data-voffset="['-185','-185','-185','-185']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-basealign="slide" data-responsive_offset="off" data-frames='[{"from":"x:left;rZ:-90deg;","speed":2500,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5;border-width:0px;">
-              <img src="{% static 'blog/img/slides/header_penpot.png' %}" alt="" data-ww="['650px','650px','650px','650px']" data-hh="['500px','500px','500px','500px']" width="650" height="500" data-no-retina />
-            </div>
-            <!-- Layer 2 -->
-            <div class="tp-caption tp-resizeme rs-parallaxlevel-9" data-x="['right','right','right','right']" data-hoffset="['-100','-100','-120','-144']" data-y="['top','top','top','top']" data-voffset="['-254','-254','-254','-254']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-basealign="slide" data-responsive_offset="on" data-frames='[{"from":"x:right;y:-500px;rZ:90deg;","speed":2500,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6;border-width:0px;">
-              <img src="{% static 'blog/img/slides/header_flowerpot.png' %}" alt="" data-ww="['700px','700px','700px','700px']" data-hh="['600px','600px','600px','600px']" width="700" height="600" data-no-retina />
-            </div>
-            <!-- Layer 3 -->
-            <div class="tp-caption tp-resizeme rs-parallaxlevel-10" data-x="['left','left','left','left']" data-hoffset="['-472','-372','-340','-638']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-484','-484','-520','-522']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-basealign="slide" data-responsive_offset="off" data-frames='[{"from":"x:left;rZ:45deg;","speed":2500,"to":"o:1;","delay":650,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7;border-width:0px;">
-              <img src="{% static 'blog/img/slides/header_papers.png' %}" alt="" data-ww="['900px','900px','900px','900px']" data-hh="['1000px','1000px','1000px','1000px']" width="900" height="1000" data-no-retina />
-            </div>
-            <!-- Layer 4 -->
-            <div class="tp-caption tp-resizeme rs-parallaxlevel-12" data-x="['left','left','left','left']" data-hoffset="['134','134','-2','-57']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['67','67','50','6']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-basealign="slide" data-responsive_offset="on" data-frames='[{"from":"y:bottom;rZ:90deg;","speed":1500,"to":"o:1;","delay":1050,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 8;border-width:0px;">
-              <img src="{% static 'blog/img/slides/header_marker.png' %}" alt="" data-ww="['200px','200px','200px','200px']" data-hh="['300px','300px','300px','300px']" width="200" height="300" data-no-retina />
-            </div>
-            <!-- Layer 5 -->
-            <div class="tp-caption tp-resizeme rs-parallaxlevel-11" data-x="['left','left','left','left']" data-hoffset="['181','181','30','-39']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-170','-170','-190','-212']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-basealign="slide" data-responsive_offset="on" data-frames='[{"from":"y:bottom;rZ:-90deg;","speed":1500,"to":"o:1;","delay":1250,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9;border-width:0px;">
-              <img src="{% static 'blog/img/slides/header_edding.png' %}" alt="" data-ww="['300px','300px','300px','300px']" data-hh="['400px','400px','400px','400px']" width="300" height="400" data-no-retina />
-            </div>
-            <!-- Layer 6 -->
-            <div class="tp-caption tp-resizeme rs-parallaxlevel-9" data-x="['right','right','right','right']" data-hoffset="['-364','-364','-479','-553']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['-155','-155','-180','-202']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-basealign="slide" data-responsive_offset="on" data-frames='[{"from":"x:right;rZ:-65deg;","speed":1500,"to":"o:1;","delay":700,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 12;border-width:0px;">
-              <img src="{% static 'blog/img/slides/header_tablet.png' %}" alt="" data-ww="['730px','730px','730px','730px']" data-hh="['520px','520px','520px','520px']" width="730" height="520" data-no-retina />
-            </div>
-            <!-- Layer 7 -->
-            <div class="tp-caption tp-resizeme rs-parallaxlevel-11" data-x="['right','right','right','right']" data-hoffset="['222','222','105','8']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['8','8','-17','-10']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-basealign="slide" data-responsive_offset="on" data-frames='[{"from":"x:right;rZ:90deg;","speed":1500,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 13;border-width:0px;">
-              <img src="{% static 'blog/img/slides/header_pen.png' %}" alt="" data-ww="['300px','300px','300px','300px']" data-hh="['500px','500px','500px','500px']" width="300" height="500" data-no-retina />
-            </div>
-            <div class="slide-content">
-              <!-- Layer 8 -->
-              <div class="tp-caption tp-resizeme rs-parallaxlevel-2" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-90']" data-fontsize="['60','60','60','60']" data-lineheight="['60','60','60','60']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:-50px;rX:-45deg;sX:2;sY:2;opacity:0;","speed":1500,"to":"o:1;","delay":510,"ease":"Power4.easeOut"},{"delay":640,"speed":600,"to":"y:30px;rX:45deg;sX:0.8;sY:0.8;opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">Flexbox Support.</div>
-              <!-- Layer 9 -->
-              <div class="tp-caption tp-resizeme rs-parallaxlevel-2" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-90']" data-fontsize="['60','60','60','60']" data-lineheight="['60','60','60','60']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:-50px;rX:-45deg;sX:2;sY:2;opacity:0;","speed":1500,"to":"o:1;","delay":2940,"ease":"Power4.easeOut"},{"delay":660,"speed":600,"to":"y:30px;rX:45deg;sX:0.8;sY:0.8;opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">Bootstrap 4 Based.</div>
-              <!-- Layer 10 -->
-              <div class="tp-caption tp-resizeme rs-parallaxlevel-2" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-90']" data-fontsize="['60','60','60','60']" data-lineheight="['60','60','60','60']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:-50px;rX:-45deg;sX:2;sY:2;opacity:0;","speed":1500,"to":"o:1;","delay":5390,"ease":"Power4.easeOut"},{"delay":"690","speed":600,"to":"y:30px;rX:45deg;sX:0.8;sY:0.8;opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">Fully Responsive.</div>
-              <!-- Layer 11 -->
-              <div class="tp-caption tp-resizeme rs-parallaxlevel-2" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-90']" data-fontsize="['60','60','60','60']" data-lineheight="['60','60','60','60']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:-50px;rX:-45deg;sX:2;sY:2;opacity:0;","speed":1500,"to":"o:1;","delay":7890,"ease":"Power4.easeOut"},{"delay":"wait","speed":600,"to":"y:30px;rX:45deg;sX:0.8;sY:0.8;opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">AppStrap.</div>
-              <!-- Layer 12 -->
-              <div class="tp-caption tp-resizeme rs-parallaxlevel-2" data-x="['center','center','center','center']" data-hoffset="['-8','-8','-8','-8']" data-y="['middle','middle','middle','middle']" data-voffset="['-10','-10','-10','-10']" data-fontsize="['20','20','20','25']" data-lineheight="['20','20','20','30']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:50px;rX:45deg;sX:2;sY:2;opacity:0;","speed":1500,"to":"o:1;","delay":600,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]' data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">The ultimate Bootstrap 4 Theme!</div>
-              <!-- Layer 13 -->
-              <div class="tp-caption rs-parallaxlevel-3" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['92','92','92','92']" data-width="none" data-height="none" data-whitespace="nowrap" data-responsive_offset="on" data-responsive="off" data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","delay":700,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'> <a href="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme" class="btn btn-outline-primary btn-rounded btn-xlg d-none d-md-block">Get AppStrap</a> <a href="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme" class="btn btn-outline-primary btn-rounded btn-sm d-md-none">Get AppStrap</a>
-              </div>
-            </div>
-          </li>
-          <!-- SLIDE 3 -->
-          <li class="slide overlay overlay-op-2" data-index="rs-3007" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="{% static 'blog/img/slides/office_cover-100x50.jpg' %}" data-rotate="0" data-saveperformance="off" data-title="Office">
-            <!-- MAIN IMAGE -->
-            <img src="{% static 'blog/img/slides/office_cover.jpg' %}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina />
-            <!-- LAYERS -->
-            <!-- BACKGROUND VIDEO LAYER -->
-            <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute" data-videowidth="100%" data-videoheight="100%" data-videomp4="{% static 'blog/img/slides/Working-Space.mp4' %}" data-videopreload="auto" data-videoloop="loopandnoslidestop" data-forceCover="1" data-aspectratio="16:9" data-autoplay="true" data-autoplayonlyfirsttime="false"></div>
-            <!-- Layer 1 -->
-            <div class="tp-caption text-white" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-30','-30','-30','-20']" data-fontsize="['70','70','70','70']" data-lineheight="['70','70','70','60']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-basealign="slide" data-responsive_offset="off" data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]">Pack with features!</div>
-            <!-- Layer 2 -->
-            <div class="tp-caption text-grey" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['22','22','22','0']" data-fontsize="['20','20','20','20']" data-lineheight="['20','20','20','20']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-basealign="slide" data-responsive_offset="off" data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1300,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']">Kickstart your next web project with AppStrap!</div>
-            <!-- Layer 3 -->
-            <div class="tp-caption" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['122','122','60','30']" data-width="none" data-height="none" data-whitespace="nowrap" data-basealign="slide" data-responsive_offset="off" data-responsive="on" data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","delay":700,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'>
-              <a href="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme" class="btn btn-primary btn-rounded btn-xlg d-none d-md-block">Get AppStrap</a>
-              <a href="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme" class="btn btn-primary btn-rounded btn-sm d-md-none">Get AppStrap</a> </div>
-          </li>
-        </ul>
-        <div class="tp-bannertimer tp-bottom"></div>
-      </div>
-      <!--end of tp-banner-->
-    </div>
-  </div>
+    <!-- ========== About ========== -->
 
   <!-- ======== @Region: #content ======== -->
   <div id="content" class="p-0">
+
+          <div id="about" class="bg-primary text-white">
+      <div class="container py-6" data-animate="fadeIn">
+        <h2 class="text-white display-4 font-weight-bold mb-3 text-letter-spacing-xs">
+          Biografía
+        </h2>
+        <div class="row">
+          <div class="col-lg-4 order-lg-2">
+            <img src="{% static 'blog/img/homes/cv-portfolio.jpg' %}" alt="Me" class="img-fluid rounded-circle op-7 border-white border-w-5 w-30 w-lg-80 mt-lg-4-neg d-none d-lg-block" />
+          </div>
+          <div class="col-lg-8">
+            <p class="lead">Ingeniero en Sistemas Computacionales.</p>
+            <p>Abbas caecus erat ibidem immitto interdico paratus sit torqueo wisi. Appellatio at eu humo imputo iriure pertineo proprius valetudo.</p>
+            <p class="mb-0">Esse jumentum volutpat. Abbas amet damnum iustum obruo paratus roto. Decet iaceo ibidem lenis nutus obruo refero roto sino vulputate. Antehabeo consequat distineo eros jus mos pneum turpis uxor. Ad cui et immitto jus pecus proprius.</p>
+            <p>Dignissim enim ex gemino luctus nibh venio. Capto qui quibus torqueo. Blandit conventio macto mos plaga.</p>
+              <p class="lead">
+                  <i class="fas fa-download pr-1 fa-fw"></i>
+                  Descarga mi <a class="text-white" href="/uploads/resume.pdf" target="_blank"><mark>resumé</mark></a>.
+              </p>
+          </div>
+        </div>
+        <hr class="border-white op-3 mt-6 mb-0" />
+        <div id="skills" class="pt-6" data-animate="fadeIn">
+          <h2 class="text-white display-4 font-weight-bold mb-3 text-letter-spacing-xs">
+            Habilidades
+          </h2>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="mb-4">
+                <h5 class="d-flex mt-0 op-8">
+                    <i class="fab fa-fw fa-html5 mr-2"></i>
+                    <i class="fab fa-fw fa-css3 mr-2"></i> HTML5 y CSS3 (92%)
+                </h5>
+                <div class="progress">
+                  <div
+                          class="progress-bar py-1 w-92 bg-primary-darkend"
+                          data-toggle="progress-bar-animated-progress"
+                          role="progressbar" aria-valuenow="92"
+                          aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <h5 class="d-flex mt-0 op-8">
+                  <i class="fab fa-fw fa-python mr-2"></i> Python (90%)
+                </h5>
+                <div class="progress">
+                  <div class="progress-bar py-1 w-90 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <h5 class="d-flex mt-0 op-8">
+                  <i class="fab fa-fw fa-linux mr-2"></i> System Admin (95%)
+                </h5>
+                <div class="progress">
+                  <div class="progress-bar py-1 w-95 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-4">
+                <h5 class="d-flex mt-0 op-8">
+                  <i class="fab fa-fw fa-android mr-2"></i> Android (48%)
+                </h5>
+                <div class="progress">
+                  <div class="progress-bar py-1 w-48 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <h5 class="d-flex mt-0 op-8">
+                  <i class="fab fa-fw fa-windows mr-2"></i> Windows (54%)
+                </h5>
+                <div class="progress">
+                  <div class="progress-bar py-1 w-54 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <h5 class="d-flex mt-0 op-8">
+                  <i class="fab fa-fw fa-github-alt mr-2"></i> GitHub (78%)
+                </h5>
+                <div class="progress">
+                  <div class="progress-bar py-1 w-78 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr-primary-darkend my-0" />
+
     <!-- Features -->
     <div id="features" class="container py-4 py-lg-6">
       <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary" />
@@ -891,8 +893,10 @@
   <!--jQuery 3.3.1 via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Popper 1.16.0 via CDN, needed for Bootstrap Tooltips & Popovers -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
+  <!-- Bootstrap v4.5.0 JS via CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
   <!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
 
