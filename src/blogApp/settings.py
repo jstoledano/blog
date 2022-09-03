@@ -19,11 +19,9 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 THIRD_PARTY_APPS = [
-    'authtools',
     'taggit'
 ]
 LOCAL_APPS = [
-    'profiles.apps.ProfilesConfig',
     'blog.apps.BlogConfig',
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -81,13 +79,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'es-mx'
-
-TIME_ZONE = 'Mexico/General'
-
-USE_I18N = True
-
-USE_TZ = True
+LANGUAGE_CODE = env('LOCALE', default='es-mx')
+TIME_ZONE = env('TIME_ZONE', default='America/Mexico_City')
+USE_I18N = env('USE_I18N', default=True)
+USE_L10N = env('USE_L10N', default=True)
+USE_TZ = env('USE_TZ', default=True)
+SITE_ID = env('SITE_ID', default=1)
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
@@ -95,12 +92,6 @@ STATICFILES_DIRS = [
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# Custom User Profile
-# django-authtools
-# https://github.com/fusionbox/django-authtools
-AUTH_USER_MODEL = 'profiles.User'
 
 # Taggit
 # django-taggit
