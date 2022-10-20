@@ -3,652 +3,516 @@
 <html lang="en">
 
 <head>
-    <link href="{% static 'blog/index.html' %}" rel="stylesheet">
     <title>toledano.org | Sitio Personal</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-  <!-- @todo: fill with your company info or remove -->
-  <meta name="description" content="">
-  <meta name="author" content="{{ author }}">
+    <!-- @todo: fill with your company info or remove -->
+    <meta name="description" content="">
+    <meta name="author" content="{{ author }}">
 
-  <!-- Bootstrap v4.5.0 CSS via CDN -->
+    <!-- Bootstrap v4.5.0 CSS via CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
+    <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
 
-  <!-- Theme style -->
-  <link href="{% static 'blog/css/theme-style.min.css' %}" rel="stylesheet">
+    <!-- Theme style -->
+    <link href="{% static 'blog/css/theme-style.min.css' %}" rel="stylesheet">
 
-  <!--Your custom colour override-->
-  <link href="{% static 'blog/css/colour-blue-dark.min.css' %}" id="colour-scheme" rel="stylesheet">
+    <!--Your custom colour override-->
+    <link href="{% static 'blog/css/colour-blue-dark.min.css' %}" id="colour-scheme" rel="stylesheet">
 
-  <!-- Your custom override -->
-  <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
-
-
-
-  <!-- Optional: ICON SETS -->
-  <!-- Iconset: Font Awesome 5.12.0 via CDN -->
-  <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-  <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
-  <link href="{% static 'blog/plugins/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
-  <!-- Iconset: ionicons - http://ionicons.com/ -->
-  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-  <!-- Iconset: Linearicons - https://linearicons.com/free -->
-  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
-  <!-- Iconset: Lineawesome - https://icons8.com/articles/line-awesome -->
-  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+    <!-- Your custom override -->
+    <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
 
 
-  <!-- Le fav and touch icons - @todo: fill with your icons or remove, try https://realfavicongenerator.net -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'blog/favicons/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/favicons/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/favicons/favicon-16x16.png' %}">
-  <link rel="manifest" href="{% static 'blog/favicons/manifest.json' %}">
-  <link rel="shortcut icon" href="{% static 'blog/favicons/favicon.ico' %}">
-  <meta name="msapplication-config" content="{% static 'blog/favicons/browserconfig.xml' %}">
-  <meta name="theme-color" content="#ffffff">
+    <!-- Optional: ICON SETS -->
+    <!-- Iconset: Font Awesome 5.12.0 via CDN -->
+    <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
+    <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
+    <link href="{% static 'blog/plugins/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
+    <!-- Iconset: ionicons - http://ionicons.com/ -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <!-- Iconset: Linearicons - https://linearicons.com/free -->
+    <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+    <!-- Iconset: Lineawesome - https://icons8.com/articles/line-awesome -->
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
 
 
-  <!-- Google fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
+    <!-- Le fav and touch icons - @todo: fill with your icons or remove, try https://realfavicongenerator.net -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'blog/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'blog/favicons/manifest.json' %}">
+    <link rel="shortcut icon" href="{% static 'blog/favicons/favicon.ico' %}">
+    <meta name="msapplication-config" content="{% static 'blog/favicons/browserconfig.xml' %}">
+    <meta name="theme-color" content="#ffffff">
 
-  <!--Plugin: Retina.js (high def image replacement) - @see: http://retinajs.com/-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
+
+    <!--Plugin: Retina.js (high def image replacement) - @see: http://retinajs.com/-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
 </head>
 <!--To implement the boxed page layout simply add the class .page-boxed to the body badge like below -->
 
 <!-- ======== @Region: body ======== -->
 
 <body class="page page-index-boxed navbar-layout-default page-boxed">
-  <a href="#content" id="top" class="sr-only">Ir al contenido</a>
+<a href="#content" id="top" class="sr-only">Ir al contenido</a>
 
-  <!-- ======== @Region: #header ======== -->
-  <div id="header">
+<!-- ======== @Region: #header ======== -->
+<div id="header">
 
     <!--Header upper region-->
     <div class="header-upper">
-      <div class="header-inner container">
-        <!--social media icons-->
-        <div class="nav nav-icons header-block order-12">
-          <!--@todo: replace with company social media details-->
-          <a href="https://twitter.com/jstoledano" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span> </a>
-          <a href="https://www.facebook.com/yo.toledano" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
-          <a href="https://www.linkedin.com/in/javier-sanchez-toledano/" class="nav-link"> <i class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
+        <div class="header-inner container">
+            <!--social media icons-->
+            <div class="nav nav-icons header-block order-12">
+                <!--@todo: replace with company social media details-->
+                <a href="https://twitter.com/jstoledano" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i>
+                    <span class="sr-only">Twitter</span> </a>
+                <a href="https://www.facebook.com/yo.toledano" class="nav-link"> <i
+                        class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
+                <a href="https://www.linkedin.com/in/javier-sanchez-toledano/" class="nav-link"> <i
+                        class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
+            </div>
         </div>
-      </div>
     </div>
     <div data-toggle="sticky">
 
-      <!--Header search region - hidden by default -->
-      <div class="header-search collapse" id="search">
-        <form class="search-form container">
-          <input type="text" name="search" class="form-control search" value="" placeholder="Buscar">
-          <button type="button" class="btn btn-link"><span class="sr-only">Buscar </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
-          <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Cerrar </span><i class="fa fa-times search-icon"></i></button>
-        </form>
-      </div>
+        <!--Header search region - hidden by default -->
+        <div class="header-search collapse" id="search">
+            <form class="search-form container">
+                <input type="text" name="search" class="form-control search" value="" placeholder="Buscar">
+                <button type="button" class="btn btn-link"><span class="sr-only">Buscar </span><i
+                        class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+                <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span
+                        class="sr-only">Cerrar </span><i class="fa fa-times search-icon"></i></button>
+            </form>
+        </div>
 
-      <!--Header & Branding region-->
-      <div class="header">
-        <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
-        <div class="header-inner container">
-          <!--branding/logo -->
-          <div class="header-brand">
-            <a class="header-brand-text" href="index.html" title="Portada">
-              <h1 class="h2">
-                <span class="header-brand-text-alt">Javier Sanchez </span>Toledano<span class="header-brand-text-alt"></span>
-              </h1>
-            </a>
-            <div class="header-divider d-none d-lg-block"></div>
-            <div class="header-slogan d-none d-lg-block">Desarrollador Web</div>
-          </div>
-          <!-- other header content -->
-          <div class="header-block order-12">
+        <!--Header & Branding region-->
+        <div class="header">
+            <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+            <div class="header-inner container">
+                <!--branding/logo -->
+                <div class="header-brand">
+                    <a class="header-brand-text" href="index.html" title="Portada">
+                        <h1 class="h2">
+                            <span class="header-brand-text-alt">Javier Sanchez </span>Toledano<span
+                                class="header-brand-text-alt"></span>
+                        </h1>
+                    </a>
+                    <div class="header-divider d-none d-lg-block"></div>
+                    <div class="header-slogan d-none d-lg-block">Desarrollador Web</div>
+                </div>
+                <!-- other header content -->
+                <div class="header-block order-12">
 
-            <!--Search trigger -->
-            <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11" data-toggle="search-form" data-target=".header-search"><i class="fa fa-search fa-flip-horizontal search-icon"></i></a>
+                    <!--Search trigger -->
+                    <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11"
+                       data-toggle="search-form" data-target=".header-search"><i
+                            class="fa fa-search fa-flip-horizontal search-icon"></i></a>
 
-            <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
-            <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
-            <!--Show/hide trigger for #offcanvas-sidebar -->
-            <a
-                    href="#"
-                    title="Haz clic para ver una sorpresa"
-                    class="btn btn-icon btn-link header-btn float-right order-last"
-                    data-toggle="off-canvas" data-target="#offcanvas-sidebar"
-                    data-settings='{"cloneTarget":false}'>
-                <i class="ion-android-more-vertical"></i> </a>
-          </div>
+                    <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+                    <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none"
+                       data-toggle="off-canvas" data-target=".navbar-main"
+                       data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i
+                            class="fa fa-bars"></i> </a>
+                    <!--Show/hide trigger for #offcanvas-sidebar -->
+                    <a
+                            href="#"
+                            title="Haz clic para ver una sorpresa"
+                            class="btn btn-icon btn-link header-btn float-right order-last"
+                            data-toggle="off-canvas" data-target="#offcanvas-sidebar"
+                            data-settings='{"cloneTarget":false}'>
+                        <i class="ion-android-more-vertical"></i> </a>
+                </div>
 
-          <div class="navbar navbar-expand-md navbar-static-top">
-            <!--everything within this div is collapsed on mobile-->
-            <div class="navbar-main collapse">
-              <!--main navigation-->
-              <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
+                <div class="navbar navbar-expand-md navbar-static-top">
+                    <!--everything within this div is collapsed on mobile-->
+                    <div class="navbar-main collapse">
+                        <!--main navigation-->
+                        <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
 
-                <!-- Homepages -->
-                <li class="nav-item dropdown dropdown-mega-menu active">
-                  <a href="#" class="nav-link dropdown-toggle" id="indexs-drop" data-toggle="dropdown" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
-                  <!-- Dropdown Menu - mega menu-->
-                    <div class="dropdown-menu">
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <h4 class="dropdown-header d-none d-lg-block mt-0">
-                            Categorías
-                          </h4>
-                            <div class="row">
-                            <div class="col-lg-4">
-                                <a href="index.html" class="dropdown-item active">Céfiros y Trinos</a>
-                                <a href="intro.html" class="dropdown-item">Python</a>
-                                <a href="index-static.html" class="dropdown-item">Bases de Datos</a>
+                            <!-- Homepages -->
+                            <li class="nav-item dropdown dropdown-mega-menu active">
+                                <a href="#" class="nav-link dropdown-toggle" id="indexs-drop" data-toggle="dropdown"
+                                   data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span>
+                                </a>
+                                <!-- Dropdown Menu - mega menu-->
+                                <div class="dropdown-menu">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h4 class="dropdown-header d-none d-lg-block mt-0">
+                                                Categorías
+                                            </h4>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <a href="index.html" class="dropdown-item active">Céfiros y
+                                                        Trinos</a>
+                                                    <a href="intro.html" class="dropdown-item">Python</a>
+                                                    <a href="index-static.html" class="dropdown-item">Bases de Datos</a>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <a href="index-onepager-image.html" class="dropdown-item">Java y
+                                                        Spring</a>
+                                                    <a href="index-onepager-image-full-height.html"
+                                                       class="dropdown-item">C#</a>
+                                                    <a href="index-onepager-bg-slideshow.html" class="dropdown-item">Go
+                                                        Lang</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.navbar-collapse -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== About ========== -->
+
+<!-- ======== @Region: #content ======== -->
+<div id="content" class="p-0">
+    <div id="about" class="bg-primary text-white">
+        <div class="container py-6" data-animate="fadeIn">
+            <h2 class="text-white display-4 font-weight-bold mb-3 text-letter-spacing-xs">
+                Biografía
+            </h2>
+            <div class="row">
+                <div class="col-lg-4 order-lg-2">
+                    <img src="{% static 'blog/img/homes/cv-portfolio.jpg' %}"
+                         alt="Me"
+                         class="img-fluid rounded-circle op-7 border-white border-w-5 w-30 w-lg-80 mt-lg-4-neg d-none d-lg-block"/>
+                </div>
+                <div class="col-lg-8">
+                    <p class="lead">Ingeniero en Sistemas Computacionales.</p>
+                    <p>Soy Licenciado en Informática e Ingeniero en Sistemas Computacionales.</p>
+                    <p class="mb-0">
+                        Soy auditor líder certificado por ICA en la Norma ISO 9000, desarrollo sistemas de gestión de
+                        la calidad con un enfoque de mejora continua, creo tableros de control con indicadores clave
+                        para mejorar la toma de decisiones basadas en datos.
+                    </p>
+                    <p></p>
+                    <p class="lead">
+                        <i class="fas fa-download pr-1 fa-fw"></i>
+                        Descarga mi <a class="text-white" href="/uploads/resume.pdf" target="_blank">
+                        <mark>Currículum Vitae</mark>
+                    </a>.
+                    </p>
+                </div>
+            </div>
+            <hr class="border-white op-3 mt-6 mb-0"/>
+            <div id="skills" class="pt-6" data-animate="fadeIn">
+                <h2 class="text-white display-4 font-weight-bold mb-3 text-letter-spacing-xs">
+                    Habilidades
+                </h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="mb-4">
+                            <h5 class="d-flex mt-0 op-8">
+                                <i class="fab fa-fw fa-html5 mr-2"></i>
+                                <i class="fab fa-fw fa-css3 mr-2"></i> HTML5 y CSS3 (92%)
+                            </h5>
+                            <div class="progress">
+                                <div
+                                        class="progress-bar py-1 w-92 bg-primary-darkend"
+                                        data-toggle="progress-bar-animated-progress"
+                                        role="progressbar" aria-valuenow="92"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <div class="col-lg-4">
-                                <a href="index-onepager-image.html" class="dropdown-item">Java y Spring</a>
-                                <a href="index-onepager-image-full-height.html" class="dropdown-item">C#</a>
-                                <a href="index-onepager-bg-slideshow.html" class="dropdown-item">Go Lang</a>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="d-flex mt-0 op-8">
+                                <i class="fab fa-fw fa-python mr-2"></i> Python (90%)
+                            </h5>
+                            <div class="progress">
+                                <div class="progress-bar py-1 w-90 bg-primary-darkend"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="90"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                          </div>
-                          </div>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="d-flex mt-0 op-8">
+                                <i class="fab fa-fw fa-linux mr-2"></i> System Admin (95%)
+                            </h5>
+                            <div class="progress">
+                                <div class="progress-bar py-1 w-95 bg-primary-darkend"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="95"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
-                </li>
-              </ul>
+                    <div class="col-lg-6">
+                        <div class="mb-4">
+                            <h5 class="d-flex mt-0 op-8">
+                                <i class="fab fa-fw fa-android mr-2"></i> Android (48%)
+                            </h5>
+                            <div class="progress">
+                                <div class="progress-bar py-1 w-48 bg-primary-darkend"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="48"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="d-flex mt-0 op-8">
+                                <i class="fab fa-fw fa-windows mr-2"></i> Windows (54%)
+                            </h5>
+                            <div class="progress">
+                                <div class="progress-bar py-1 w-54 bg-primary-darkend"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="54"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="d-flex mt-0 op-8">
+                                <i class="fab fa-fw fa-github-alt mr-2"></i> GitHub (78%)
+                            </h5>
+                            <div class="progress">
+                                <div class="progress-bar py-1 w-78 bg-primary-darkend"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="78"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--/.navbar-collapse -->
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-
-    <!-- ========== About ========== -->
-
-  <!-- ======== @Region: #content ======== -->
-  <div id="content" class="p-0">
-      <div id="about" class="bg-primary text-white">
-          <div class="container py-6" data-animate="fadeIn">
-              <h2 class="text-white display-4 font-weight-bold mb-3 text-letter-spacing-xs">
-                  Biografía
-              </h2>
-              <div class="row">
-                  <div class="col-lg-4 order-lg-2">
-                      <img src="{% static 'blog/img/homes/cv-portfolio.jpg' %}"
-                           alt="Me"
-                           class="img-fluid rounded-circle op-7 border-white border-w-5 w-30 w-lg-80 mt-lg-4-neg d-none d-lg-block" />
-                  </div>
-                  <div class="col-lg-8">
-                      <p class="lead">Ingeniero en Sistemas Computacionales.</p>
-                      <p>Soy Licenciado en Informática e Ingeniero en Sistemas Computacionales.</p>
-                      <p class="mb-0">
-                          Soy auditor líder certificado por ICA en la Norma ISO 9000, desarrollo sistemas de gestión de
-                          la calidad con un enfoque de mejora continua, creo tableros de control con indicadores clave
-                          para mejorar la toma de decisiones basadas en datos.
-                      </p>
-                      <p>
-                          Dignissim enim ex gemino luctus nibh venio. Capto qui quibus torqueo. Blandit conventio macto
-                          mos plaga.
-                      </p>
-              <p class="lead">
-                  <i class="fas fa-download pr-1 fa-fw"></i>
-                  Descarga mi <a class="text-white" href="/uploads/resume.pdf" target="_blank"><mark>resumé</mark></a>.
-              </p>
-          </div>
-        </div>
-        <hr class="border-white op-3 mt-6 mb-0" />
-        <div id="skills" class="pt-6" data-animate="fadeIn">
-          <h2 class="text-white display-4 font-weight-bold mb-3 text-letter-spacing-xs">
-            Habilidades
-          </h2>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-4">
-                <h5 class="d-flex mt-0 op-8">
-                    <i class="fab fa-fw fa-html5 mr-2"></i>
-                    <i class="fab fa-fw fa-css3 mr-2"></i> HTML5 y CSS3 (92%)
-                </h5>
-                <div class="progress">
-                  <div
-                          class="progress-bar py-1 w-92 bg-primary-darkend"
-                          data-toggle="progress-bar-animated-progress"
-                          role="progressbar" aria-valuenow="92"
-                          aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <h5 class="d-flex mt-0 op-8">
-                  <i class="fab fa-fw fa-python mr-2"></i> Python (90%)
-                </h5>
-                <div class="progress">
-                  <div class="progress-bar py-1 w-90 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <h5 class="d-flex mt-0 op-8">
-                  <i class="fab fa-fw fa-linux mr-2"></i> System Admin (95%)
-                </h5>
-                <div class="progress">
-                  <div class="progress-bar py-1 w-95 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-4">
-                <h5 class="d-flex mt-0 op-8">
-                  <i class="fab fa-fw fa-android mr-2"></i> Android (48%)
-                </h5>
-                <div class="progress">
-                  <div class="progress-bar py-1 w-48 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <h5 class="d-flex mt-0 op-8">
-                  <i class="fab fa-fw fa-windows mr-2"></i> Windows (54%)
-                </h5>
-                <div class="progress">
-                  <div class="progress-bar py-1 w-54 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <h5 class="d-flex mt-0 op-8">
-                  <i class="fab fa-fw fa-github-alt mr-2"></i> GitHub (78%)
-                </h5>
-                <div class="progress">
-                  <div class="progress-bar py-1 w-78 bg-primary-darkend" data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr class="hr-primary-darkend my-0" />
+    <hr class="hr-primary-darkend my-0"/>
 
     <!-- Features -->
     <div id="features" class="container py-4 py-lg-6">
-      <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary" />
-      <h2 class="text-center text-uppercase font-weight-bold my-0">
-        Core Features
-      </h2>
-      <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
-        Great features, great product!
-      </h5>
-      <hr class="mb-5 w-50 mx-auto" />
-      <div class="row text-center">
-        <div class="col-lg-4 py-1">
-          <i class="la la-tachometer icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i>
-          <h5 class="mt-1 op-8">
-            Fully Optimized
-          </h5>
-          <p class="text-sm text-black-50">Iustum neque nimis nunc sino. Augue ille iriure jus molior quibus quis utinam.</p>
+        <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary"/>
+        <h2 class="text-center text-uppercase font-weight-bold my-0">
+            Core Features
+        </h2>
+        <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
+            Great features, great product!
+        </h5>
+        <hr class="mb-5 w-50 mx-auto"/>
+        <div class="row text-center">
+            <div class="col-lg-4 py-1">
+                <i class="la la-tachometer icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i>
+                <h5 class="mt-1 op-8">
+                    Fully Optimized
+                </h5>
+                <p class="text-sm text-black-50">Iustum neque nimis nunc sino. Augue ille iriure jus molior quibus quis
+                    utinam.</p>
+            </div>
+            <div class="col-lg-4 py-1">
+                <i class="la la-wrench icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.2"></i>
+                <h5 class="mt-1 op-8">
+                    Free Support
+                </h5>
+                <p class="text-sm text-black-50">At laoreet nisl tation. Euismod jumentum metuo refoveo secundum sino
+                    sudo vicis wisi.</p>
+            </div>
+            <div class="col-lg-4 py-1">
+                <i class="la la-rocket icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.3"></i>
+                <h5 class="mt-1 op-8">
+                    Free Upgrades
+                </h5>
+                <p class="text-sm text-black-50">Ad augue eros euismod huic paulatim sagaciter si vulpes.</p>
+            </div>
+            <div class="col-lg-4 py-1">
+                <i class="la la-area-chart icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.4"></i>
+                <h5 class="mt-1 op-8">
+                    99.9% Uptime
+                </h5>
+                <p class="text-sm text-black-50">Cogo duis euismod saepius tego vel. Abbas defui suscipere.</p>
+            </div>
+            <div class="col-lg-4 py-1">
+                <i class="la la-users icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.5"></i>
+                <h5 class="mt-1 op-8">
+                    Multiuser
+                </h5>
+                <p class="text-sm text-black-50">Ex occuro olim pertineo proprius quae tego ullamcorper.</p>
+            </div>
+            <div class="col-lg-4 py-1">
+                <i class="la la-plug icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.6"></i>
+                <h5 class="mt-1 op-8">
+                    Plug n play
+                </h5>
+                <p class="text-sm text-black-50">Commoveo facilisis haero similis valetudo. Ad importunus metuo
+                    paulatim.</p>
+            </div>
         </div>
-        <div class="col-lg-4 py-1">
-          <i class="la la-wrench icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.2"></i>
-          <h5 class="mt-1 op-8">
-            Free Support
-          </h5>
-          <p class="text-sm text-black-50">At laoreet nisl tation. Euismod jumentum metuo refoveo secundum sino sudo vicis wisi.</p>
-        </div>
-        <div class="col-lg-4 py-1">
-          <i class="la la-rocket icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.3"></i>
-          <h5 class="mt-1 op-8">
-            Free Upgrades
-          </h5>
-          <p class="text-sm text-black-50">Ad augue eros euismod huic paulatim sagaciter si vulpes.</p>
-        </div>
-        <div class="col-lg-4 py-1">
-          <i class="la la-area-chart icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.4"></i>
-          <h5 class="mt-1 op-8">
-            99.9% Uptime
-          </h5>
-          <p class="text-sm text-black-50">Cogo duis euismod saepius tego vel. Abbas defui suscipere.</p>
-        </div>
-        <div class="col-lg-4 py-1">
-          <i class="la la-users icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.5"></i>
-          <h5 class="mt-1 op-8">
-            Multiuser
-          </h5>
-          <p class="text-sm text-black-50">Ex occuro olim pertineo proprius quae tego ullamcorper.</p>
-        </div>
-        <div class="col-lg-4 py-1">
-          <i class="la la-plug icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.6"></i>
-          <h5 class="mt-1 op-8">
-            Plug n play
-          </h5>
-          <p class="text-sm text-black-50">Commoveo facilisis haero similis valetudo. Ad importunus metuo paulatim.</p>
-        </div>
-      </div>
     </div>
-<!-- News section & sidebar -->
+    <!-- News section & sidebar -->
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <!-- News sections: Lifestyle -->
-          <h4 class="text-uppercase text-letter-spacing-sm my-0 text-primary font-weight-bold">
-            Lifestyle
-          </h4>
-          <hr class="mt-2 mb-3" />
-          <div class="row">
-            <div class="col-lg-7">
-              <!-- Main item -->
-              <!-- News item 1 -->
-              <div class="card card-silent mb-lg-4 border-0 flex-ew" data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
-                <img class="card-img img-fluid" data-src="https://source.unsplash.com/5ido2uN-7V0/540x320/" alt="Causa Elit Exputo Neo Vel Veniam Voco" data-toggle="blazy">
-                <div class="card-body px-0">
-                  <h4 class="card-title mb-1">
-                    Causa Elit Exputo Neo Vel Veniam Voco
-                  </h4>
-                  <p class="card-text text-uppercase text-xs"><i class="far fa-comment"></i> 124 <span class="px-1">/</span> <i class="far fa-clock"></i> May 28 2020</p>
+        <div class="row">
+            <div class="col-lg-12">
+                <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary"/>
+        <h2 class="text-center text-uppercase font-weight-bold my-0">
+            Artículos del Blog
+        </h2>
+        <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
+            Los artículos del blog más recientes
+        </h5>
+        <hr class="mb-5 w-50 mx-auto"/>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <!-- Main item -->
+                        <!-- News item 1 -->
+                        <div class="card card-silent mb-lg-4 border-0 flex-ew"
+                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
+                            <img class="card-img img-fluid" data-src="https://source.unsplash.com/5ido2uN-7V0/540x320/"
+                                 alt="Causa Elit Exputo Neo Vel Veniam Voco" data-toggle="blazy">
+                            <div class="card-body px-0">
+                                <h4 class="card-title mb-1">
+                                    Causa Elit Exputo Neo Vel Veniam Voco
+                                </h4>
+                                <p class="card-text text-uppercase text-xs"><i class="far fa-comment"></i> 124 <span
+                                        class="px-1">/</span> <i class="far fa-clock"></i> May 28 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- subitems -->
+                        <!-- News subitem 1 -->
+                        <div class="row row-hover py-1 py-lg-3 align-items-center"
+                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
+                            <div class="col-3">
+                                <img class="img-fluid" data-toggle="blazy"
+                                     data-src="https://source.unsplash.com/5ido2uN-7V0/100x100/"
+                                     alt="Abbas Dolor Huic Nisl Paratus Pertineo Qui Vero">
+                            </div>
+                            <div class="col-9 pl-0">
+                                <h6 class="mb-1">
+                                    Abbas Dolor Huic Nisl Paratus Pertineo Qui Vero
+                                </h6>
+                                <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
+                                        class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
+                            </div>
+                        </div>
+                        <hr class="my-1"/>
+                        <!-- News subitem 2 -->
+                        <div class="row row-hover py-1 py-lg-3 align-items-center"
+                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
+                            <div class="col-3">
+                                <img class="img-fluid" data-toggle="blazy"
+                                     data-src="https://source.unsplash.com/A9Vbvh_dMG0/100x100/"
+                                     alt="Aliquam Capto Defui Importunus Jus Ut Utinam Virtus Vulputate">
+                            </div>
+                            <div class="col-9 pl-0">
+                                <h6 class="mb-1">
+                                    Aliquam Capto Defui Importunus Jus Ut Utinam Virtus Vulputate
+                                </h6>
+                                <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
+                                        class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
+                            </div>
+                        </div>
+                        <hr class="my-1"/>
+                        <!-- News subitem 3 -->
+                        <div class="row row-hover py-1 py-lg-3 align-items-center"
+                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
+                            <div class="col-3">
+                                <img class="img-fluid" data-toggle="blazy"
+                                     data-src="https://source.unsplash.com/Edod-s9I1lA/100x100/"
+                                     alt="Abluo Esse Jus Molior Nimis Ratis Te Voco Ymo">
+                            </div>
+                            <div class="col-9 pl-0">
+                                <h6 class="mb-1">
+                                    Abluo Esse Jus Molior Nimis Ratis Te Voco Ymo
+                                </h6>
+                                <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
+                                        class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
+                            </div>
+                        </div>
+                        <hr class="my-1"/>
+                    </div>
                 </div>
-              </div>
+                <!-- end of News sections: Lifestyle -->
+
             </div>
-            <div class="col-lg-5">
-              <!-- subitems -->
-              <!-- News subitem 1 -->
-              <div class="row row-hover py-1 py-lg-3 align-items-center" data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
-                <div class="col-3">
-                  <img class="img-fluid" data-toggle="blazy" data-src="https://source.unsplash.com/5ido2uN-7V0/100x100/" alt="Abbas Dolor Huic Nisl Paratus Pertineo Qui Vero">
-                </div>
-                <div class="col-9 pl-0">
-                  <h6 class="mb-1">
-                    Abbas Dolor Huic Nisl Paratus Pertineo Qui Vero
-                  </h6>
-                  <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
-                </div>
-              </div>
-              <hr class="my-1" />
-              <!-- News subitem 2 -->
-              <div class="row row-hover py-1 py-lg-3 align-items-center" data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
-                <div class="col-3">
-                  <img class="img-fluid" data-toggle="blazy" data-src="https://source.unsplash.com/A9Vbvh_dMG0/100x100/" alt="Aliquam Capto Defui Importunus Jus Ut Utinam Virtus Vulputate">
-                </div>
-                <div class="col-9 pl-0">
-                  <h6 class="mb-1">
-                    Aliquam Capto Defui Importunus Jus Ut Utinam Virtus Vulputate
-                  </h6>
-                  <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
-                </div>
-              </div>
-              <hr class="my-1" />
-              <!-- News subitem 3 -->
-              <div class="row row-hover py-1 py-lg-3 align-items-center" data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
-                <div class="col-3">
-                  <img class="img-fluid" data-toggle="blazy" data-src="https://source.unsplash.com/Edod-s9I1lA/100x100/" alt="Abluo Esse Jus Molior Nimis Ratis Te Voco Ymo">
-                </div>
-                <div class="col-9 pl-0">
-                  <h6 class="mb-1">
-                    Abluo Esse Jus Molior Nimis Ratis Te Voco Ymo
-                  </h6>
-                  <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
-                </div>
-              </div>
-              <hr class="my-1" />
-            </div>
-          </div>
-          <!-- end of News sections: Lifestyle -->
-
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- ======== @Region: #content-below ======== -->
-  <div id="content-below">
-    <!-- Awesome features call to action -->
-    <div class="bg-primary bg-op-9 text-white py-4">
-      <div class="container">
-        <div class="row text-center text-lg-left align-items-lg-center">
-          <div class="col-12 col-lg-7 text-white">
-            <h3 class="font-weight-bold my-0 text-uppercase">
-              Awesome Features
-            </h3>
-            <p class="font-weight-normal op-9 my-0"> <i class="ion-android-checkmark-circle"></i> 99.9% Uptime <i class="ion-android-checkmark-circle ml-lg-3"></i> Free Upgrades <i class="ion-android-checkmark-circle ml-lg-3"></i> Fully Responsive <i class="ion-android-checkmark-circle ml-lg-3"></i> Bug Free </p>
-          </div>
-          <div class="col-12 col-lg-5 py-2 text-lg-right">
-            <a href="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme" class="btn btn-xlg btn-white btn-rounded shadow-lg bg-light bg-op-8 bg-hover-white">Get AppStrap<i class="fa fa-arrow-right ml-2 mt-1"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======== @Region: #footer ======== -->
-  <footer id="footer" class="p-0">
+<!-- ======== @Region: #footer ======== -->
+<footer id="footer" class="p-0">
     <div class="container pt-6 pb-5">
-      <div class="row">
-        <div class="col-md-4">
-          <!--@todo: replace with company contact details-->
-          <h4 class="text-uppercase text-white">
-            Contact Us
-          </h4>
-          <address>
-            <ul class="list-unstyled">
-              <li>
-                <abbr title="Phone"><i class="fa fa-phone fa-fw"></i></abbr>
-                019223 8092344
-              </li>
-              <li>
-                <abbr title="Email"><i class="fa fa-envelope fa-fw"></i></abbr>
-                info@appstraptheme.com
-              </li>
-              <li>
-                <abbr title="Address"><i class="fa fa-home fa-fw"></i></abbr>
-                Sunshine House, Sunville. SUN12 8LU.
-              </li>
-            </ul>
-          </address>
-        </div>
-
-        <div class="col-md-4">
-          <h4 class="text-uppercase text-white">
-            About Us
-          </h4>
-          <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal & web templates!</p>
-        </div>
-
-        <div class="col-md-4">
-          <h4 class="text-uppercase text-white">
-            Newsletter
-          </h4>
-          <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
-          <!--@todo: replace with mailchimp code-->
-          <form>
-            <div class="input-group">
-              <label class="sr-only" for="email-field">Email</label>
-              <input type="text" class="form-control" id="email-field" placeholder="Email">
-              <span class="input-group-append">
-                <button class="btn btn-primary" type="button">Go!</button>
-              </span>
+        <div class="row">
+            <div class="col-md-4">
+                <!--@todo: replace with company contact details-->
+                <h4 class="text-uppercase text-white">
+                    Contact Us
+                </h4>
+                <address>
+                    <ul class="list-unstyled">
+                        <li>
+                            <abbr title="Phone"><i class="fa fa-phone fa-fw"></i></abbr>
+                            019223 8092344
+                        </li>
+                        <li>
+                            <abbr title="Email"><i class="fa fa-envelope fa-fw"></i></abbr>
+                            <img src="http://safemail.justlikeed.net/e/20fc96cb504efcde094ab2899bd65f2d.png" border="0" align="absbottom" title="email"></a>
+                        </li>
+                        <li>
+                            <abbr title="Address"><i class="fa fa-home fa-fw"></i></abbr>
+                            Sunshine House, Sunville. SUN12 8LU.
+                        </li>
+                    </ul>
+                </address>
             </div>
-          </form>
+
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4"> </div>
         </div>
-      </div>
 
     </div>
-    <hr class="my-0 hr-blank op-2" />
+    <hr class="my-0 hr-blank op-2"/>
     <!--@todo: replace with company copyright details-->
     <div class="bg-inverse-dark text-sm py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <p class="mb-0">Site template by <a href="appstraptheme.com" class="footer-link">AppStrap</a> | Copyright 2020 &copy; AppStrap</p>
-          </div>
-          <div class="col-md-6">
-            <ul class="list-inline footer-links float-md-right mb-0">
-              <li class="list-inline-item"><a href="#">Terms</a></li>
-              <li class="list-inline-item"><a href="#">Privacy</a></li>
-              <li class="list-inline-item"><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">Site template by <a href="appstraptheme.com" class="footer-link">AppStrap</a> |
+                        Copyright 2020 &copy; AppStrap</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline footer-links float-md-right mb-0">
+                        <li class="list-inline-item"><a href="#">Terms</a></li>
+                        <li class="list-inline-item"><a href="#">Privacy</a></li>
+                        <li class="list-inline-item"><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#top" class="btn btn-icon btn-dark pos-fixed pos-b pos-r mr-3 mb-3 scroll-state-hidden"
+               title="Back to top" data-scroll="scroll-state"><i class="fa fa-chevron-up"></i></a>
         </div>
-        <a href="#top" class="btn btn-icon btn-dark pos-fixed pos-b pos-r mr-3 mb-3 scroll-state-hidden" title="Back to top" data-scroll="scroll-state"><i class="fa fa-chevron-up"></i></a>
-      </div>
     </div>
-  </footer>
-
-  <!--Off canvas region/sidebar (legacy .header-hidden region) -->
-  <aside id="offcanvas-sidebar" class="bg-dark text-white js-offcanvas">
-    <a class="js-offcanvas-close c-button c-button--close-right btn btn-sm btn-icon btn-link text-white pos-absolute pos-t pos-r mt-2 mr-2 op-7 pos-zindex-1 pos-zindex-10"> <i class="la la-close"></i> </a>
-    <div class="py-6 px-4">
-      <h5 class="text-uppercase text-letter-spacing">
-        About Us
-      </h5>
-      <p class="text-sm">Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal & web templates!</p>
-      <a href="about.html" class="btn btn-sm btn-primary">Find out more</a>
-      <hr class="hr-light op-2 my-4" />
-      <!--@todo: replace with company contact details-->
-      <h5 class="text-uppercase text-letter-spacing">
-        Contact Us
-      </h5>
-      <address>
-        <p class="mb-1 text-sm">
-          <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
-          019223 8092344
-        </p>
-        <p class="mb-1 text-sm">
-          <abbr title="Email"><i class="fa fa-envelope"></i></abbr>
-          info@themelize.me
-        </p>
-        <p class="mb-0 text-sm">
-          <abbr title="Address"><i class="fa fa-home"></i></abbr>
-          Sunshine House, Sunville. SUN12 8LU.
-        </p>
-      </address>
-    </div>
-  </aside>
-
-  <!--Hidden elements - excluded from jPanel Menu on mobile-->
-  <div class="hidden-elements js-off-canvas-exclude">
-    <!--@modal - signup modal-->
-    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <form action="signup.html">
-          <div class="modal-content">
-            <div class="modal-header bg-light">
-              <h4 class="modal-title">
-                Sign Up
-              </h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <h6 class="op-8">
-                  Price Plan
-                </h6>
-                <select class="form-control">
-                  <option>Basic</option>
-                  <option>Pro</option>
-                  <option>Pro +</option>
-                </select>
-              </div>
-              <hr />
-
-              <h6 class="op-8">
-                Account Information
-              </h6>
-              <div class="form-group">
-                <label class="sr-only" for="signup-first-name">First Name</label>
-                <input type="text" class="form-control" id="signup-first-name" placeholder="First name">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-last-name">Last Name</label>
-                <input type="text" class="form-control" id="signup-last-name" placeholder="Last name">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-username">Userame</label>
-                <input type="text" class="form-control" id="signup-username" placeholder="Username">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-email">Email address</label>
-                <input type="email" class="form-control" id="signup-email" placeholder="Email address">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-password">Password</label>
-                <input type="password" class="form-control" id="signup-password" placeholder="Password">
-              </div>
-              <div class="form-check text-xs">
-                <label class="form-check-label op-8">
-                  <input type="checkbox" value="term" class="form-check-input mt-1">
-                  I agree with the Terms and Conditions.
-                </label>
-              </div>
-            </div>
-            <div class="modal-footer bg-light py-3">
-              <div class="d-flex align-items-center">
-                <button type="button" class="btn btn-primary">Sign Up</button>
-                <button type="button" class="btn btn-link ml-1" data-dismiss="modal" aria-hidden="true">Cancel</button>
-              </div>
-              <p class="text-xs text-right text-lh-tight op-8 my-0 ml-auto">Already signed up? <a href="login.html">Login here</a></p>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </form>
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-
-    <!--@modal - login modal-->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <form action="login.html">
-            <div class="modal-header bg-light">
-              <h4 class="modal-title">
-                Login
-              </h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label class="sr-only" for="login-email">Email</label>
-                <input type="email" id="login-email" class="form-control email" placeholder="Email">
-              </div>
-              <div class="form-group mb-0">
-                <label class="sr-only" for="login-password">Password</label>
-                <input type="password" id="login-password" class="form-control password mb-1" placeholder="Password">
-              </div>
-            </div>
-            <div class="modal-footer bg-light py-3">
-              <div class="d-flex align-items-center">
-                <button type="button" class="btn btn-primary">Login</button>
-                <button type="button" class="btn btn-link ml-1" data-dismiss="modal" aria-hidden="true">Cancel</button>
-              </div>
-              <p class="text-xs text-right text-lh-tight op-8 my-0 ml-auto">
-                Not a member? <a href="#" class="signup">Sign up now!</a>
-                <br />
-                <a href="#">Forgotten password?</a>
-              </p>
-            </div>
-                      </form>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-  </div>
+</footer>
 
 
-  <!--jQuery 3.3.1 via CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Popper 1.16.0 via CDN, needed for Bootstrap Tooltips & Popovers -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!--jQuery 3.3.1 via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Popper 1.16.0 via CDN, needed for Bootstrap Tooltips & Popovers -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-  <!-- Bootstrap v4.5.0 JS via CDN -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Bootstrap v4.5.0 JS via CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-  <!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
+<!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
 
-  <!--Custom scripts & AppStrap API integration -->
-  <script src="{% static 'blog/js/custom-script.js' %}"></script>
-  <!--AppStrap scripts mainly used to trigger libraries/plugins -->
-  <script src="{% static 'blog/js/script.js' %}"></script>
+<!--Custom scripts & AppStrap API integration -->
+<script src="{% static 'blog/js/custom-script.js' %}"></script>
+<!--AppStrap scripts mainly used to trigger libraries/plugins -->
+<script src="{% static 'blog/js/script.js' %}"></script>
 </body>
 
 </html>

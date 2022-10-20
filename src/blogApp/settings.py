@@ -8,7 +8,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS')
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -79,8 +79,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = env('LOCALE', default='es-mx')
-TIME_ZONE = env('TIME_ZONE', default='America/Mexico_City')
+LANGUAGE_CODE = env('DJANGO_LOCALE', default='es-mx')
+TIME_ZONE = env('DJANGO_TIME_ZONE', default='America/Mexico_City')
 USE_I18N = env('USE_I18N', default=True)
 USE_L10N = env('USE_L10N', default=True)
 USE_TZ = env('USE_TZ', default=True)
@@ -88,7 +88,8 @@ SITE_ID = env('SITE_ID', default=1)
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    'static', # your static/ files folder
+    'static',     # your static/ files folder
+    'blog/static',
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
