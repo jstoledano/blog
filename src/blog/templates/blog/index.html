@@ -20,7 +20,7 @@
     <link href="{% static 'blog/css/theme-style.min.css' %}" rel="stylesheet">
 
     <!--Your custom colour override-->
-    <link href="{% static 'blog/css/colour-blue-dark.min.css' %}" id="colour-scheme" rel="stylesheet">
+    <link href="{% static 'blog/css/colour-slate.min.css' %}" id="colour-scheme" rel="stylesheet">
 
     <!-- Your custom override -->
     <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
@@ -62,134 +62,101 @@
 <!--To implement the boxed page layout simply add the class .page-boxed to the body badge like below -->
 
 <!-- ======== @Region: body ======== -->
+<body class="page page-onepager header-ontop page-index-freelancer-portfolio navbar-layout-default">
 
-<body class="page page-index-boxed navbar-layout-default page-boxed">
-<a href="#content" id="top" class="sr-only">Ir al contenido</a>
+  <!-- @plugin: page loading indicator, delete to remove loader -->
+  <div class="page-loader" data-toggle="page-loader"></div>
 
-<!-- ======== @Region: #header ======== -->
-<div id="header">
+  <a id="#top" href="#content" class="sr-only">Ir al contenido</a>
 
-    <!--Header upper region-->
-    <div class="header-upper">
-        <div class="header-inner container">
-            <!--social media icons-->
-            <div class="nav nav-icons header-block order-12">
-                <!--@todo: replace with company social media details-->
-                <a href="https://twitter.com/jstoledano" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i>
-                    <span class="sr-only">Twitter</span> </a>
-                <a href="https://www.facebook.com/yo.toledano" class="nav-link"> <i
-                        class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
-                <a href="https://www.linkedin.com/in/javier-sanchez-toledano/" class="nav-link"> <i
-                        class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
-            </div>
+  <!-- ======== @Region: #header ======== -->
+  <div id="header" class="w-100 pos-fixed pos-t scroll-state-hidden"
+       data-scroll="scroll-state" data-scroll-amount="500"
+       data-scroll-setting='{"effectIn":"slideInDown", "effectOut":"slideOutUp", "effectDuration":"0.3", "breakpoint":"992"}'>
+
+    <!--Header & Branding region-->
+    <div class="header header-dark py-2 bg-dark bg-op-9 border-bottom-0">
+      <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+      <div class="header-inner container">
+        <!--branding/logo -->
+        <div class="header-brand">
+          <a class="header-brand-text" href="index.html" title="Home">
+            <h2 class="h3 font-weight-normal text-letter-spacing-sm text-font-base text-white">
+              Javier <span class="font-weight-bold">Sanchez Toledano</span>
+            </h2>
+          </a>
+          <div class="header-divider d-none d-lg-block"></div>
+          <div class="header-slogan d-none d-lg-block">Fullstack Developer</div>
         </div>
+        <!-- other header content -->
+        <div class="header-block order-lg-12">
+          <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+          <a href="#top" class="btn btn-link btn-icon text-white d-lg-none"
+             data-toggle="collapse" data-target=".navbar-main"
+             data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'>
+              <i class="fa fa-bars"></i> </a>
+        </div>
+
+        <div class="navbar navbar-expand-md navbar-expand-collapse navbar-static-top">
+          <!--everything within this div is collapsed on mobile-->
+          <div class="navbar-main collapse ">
+            <!--main navigation-->
+            <ul class="nav navbar-nav navbar-dark navbar-nav-onepager">
+              <li class="nav-item"></li>
+              <li class="nav-item">
+                <a href="#top"
+                   data-toggle="scroll-link"
+                   data-scroll-link-nooffset=true
+                   class="nav-link link-effect-underline">
+                        <i class="fa fa-home nav-link-icon"></i>
+                        <span class="d-none">Inicio</span> </a>
+              </li>
+                <li class="nav-item"> <a href="#about" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Sobre mí </a> </li>
+                <li class="nav-item"> <a href="#skills" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Habilidades </a> </li>
+                <li class="nav-item"> <a href="#soft-skills" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Soft Skills </a> </li>
+                <li class="nav-item"> <a href="#experience" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Experiencia </a> </li>
+                <li class="nav-item"> <a href="#blog" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Blog </a> </li>
+                <li class="nav-item"> <a href="#contact" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Contacto </a> </li>
+            </ul>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+      </div>
     </div>
-    <div data-toggle="sticky">
+  </div>
 
-        <!--Header search region - hidden by default -->
-        <div class="header-search collapse" id="search">
-            <form class="search-form container">
-                <input type="text" name="search" class="form-control search" value="" placeholder="Buscar">
-                <button type="button" class="btn btn-link"><span class="sr-only">Buscar </span><i
-                        class="fa fa-search fa-flip-horizontal search-icon"></i></button>
-                <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span
-                        class="sr-only">Cerrar </span><i class="fa fa-times search-icon"></i></button>
-            </form>
-        </div>
-
-        <!--Header & Branding region-->
-        <div class="header">
-            <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
-            <div class="header-inner container">
-                <!--branding/logo -->
-                <div class="header-brand">
-                    <a class="header-brand-text" href="index.html" title="Portada">
-                        <h1 class="h2">
-                            <span class="header-brand-text-alt">Javier Sanchez </span>Toledano<span
-                                class="header-brand-text-alt"></span>
-                        </h1>
-                    </a>
-                    <div class="header-divider d-none d-lg-block"></div>
-                    <div class="header-slogan d-none d-lg-block">Desarrollador Web</div>
-                </div>
-                <!-- other header content -->
-                <div class="header-block order-12">
-
-                    <!--Search trigger -->
-                    <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11"
-                       data-toggle="search-form" data-target=".header-search"><i
-                            class="fa fa-search fa-flip-horizontal search-icon"></i></a>
-
-                    <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
-                    <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none"
-                       data-toggle="off-canvas" data-target=".navbar-main"
-                       data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i
-                            class="fa fa-bars"></i> </a>
-                    <!--Show/hide trigger for #offcanvas-sidebar -->
-                    <a
-                            href="#"
-                            title="Haz clic para ver una sorpresa"
-                            class="btn btn-icon btn-link header-btn float-right order-last"
-                            data-toggle="off-canvas" data-target="#offcanvas-sidebar"
-                            data-settings='{"cloneTarget":false}'>
-                        <i class="ion-android-more-vertical"></i> </a>
-                </div>
-
-                <div class="navbar navbar-expand-md navbar-static-top">
-                    <!--everything within this div is collapsed on mobile-->
-                    <div class="navbar-main collapse">
-                        <!--main navigation-->
-                        <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
-
-                            <!-- Homepages -->
-                            <li class="nav-item dropdown dropdown-mega-menu active">
-                                <a href="#" class="nav-link dropdown-toggle" id="indexs-drop" data-toggle="dropdown"
-                                   data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span>
-                                </a>
-                                <!-- Dropdown Menu - mega menu-->
-                                <div class="dropdown-menu">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <h4 class="dropdown-header d-none d-lg-block mt-0">
-                                                Categorías
-                                            </h4>
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <a href="index.html" class="dropdown-item active">Céfiros y
-                                                        Trinos</a>
-                                                    <a href="intro.html" class="dropdown-item">Python</a>
-                                                    <a href="index-static.html" class="dropdown-item">Bases de Datos</a>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <a href="index-onepager-image.html" class="dropdown-item">Java y
-                                                        Spring</a>
-                                                    <a href="index-onepager-image-full-height.html"
-                                                       class="dropdown-item">C#</a>
-                                                    <a href="index-onepager-bg-slideshow.html" class="dropdown-item">Go
-                                                        Lang</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--/.navbar-collapse -->
-                </div>
-            </div>
-        </div>
+  <!-- ======== @Region: #highlighted ======== -->
+  <div id="highlighted" class="border-bottom-0 bg-dark">
+    <!-- Image Banner: Use the the data-bg-img functionality to create a simple image banner Use spacer classes to make the banner larger with padding, allows for easy responsive changes too see: elements-ctas.htm To make the banner full height/screen add the attributes: data-toggle="full-height" data-offset="#header" -->
+    <div class="bg-white overlay overlay-op-8 text-center text-lg-left pt-8 pb-7 flex-valign"
+         data-bg-img="{% static '/blog/img/backgrounds/freelancer.jpg' %}"
+         data-css='{"background-position": "center top","background-attachment": "fixed"}'
+         data-toggle="full-height" data-breakpoint="992" data-scroll="scrollax" data-scrollax-y-ratio="off">
+      <div class="container">
+        <h4 class="text-white font-weight-normal text-uppercase mb-0" data-animate="fadeIn" data-animate-delay="0.2">
+          Javier Sanchez Toledano
+        </h4>
+        <h2 class="display-3 text-white mb-0 text-letter-spacing-xs d-inline-block">
+          <span data-animate="fadeIn"
+                data-animate-delay="0.4"> </span>
+            <span class="font-weight-bold"
+                  data-typed='["Quality Lead Auditor", "DB Admin", "Fullstack Developer"]'
+                  data-typed-settings='{"delay":1000, "speed":200,"breakLines":false, "deleteDelay":1500}'></span>
+        </h2>
+        <a href="#about"
+           data-toggle="scroll-link" data-scroll-link-nooffset=true
+           class="btn btn-primary btn-icon btn-rounded ml-3 mt-4-neg d-none d-lg-inline-block">
+            <i class="fa fa-chevron-down"></i></a>
+      </div>
     </div>
-</div>
-
-<!-- ========== About ========== -->
+  </div>
 
 <!-- ======== @Region: #content ======== -->
 <div id="content" class="p-0">
     <div id="about" class="bg-primary text-white">
         <div class="container py-6" data-animate="fadeIn">
             <h2 class="text-white display-4 font-weight-bold mb-3 text-letter-spacing-xs">
-                Biografía
+                Acerca de mi
             </h2>
             <div class="row">
                 <div class="col-lg-4 order-lg-2">
@@ -224,13 +191,13 @@
                         <div class="mb-4">
                             <h5 class="d-flex mt-0 op-8">
                                 <i class="fab fa-fw fa-html5 mr-2"></i>
-                                <i class="fab fa-fw fa-css3 mr-2"></i> HTML5 y CSS3 (92%)
+                                <i class="fab fa-fw fa-css3 mr-2"></i> HTML5 y CSS3 (95%)
                             </h5>
                             <div class="progress">
                                 <div
                                         class="progress-bar py-1 w-92 bg-primary-darkend"
                                         data-toggle="progress-bar-animated-progress"
-                                        role="progressbar" aria-valuenow="92"
+                                        role="progressbar" aria-valuenow="95"
                                         aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
@@ -258,31 +225,31 @@
                     <div class="col-lg-6">
                         <div class="mb-4">
                             <h5 class="d-flex mt-0 op-8">
-                                <i class="fab fa-fw fa-android mr-2"></i> Android (48%)
+                                <i class="fab fa-fw fa-android mr-2"></i> Android (50%)
                             </h5>
                             <div class="progress">
                                 <div class="progress-bar py-1 w-48 bg-primary-darkend"
-                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="48"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="50"
                                      aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="mb-4">
                             <h5 class="d-flex mt-0 op-8">
-                                <i class="fab fa-fw fa-windows mr-2"></i> Windows (54%)
+                                <i class="fab fa-fw fa-windows mr-2"></i> Windows (75%)
                             </h5>
                             <div class="progress">
                                 <div class="progress-bar py-1 w-54 bg-primary-darkend"
-                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="54"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="75"
                                      aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="mb-4">
                             <h5 class="d-flex mt-0 op-8">
-                                <i class="fab fa-fw fa-github-alt mr-2"></i> GitHub (78%)
+                                <i class="fab fa-fw fa-github-alt mr-2"></i> GitHub (90%)
                             </h5>
                             <div class="progress">
                                 <div class="progress-bar py-1 w-78 bg-primary-darkend"
-                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="78"
+                                     data-toggle="progress-bar-animated-progress" role="progressbar" aria-valuenow="90"
                                      aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
@@ -294,31 +261,33 @@
     <hr class="hr-primary-darkend my-0"/>
 
     <!-- Features -->
-    <div id="features" class="container py-4 py-lg-6">
+    <div id="soft-skills" class="container py-4 py-lg-6">
         <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary"/>
         <h2 class="text-center text-uppercase font-weight-bold my-0">
-            Core Features
+            Soft Skills
         </h2>
         <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
-            Great features, great product!
+            ¡Más de 20 años de trabajo en equipo!
         </h5>
         <hr class="mb-5 w-50 mx-auto"/>
         <div class="row text-center">
             <div class="col-lg-4 py-1">
                 <i class="la la-tachometer icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i>
                 <h5 class="mt-1 op-8">
-                    Fully Optimized
+                    Enfocado en resultados
                 </h5>
-                <p class="text-sm text-black-50">Iustum neque nimis nunc sino. Augue ille iriure jus molior quibus quis
-                    utinam.</p>
+                <p class="text-sm text-black-50">
+                    Alineo mi esfuerzo con los objetivos de la organización para maximizar resultados.
+                </p>
             </div>
             <div class="col-lg-4 py-1">
                 <i class="la la-wrench icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.2"></i>
                 <h5 class="mt-1 op-8">
-                    Free Support
+                    Innovador
                 </h5>
-                <p class="text-sm text-black-50">At laoreet nisl tation. Euismod jumentum metuo refoveo secundum sino
-                    sudo vicis wisi.</p>
+                <p class="text-sm text-black-50">
+                    Desarrollo nuevas herramientas y mejor procesos para alcanzar las metas de la organización.
+                </p>
             </div>
             <div class="col-lg-4 py-1">
                 <i class="la la-rocket icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.3"></i>
@@ -330,33 +299,140 @@
             <div class="col-lg-4 py-1">
                 <i class="la la-area-chart icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.4"></i>
                 <h5 class="mt-1 op-8">
-                    99.9% Uptime
+                    Mejora Continua
                 </h5>
-                <p class="text-sm text-black-50">Cogo duis euismod saepius tego vel. Abbas defui suscipere.</p>
+                <p class="text-sm text-black-50">
+                    Mejoro continuamente mis habilidades.<br />Aprendo de mis errores.
+                </p>
             </div>
             <div class="col-lg-4 py-1">
                 <i class="la la-users icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.5"></i>
                 <h5 class="mt-1 op-8">
-                    Multiuser
+                    Trabajo en equipo
                 </h5>
-                <p class="text-sm text-black-50">Ex occuro olim pertineo proprius quae tego ullamcorper.</p>
+                <p class="text-sm text-black-50">
+                    Me integro a equipos de trabajo aportando mi experiencia para generar valor agregado.
+                </p>
             </div>
             <div class="col-lg-4 py-1">
                 <i class="la la-plug icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.6"></i>
                 <h5 class="mt-1 op-8">
-                    Plug n play
+                    Adaptable
                 </h5>
-                <p class="text-sm text-black-50">Commoveo facilisis haero similis valetudo. Ad importunus metuo
-                    paulatim.</p>
+                <p class="text-sm text-black-50">
+                    Me adapto a equipos, personas y procesos para crear ventajas emergentes.
+                </p>
             </div>
         </div>
     </div>
+
+        <!-- experience -->
+    <div id="experience" class="py-6" data-animate="fadeIn">
+      <div class="container">
+        <h2 class="text-dark display-4 font-weight-bold mb-3 text-letter-spacing-xs">
+          Experiencia
+        </h2>
+        <div class="owl-thumbs carousel-timeline-nav"
+             data-toggle="owl-carousel"
+             data-owl-carousel-thumbs="#experience-timeline"
+             data-owl-carousel-settings='{"items":4, "nav":false, "dots":false, "merge":true, "mergeFit":true}'>
+            <a class="owl-thumb text-sm text-uppercase" data-merge="2">Presente</a>
+            <a class="owl-thumb text-sm text-uppercase" data-merge="2">2017</a>
+            <a class="owl-thumb text-sm text-uppercase" data-merge="2">2014</a>
+            <a class="owl-thumb text-sm text-uppercase" data-merge="2">2009</a>
+        </div>
+        <div class="owl-carousel owl-overflow owl-highlight-active owl-equalheight" id="experience-timeline" data-toggle="owl-carousel" data-owl-carousel-settings='{"items":1,"nav":true, "dots":false}'>
+          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+            <div class="row">
+              <div class="col-md-2 d-none d-md-block">
+                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
+              </div>
+              <div class="col-md-10">
+                <h5 class="text-uppercase my-0 text-primary">
+                  Ene 2018 - Presente
+                </h5>
+                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                  <span>Responsable del Centro de Consulta del Padrón Electoral</span>
+                </h2>
+                <p>
+                    Generar consultas a las bases de datos del Padrón Electoral a solicitud de las representaciones de
+                    los Partidos Políticos en bases de datos Oracle en entornos Red Hat Enterprise Linux.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+            <div class="row">
+              <div class="col-md-2 d-none d-md-block">
+                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
+              </div>
+              <div class="col-md-10">
+                <h5 class="text-uppercase my-0 text-primary">
+                  ENE 2015 - DIC 2017
+                </h5>
+                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                  Supervisor de Sistemas de Gestión de la Calidad
+                  </span>
+                </h2>
+                <p>
+                    Desarrollo un <em>Balanced Scorecard</em> para la gestión de indicadores clave junto con un
+                    subsistema de gestión documental para cumplir con la norma ISO 9001. Audito procesos para asegurar
+                    el cumplimiento de requisitos y la obtención de resultados planificados para ayudar a garantizar los
+                    derechos político electorales de los ciudadanos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+            <div class="row">
+              <div class="col-md-2 d-none d-md-block">
+                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
+              </div>
+              <div class="col-md-10">
+                <h5 class="text-uppercase my-0 text-primary">
+                  Dic 2010 - Dic 2014
+                </h5>
+                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                  Cartógrafo
+                  </span>
+                </h2>
+                <p>
+                    Hago uso de sistemas de información geográfica (<em>GIS</em>) para mantener actualizada la cartografía
+                    electoral en el estado de Tlaxcala, insumo básico para garantizar los derechos políticos de los ciudadanos
+                    tlaxcaltecas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+            <div class="row">
+              <div class="col-md-2 d-none d-md-block">
+                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
+              </div>
+              <div class="col-md-10">
+                <h5 class="text-uppercase my-0 text-primary">
+                  Sep 2001 - Dic 2009
+                </h5>
+                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                  Soporte Técnico
+                </h2>
+                  <p>
+                  Aseguro el funcionamiento continuo de los Módulos de Atención Ciudadana. Administro los queipos bajo el
+                  sistema operativo  con Fedora Linux.
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- News section & sidebar -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary"/>
-        <h2 class="text-center text-uppercase font-weight-bold my-0">
+        <h2 class="text-center text-uppercase font-weight-bold my-0" id="blog">
             Artículos del Blog
         </h2>
         <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
@@ -448,14 +524,14 @@
         <div class="row">
             <div class="col-md-4">
                 <!--@todo: replace with company contact details-->
-                <h4 class="text-uppercase text-white">
-                    Contact Us
+                <h4 class="text-uppercase text-white" id="contact">
+                    Contacto
                 </h4>
                 <address>
                     <ul class="list-unstyled">
                         <li>
                             <abbr title="Phone"><i class="fa fa-phone fa-fw"></i></abbr>
-                            019223 8092344
+                            +52 246 177 6996
                         </li>
                         <li>
                             <abbr title="Email"><i class="fa fa-envelope fa-fw"></i></abbr>
@@ -463,7 +539,7 @@
                         </li>
                         <li>
                             <abbr title="Address"><i class="fa fa-home fa-fw"></i></abbr>
-                            Sunshine House, Sunville. SUN12 8LU.
+                            Tlaxcala, México.
                         </li>
                     </ul>
                 </address>
