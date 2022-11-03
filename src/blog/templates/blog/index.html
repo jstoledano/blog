@@ -64,92 +64,102 @@
 <!-- ======== @Region: body ======== -->
 <body class="page page-onepager header-ontop page-index-freelancer-portfolio navbar-layout-default">
 
-  <!-- @plugin: page loading indicator, delete to remove loader -->
-  <div class="page-loader" data-toggle="page-loader"></div>
+<!-- @plugin: page loading indicator, delete to remove loader -->
+<div class="page-loader" data-toggle="page-loader"></div>
 
-  <a id="#top" href="#content" class="sr-only">Ir al contenido</a>
+<a id="#top" href="#content" class="sr-only">Ir al contenido</a>
 
-  <!-- ======== @Region: #header ======== -->
-  <div id="header" class="w-100 pos-fixed pos-t scroll-state-hidden"
-       data-scroll="scroll-state" data-scroll-amount="500"
-       data-scroll-setting='{"effectIn":"slideInDown", "effectOut":"slideOutUp", "effectDuration":"0.3", "breakpoint":"992"}'>
+<!-- ======== @Region: #header ======== -->
+<div id="header" class="w-100 pos-fixed pos-t scroll-state-hidden"
+     data-scroll="scroll-state" data-scroll-amount="500"
+     data-scroll-setting='{"effectIn":"slideInDown", "effectOut":"slideOutUp", "effectDuration":"0.3", "breakpoint":"992"}'>
 
     <!--Header & Branding region-->
     <div class="header header-dark py-2 bg-dark bg-op-9 border-bottom-0">
-      <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
-      <div class="header-inner container">
-        <!--branding/logo -->
-        <div class="header-brand">
-          <a class="header-brand-text" href="index.html" title="Home">
-            <h2 class="h3 font-weight-normal text-letter-spacing-sm text-font-base text-white">
-              Javier <span class="font-weight-bold">Sanchez Toledano</span>
-            </h2>
-          </a>
-          <div class="header-divider d-none d-lg-block"></div>
-          <div class="header-slogan d-none d-lg-block">Fullstack Developer</div>
-        </div>
-        <!-- other header content -->
-        <div class="header-block order-lg-12">
-          <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
-          <a href="#top" class="btn btn-link btn-icon text-white d-lg-none"
-             data-toggle="collapse" data-target=".navbar-main"
-             data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'>
-              <i class="fa fa-bars"></i> </a>
-        </div>
+        <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+        <div class="header-inner container">
+            <!--branding/logo -->
+            <div class="header-brand">
+                <a class="header-brand-text" href="index.html" title="Home">
+                    <h2 class="h3 font-weight-normal text-letter-spacing-sm text-font-base text-white">
+                        Javier <span class="font-weight-bold">Sanchez Toledano</span>
+                    </h2>
+                </a>
+                <div class="header-divider d-none d-lg-block"></div>
+                <div class="header-slogan d-none d-lg-block">Fullstack Developer</div>
+            </div>
+            <!-- other header content -->
+            <div class="header-block order-lg-12">
+                <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+                <a href="#top" class="btn btn-link btn-icon text-white d-lg-none"
+                   data-toggle="collapse" data-target=".navbar-main"
+                   data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'>
+                    <i class="fa fa-bars"></i> </a>
+            </div>
 
-        <div class="navbar navbar-expand-md navbar-expand-collapse navbar-static-top">
-          <!--everything within this div is collapsed on mobile-->
-          <div class="navbar-main collapse ">
-            <!--main navigation-->
-            <ul class="nav navbar-nav navbar-dark navbar-nav-onepager">
-              <li class="nav-item"></li>
-              <li class="nav-item">
-                <a href="#top"
-                   data-toggle="scroll-link"
-                   data-scroll-link-nooffset=true
-                   class="nav-link link-effect-underline">
-                        <i class="fa fa-home nav-link-icon"></i>
-                        <span class="d-none">Inicio</span> </a>
-              </li>
-                <li class="nav-item"> <a href="#about" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Sobre mí </a> </li>
-                <li class="nav-item"> <a href="#skills" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Habilidades </a> </li>
-                <li class="nav-item"> <a href="#soft-skills" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Soft Skills </a> </li>
-                <li class="nav-item"> <a href="#experience" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Experiencia </a> </li>
-                <li class="nav-item"> <a href="#blog" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Blog </a> </li>
-                <li class="nav-item"> <a href="#contact" data-toggle="scroll-link" data-scroll-link-nooffset=true class="nav-link link-effect-underline"> Contacto </a> </li>
-            </ul>
-          </div>
-          <!--/.navbar-collapse -->
+            <div class="navbar navbar-expand-md navbar-expand-collapse navbar-static-top">
+                <!--everything within this div is collapsed on mobile-->
+                <div class="navbar-main collapse ">
+                    <!--main navigation-->
+                    <ul class="nav navbar-nav navbar-dark navbar-nav-onepager">
+                        <li class="nav-item"></li>
+                        <li class="nav-item">
+                            <a href="#top"
+                               data-toggle="scroll-link"
+                               data-scroll-link-nooffset=true
+                               class="nav-link link-effect-underline">
+                                <i class="fa fa-home nav-link-icon"></i>
+                                <span class="d-none">Inicio</span> </a>
+                        </li>
+                        <li class="nav-item"><a href="#about" data-toggle="scroll-link" data-scroll-link-nooffset=true
+                                                class="nav-link link-effect-underline"> Sobre mí </a></li>
+                        <li class="nav-item"><a href="#skills" data-toggle="scroll-link" data-scroll-link-nooffset=true
+                                                class="nav-link link-effect-underline"> Habilidades </a></li>
+                        <li class="nav-item">
+                            <a href="#idiomas" data-toggle="scroll-link"
+                                               data-scroll-link-nooffset=true class="nav-link link-effect-underline">
+                                                Idiomas </a></li>
+                        <li class="nav-item"><a href="#experience" data-toggle="scroll-link"
+                                                data-scroll-link-nooffset=true class="nav-link link-effect-underline">
+                            Experiencia </a></li>
+                        <li class="nav-item"><a href="#blog" data-toggle="scroll-link" data-scroll-link-nooffset=true
+                                                class="nav-link link-effect-underline"> Blog </a></li>
+                        <li class="nav-item"><a href="#contact" data-toggle="scroll-link" data-scroll-link-nooffset=true
+                                                class="nav-link link-effect-underline"> Contacto </a></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- ======== @Region: #highlighted ======== -->
-  <div id="highlighted" class="border-bottom-0 bg-dark">
+<!-- ======== @Region: #highlighted ======== -->
+<div id="highlighted" class="border-bottom-0 bg-dark">
     <!-- Image Banner: Use the the data-bg-img functionality to create a simple image banner Use spacer classes to make the banner larger with padding, allows for easy responsive changes too see: elements-ctas.htm To make the banner full height/screen add the attributes: data-toggle="full-height" data-offset="#header" -->
     <div class="bg-white overlay overlay-op-8 text-center text-lg-left pt-8 pb-7 flex-valign"
          data-bg-img="{% static '/blog/img/backgrounds/freelancer.jpg' %}"
          data-css='{"background-position": "center top","background-attachment": "fixed"}'
          data-toggle="full-height" data-breakpoint="992" data-scroll="scrollax" data-scrollax-y-ratio="off">
-      <div class="container">
-        <h4 class="text-white font-weight-normal text-uppercase mb-0" data-animate="fadeIn" data-animate-delay="0.2">
-          Javier Sanchez Toledano
-        </h4>
-        <h2 class="display-3 text-white mb-0 text-letter-spacing-xs d-inline-block">
+        <div class="container">
+            <h4 class="text-white font-weight-normal text-uppercase mb-0" data-animate="fadeIn"
+                data-animate-delay="0.2">
+                Javier Sanchez Toledano
+            </h4>
+            <h2 class="display-3 text-white mb-0 text-letter-spacing-xs d-inline-block">
           <span data-animate="fadeIn"
-                data-animate-delay="0.4"> </span>
-            <span class="font-weight-bold"
-                  data-typed='["Quality Lead Auditor", "DB Admin", "Fullstack Developer"]'
-                  data-typed-settings='{"delay":1000, "speed":200,"breakLines":false, "deleteDelay":1500}'></span>
-        </h2>
-        <a href="#about"
-           data-toggle="scroll-link" data-scroll-link-nooffset=true
-           class="btn btn-primary btn-icon btn-rounded ml-3 mt-4-neg d-none d-lg-inline-block">
-            <i class="fa fa-chevron-down"></i></a>
-      </div>
+                data-animate-delay="0.4">Soy </span>
+                <span class="font-weight-bold"
+                      data-typed='["Quality Lead Auditor", "DB Admin", "Fullstack Developer"]'
+                      data-typed-settings='{"delay":1000, "speed":200,"breakLines":false, "deleteDelay":1500}'></span>
+            </h2>
+            <a href="#about"
+               data-toggle="scroll-link" data-scroll-link-nooffset=true
+               class="btn btn-primary btn-icon btn-rounded ml-3 mt-4-neg d-none d-lg-inline-block">
+                <i class="fa fa-chevron-down"></i></a>
+        </div>
     </div>
-  </div>
+</div>
 
 <!-- ======== @Region: #content ======== -->
 <div id="content" class="p-0">
@@ -272,7 +282,7 @@
         <hr class="mb-5 w-50 mx-auto"/>
         <div class="row text-center">
             <div class="col-lg-4 py-1">
-                <i class="la la-tachometer icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i>
+                <i class="la la-bullseye icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i>
                 <h5 class="mt-1 op-8">
                     Enfocado en resultados
                 </h5>
@@ -281,7 +291,7 @@
                 </p>
             </div>
             <div class="col-lg-4 py-1">
-                <i class="la la-wrench icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.2"></i>
+                <i class="la la-cogs icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.2"></i>
                 <h5 class="mt-1 op-8">
                     Innovador
                 </h5>
@@ -290,11 +300,11 @@
                 </p>
             </div>
             <div class="col-lg-4 py-1">
-                <i class="la la-rocket icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.3"></i>
+                <i class="la la-commenting icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.3"></i>
                 <h5 class="mt-1 op-8">
-                    Free Upgrades
+                    Buen comunicador
                 </h5>
-                <p class="text-sm text-black-50">Ad augue eros euismod huic paulatim sagaciter si vulpes.</p>
+                <p class="text-sm text-black-50">Sé escuchar y comunicar ideas,<br /> conceptos y conocimiento.</p>
             </div>
             <div class="col-lg-4 py-1">
                 <i class="la la-area-chart icon-3x text-primary" data-animate="fadeIn" data-animate-delay="0.4"></i>
@@ -302,7 +312,7 @@
                     Mejora Continua
                 </h5>
                 <p class="text-sm text-black-50">
-                    Mejoro continuamente mis habilidades.<br />Aprendo de mis errores.
+                    Mejoro continuamente mis habilidades.<br/>Aprendo de mis errores.
                 </p>
             </div>
             <div class="col-lg-4 py-1">
@@ -326,105 +336,145 @@
         </div>
     </div>
 
-        <!-- experience -->
-    <div id="experience" class="py-6" data-animate="fadeIn">
-      <div class="container">
+    <!-- idiomas -->
+    <div id="idiomas" class="bg-white">
+      <div class="container py-6 animated animated-done" data-animate="fadeIn">
+          <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary"/>
         <h2 class="text-dark display-4 font-weight-bold mb-3 text-letter-spacing-xs">
-          Experiencia
+          Idiomas
         </h2>
-        <div class="owl-thumbs carousel-timeline-nav"
-             data-toggle="owl-carousel"
-             data-owl-carousel-thumbs="#experience-timeline"
-             data-owl-carousel-settings='{"items":4, "nav":false, "dots":false, "merge":true, "mergeFit":true}'>
-            <a class="owl-thumb text-sm text-uppercase" data-merge="2">Presente</a>
-            <a class="owl-thumb text-sm text-uppercase" data-merge="2">2017</a>
-            <a class="owl-thumb text-sm text-uppercase" data-merge="2">2014</a>
-            <a class="owl-thumb text-sm text-uppercase" data-merge="2">2009</a>
-        </div>
-        <div class="owl-carousel owl-overflow owl-highlight-active owl-equalheight" id="experience-timeline" data-toggle="owl-carousel" data-owl-carousel-settings='{"items":1,"nav":true, "dots":false}'>
-          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
-            <div class="row">
-              <div class="col-md-2 d-none d-md-block">
-                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
-              </div>
-              <div class="col-md-10">
-                <h5 class="text-uppercase my-0 text-primary">
-                  Ene 2018 - Presente
-                </h5>
-                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
-                  <span>Responsable del Centro de Consulta del Padrón Electoral</span>
-                </h2>
-                <p>
-                    Generar consultas a las bases de datos del Padrón Electoral a solicitud de las representaciones de
-                    los Partidos Políticos en bases de datos Oracle en entornos Red Hat Enterprise Linux.
-                </p>
-              </div>
-            </div>
+        <div class="row text-center">
+          <div class="col-lg-4 py-2">
+              <img    class="ion-social-usd-outline icon-3x icon-sq bg-primary text-white rounded-circle bg-shadow animated-done bounceIn animated"
+                      data-animate="fadeIn" data-animate-delay="0.1" data-hover="bounceOut" data-hover-out="bounceIn" style="animation-delay: 0.1s;"
+                      src="https://img.icons8.com/fluency/96/null/mexico-circular.png"/>
+            <h4 class="mt-2">
+              Español
+            </h4>
+            <p class="mb-2">Nativo</p>
           </div>
-          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
-            <div class="row">
-              <div class="col-md-2 d-none d-md-block">
-                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
-              </div>
-              <div class="col-md-10">
-                <h5 class="text-uppercase my-0 text-primary">
-                  ENE 2015 - DIC 2017
-                </h5>
-                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
-                  Supervisor de Sistemas de Gestión de la Calidad
-                  </span>
-                </h2>
-                <p>
-                    Desarrollo un <em>Balanced Scorecard</em> para la gestión de indicadores clave junto con un
-                    subsistema de gestión documental para cumplir con la norma ISO 9001. Audito procesos para asegurar
-                    el cumplimiento de requisitos y la obtención de resultados planificados para ayudar a garantizar los
-                    derechos político electorales de los ciudadanos.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
-            <div class="row">
-              <div class="col-md-2 d-none d-md-block">
-                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
-              </div>
-              <div class="col-md-10">
-                <h5 class="text-uppercase my-0 text-primary">
-                  Dic 2010 - Dic 2014
-                </h5>
-                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
-                  Cartógrafo
-                  </span>
-                </h2>
-                <p>
-                    Hago uso de sistemas de información geográfica (<em>GIS</em>) para mantener actualizada la cartografía
-                    electoral en el estado de Tlaxcala, insumo básico para garantizar los derechos políticos de los ciudadanos
-                    tlaxcaltecas.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
-            <div class="row">
-              <div class="col-md-2 d-none d-md-block">
-                <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid" />
-              </div>
-              <div class="col-md-10">
-                <h5 class="text-uppercase my-0 text-primary">
-                  Sep 2001 - Dic 2009
-                </h5>
-                <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
-                  Soporte Técnico
-                </h2>
-                  <p>
-                  Aseguro el funcionamiento continuo de los Módulos de Atención Ciudadana. Administro los queipos bajo el
-                  sistema operativo  con Fedora Linux.
-              </p>
-              </div>
-            </div>
+          <div class="col-lg-4 py-2">
+            <img    class="ion-social-usd-outline icon-3x icon-sq bg-primary text-white rounded-circle bg-shadow animated-done bounceIn animated"
+                      data-animate="fadeIn" data-animate-delay="0.1" data-hover="bounceOut" data-hover-out="bounceIn" style="animation-delay: 0.1s;"
+                      src="https://img.icons8.com/fluency/96/null/usa-circular.png"/>
+            <h4 class="mt-2">
+              English
+            </h4>
+              <p class="mb-2"><a href="https://www.efset.org/cert/hgzpW5">C2 Proficient</a></p>
+            <a href="https://www.efset.org/cert/hgzpW5" class="text-sm font-weight-bold">Read More <i class="ion-ios-arrow-forward pl-1"></i></a>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- experience -->
+    <div id="experience" class="py-6" data-animate="fadeIn">
+        <div class="container">
+            <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary"/>
+            <h2 class="text-dark display-4 font-weight-bold mb-3 text-letter-spacing-xs">
+                Experiencia
+            </h2>
+            <div class="owl-thumbs carousel-timeline-nav"
+                 data-toggle="owl-carousel"
+                 data-owl-carousel-thumbs="#experience-timeline"
+                 data-owl-carousel-settings='{"items":4, "nav":false, "dots":false, "merge":true, "mergeFit":true}'>
+                <a class="owl-thumb text-sm text-uppercase" data-merge="2">Presente</a>
+                <a class="owl-thumb text-sm text-uppercase" data-merge="2">2017</a>
+                <a class="owl-thumb text-sm text-uppercase" data-merge="2">2014</a>
+                <a class="owl-thumb text-sm text-uppercase" data-merge="2">2011</a>
+            </div>
+            <div class="owl-carousel owl-overflow owl-highlight-active owl-equalheight" id="experience-timeline"
+                 data-toggle="owl-carousel" data-owl-carousel-settings='{"items":1,"nav":true, "dots":false}'>
+                <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+                    <div class="row">
+                        <div class="col-md-2 d-none d-md-block">
+                            <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid"/>
+                        </div>
+                        <div class="col-md-10">
+                            <h5 class="text-uppercase my-0 text-primary">
+                                Ene 2018 - Presente
+                            </h5>
+                            <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                                <span>Responsable del Centro Estatal de Consulta del Padrón Electoral</span>
+                            </h2>
+                            <p>
+                                Genero consultas a las bases de datos del Padrón Electoral a solicitud de las
+                                representaciones de
+                                los Partidos Políticos en bases de datos Oracle en entornos Red Hat Enterprise Linux.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+                    <div class="row">
+                        <div class="col-md-2 d-none d-md-block">
+                            <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid"/>
+                        </div>
+                        <div class="col-md-10">
+                            <h5 class="text-uppercase my-0 text-primary">
+                                ENE 2015 - DIC 2017
+                            </h5>
+                            <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                                Cartógrafo
+                                </span>
+                            </h2>
+                            <p>
+                                Hago uso de sistemas de información geográfica (GIS) para mantener actualizada la
+                                cartografía electoral en el estado de Tlaxcala, insumo básico para garantizar los
+                                derechos políticos de los ciudadanos tlaxcaltecas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+                    <div class="row">
+                        <div class="col-md-2 d-none d-md-block">
+                            <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid"/>
+                        </div>
+                        <div class="col-md-10">
+                            <h5 class="text-uppercase my-0 text-primary">
+                                ENE 2012 - DIC 2014
+                            </h5>
+                            <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                                Supervisor de Sistemas de Gestión de la Calidad
+                                </span>
+                            </h2>
+                            <p>
+                                Desarrollo un <em>Balanced Scorecard</em> para la gestión de indicadores clave junto con
+                                un
+                                subsistema de gestión documental para cumplir con la norma ISO 9001. Audito procesos
+                                para asegurar
+                                el cumplimiento de requisitos y la obtención de resultados planificados para ayudar a
+                                garantizar los
+                                derechos político electorales de los ciudadanos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 p-lg-5 bg-light border-primary border-w-3 border-top-0 border-left-0 border-right-0 mb-2 w-100">
+                    <div class="row">
+                        <div class="col-md-2 d-none d-md-block">
+                            <img src="{% static '/blog/img/ine.svg' %}" alt="INE" class="img-fluid"/>
+                        </div>
+                        <div class="col-md-10">
+                            <h5 class="text-uppercase my-0 text-primary">
+                                Sep 2001 - Dic 2011
+                            </h5>
+                            <h2 class="text-dark text-letter-spacing-sm font-weight-bold my-0">
+                                Soporte Técnico
+                            </h2>
+                            <p>
+                                Aseguro el funcionamiento continuo de los Módulos de Atención Ciudadana. Administro los
+                                queipos bajo el
+                                sistema operativo con Fedora Linux.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- News section & sidebar -->
@@ -432,13 +482,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary"/>
-        <h2 class="text-center text-uppercase font-weight-bold my-0" id="blog">
-            Artículos del Blog
-        </h2>
-        <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
-            Los artículos del blog más recientes
-        </h5>
-        <hr class="mb-5 w-50 mx-auto"/>
+                <h2 class="text-center text-uppercase font-weight-bold my-0" id="blog">
+                    Artículos del Blog
+                </h2>
+                <h5 class="text-center font-weight-light mt-2 mb-0 text-muted">
+                    Los artículos del blog más recientes
+                </h5>
+                <hr class="mb-5 w-50 mx-auto"/>
                 <div class="row">
                     <div class="col-lg-7">
                         <!-- Main item -->
@@ -535,7 +585,8 @@
                         </li>
                         <li>
                             <abbr title="Email"><i class="fa fa-envelope fa-fw"></i></abbr>
-                            <img src="http://safemail.justlikeed.net/e/20fc96cb504efcde094ab2899bd65f2d.png" border="0" align="absbottom" title="email"></a>
+                            <img src="http://safemail.justlikeed.net/e/20fc96cb504efcde094ab2899bd65f2d.png" border="0"
+                                 align="absbottom" title="email"></a>
                         </li>
                         <li>
                             <abbr title="Address"><i class="fa fa-home fa-fw"></i></abbr>
@@ -547,7 +598,7 @@
 
             <div class="col-md-4"></div>
 
-            <div class="col-md-4"> </div>
+            <div class="col-md-4"></div>
         </div>
 
     </div>
