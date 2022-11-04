@@ -8,13 +8,15 @@
 #     licence: MIT
 #      python: 3.10
 
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView
 
 from . import models
 
 
-class IndexView(TemplateView):
+class IndexView(ListView):
     template_name = 'blog/index.html'
+    queryset = models.Entry.objects.all().order_by('-pub_date')[:4]
+    context_object_name = 'entries'
 
 
 class CategoryList(ListView):

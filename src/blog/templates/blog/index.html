@@ -490,6 +490,8 @@
                 </h5>
                 <hr class="mb-5 w-50 mx-auto"/>
                 <div class="row">
+                    {% for entry in entries %}
+                    {% if foorloop.first %}
                     <div class="col-lg-7">
                         <!-- Main item -->
                         <!-- News item 1 -->
@@ -499,13 +501,14 @@
                                  alt="Causa Elit Exputo Neo Vel Veniam Voco" data-toggle="blazy">
                             <div class="card-body px-0">
                                 <h4 class="card-title mb-1">
-                                    Causa Elit Exputo Neo Vel Veniam Voco
+                                   {{ forloop.counter }} {{ entry.title }}
                                 </h4>
                                 <p class="card-text text-uppercase text-xs"><i class="far fa-comment"></i> 124 <span
-                                        class="px-1">/</span> <i class="far fa-clock"></i> May 28 2020</p>
+                                        class="px-1">/</span> <i class="far fa-clock"></i> {{ entry.pub_date }}</p>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                     <div class="col-lg-5">
                         <!-- subitems -->
                         <!-- News subitem 1 -->
@@ -518,41 +521,7 @@
                             </div>
                             <div class="col-9 pl-0">
                                 <h6 class="mb-1">
-                                    Abbas Dolor Huic Nisl Paratus Pertineo Qui Vero
-                                </h6>
-                                <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
-                                        class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
-                            </div>
-                        </div>
-                        <hr class="my-1"/>
-                        <!-- News subitem 2 -->
-                        <div class="row row-hover py-1 py-lg-3 align-items-center"
-                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
-                            <div class="col-3">
-                                <img class="img-fluid" data-toggle="blazy"
-                                     data-src="https://source.unsplash.com/A9Vbvh_dMG0/100x100/"
-                                     alt="Aliquam Capto Defui Importunus Jus Ut Utinam Virtus Vulputate">
-                            </div>
-                            <div class="col-9 pl-0">
-                                <h6 class="mb-1">
-                                    Aliquam Capto Defui Importunus Jus Ut Utinam Virtus Vulputate
-                                </h6>
-                                <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
-                                        class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
-                            </div>
-                        </div>
-                        <hr class="my-1"/>
-                        <!-- News subitem 3 -->
-                        <div class="row row-hover py-1 py-lg-3 align-items-center"
-                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
-                            <div class="col-3">
-                                <img class="img-fluid" data-toggle="blazy"
-                                     data-src="https://source.unsplash.com/Edod-s9I1lA/100x100/"
-                                     alt="Abluo Esse Jus Molior Nimis Ratis Te Voco Ymo">
-                            </div>
-                            <div class="col-9 pl-0">
-                                <h6 class="mb-1">
-                                    Abluo Esse Jus Molior Nimis Ratis Te Voco Ymo
+                                     {{ forloop.counter }}  - {{ entry.title }}
                                 </h6>
                                 <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
                                         class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
@@ -560,6 +529,7 @@
                         </div>
                         <hr class="my-1"/>
                     </div>
+                    {% endfor %}
                 </div>
                 <!-- end of News sections: Lifestyle -->
 
