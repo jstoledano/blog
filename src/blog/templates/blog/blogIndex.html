@@ -21,7 +21,7 @@
   <link href="{% static 'blog/css/theme-style.min.css' %}" rel="stylesheet">
 
   <!--Your custom colour override-->
-  <link href="{% static 'blog/css/colour-slate.min.css' %}" id="colour-scheme" rel="stylesheet">
+  <link href="{% static 'blog/css/colour-blue-dark.min.css' %}" id="colour-scheme" rel="stylesheet">
 
   <!-- Your custom override -->
   <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
@@ -66,9 +66,6 @@
 
 <body class="page page-blog navbar-layout-default">
 
-  <!-- @plugin: page loading indicator, delete to remove loader -->
-  <div class="page-loader" data-toggle="page-loader"></div>
-
   <a href="#content" id="top" class="sr-only">Skip to content</a>
 
   <!-- ======== @Region: #header ======== -->
@@ -79,30 +76,13 @@
       <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.htm) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
       <div class="header-inner container">
         <!--user menu-->
-        <div class="header-block-flex order-1 mr-auto">
-          <nav class="nav nav-sm header-block-flex">
-            <a class="nav-link d-md-none" href="login.html"><i class="fa fa-user"></i></a>
-            <a class="nav-link text-xs text-uppercase d-none d-md-block" href="#signup-modal" data-toggle="modal">Sign Up</a> <a class="nav-link text-xs text-uppercase d-none d-md-block" href="#login-modal" data-toggle="modal">Login</a>
-          </nav>
-          <div class="header-divider header-divider-sm"></div>
-          <!--language menu-->
-          <div class="dropdown dropdowns-no-carets">
-            <a href="#en" class="nav-link text-xs p-0 dropdown-toggle ml-1" data-toggle="dropdown"><i class="flag-icon flag-icon-gb"></i></a>
-            <div class="dropdown-menu dropdown-menu-sm rounded dropdown-menu-arrow border-w-2 ml-2-neg">
-              <a href="#es" class="dropdown-item lang-es"><i class="flag-icon flag-icon-es"></i> Spanish</a>
-              <a href="#pt" class="dropdown-item lang-pt"><i class="flag-icon flag-icon-pt"></i> Portguese</a>
-              <a href="#cn" class="dropdown-item lang-cn"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
-              <a href="#se" class="dropdown-item lang-se"><i class="flag-icon flag-icon-se"></i> Swedish</a>
-            </div>
-          </div>
-        </div>
+        <div class="header-block-flex order-1 mr-auto"></div>
         <!--social media icons-->
         <div class="nav nav-icons header-block order-12">
           <!--@todo: replace with company social media details-->
-          <a href="#" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span> </a>
-          <a href="#" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
-          <a href="#" class="nav-link"> <i class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
-          <a href="#" class="nav-link"> <i class="fab fa-google-plus-square icon-1x"></i> <span class="sr-only">Google plus</span> </a>
+          <a href="https://twitter.com/jstoledano" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span> </a>
+          <a href="https://www.facebook.com/yo.toledano" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
+          <a href="https://www.linkedin.com/in/javier-sanchez-toledano/" class="nav-link"> <i class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
         </div>
       </div>
     </div>
@@ -111,8 +91,8 @@
       <!--Header search region - hidden by default -->
       <div class="header-search collapse" id="search">
         <form class="search-form container">
-          <input type="text" name="search" class="form-control search" value="" placeholder="Search">
-          <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+          <input type="text" name="search" class="form-control search" value="" placeholder="Buscar">
+          <button type="button" class="btn btn-link"><span class="sr-only">Buscar </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
           <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
         </form>
       </div>
@@ -125,11 +105,11 @@
           <div class="header-brand">
             <a class="header-brand-text" href="index.html" title="Home">
               <h1 class="h2">
-                <span class="header-brand-text-alt">App</span>Strap<span class="header-brand-text-alt">.</span>
+                <span class="header-brand-text-alt">Javier </span>Sanchez Toledano<span class="header-brand-text-alt"></span>
               </h1>
             </a>
             <div class="header-divider d-none d-lg-block"></div>
-            <div class="header-slogan d-none d-lg-block">Bootstrap 4 Theme</div>
+            <div class="header-slogan d-none d-lg-block">Fullstack developer</div>
           </div>
           <!-- other header content -->
           <div class="header-block order-12">
@@ -148,221 +128,39 @@
             <div class="navbar-main collapse">
               <!--main navigation-->
               <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
+                  <!-- Homepages -->
+                  <li class="nav-item dropdown dropdown-mega-menu active">
+                      <a href="{% url 'blog:index' %}" class="nav-link" id="indexs-drop"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Inicio</span> </a>
+                  </li>
 
-                <!-- Homepages -->
-                <li class="nav-item dropdown dropdown-mega-menu active">
-                  <a href="#" class="nav-link dropdown-toggle" id="indexs-drop" data-toggle="dropdown" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
-                  <!-- Dropdown Menu - mega menu-->
-                  <div class="dropdown-menu">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <h4 class="dropdown-header d-none d-lg-block mt-0">
-                          Classic Homepages
-                        </h4>
-                        <div class="row">
-                          <div class="col-lg-6"> <a href="intro.html" class="dropdown-item">Intro</a> <a href="index.html" class="dropdown-item active">Homepage (default)</a> <a href="index-static.html" class="dropdown-item">Homepage No Slider</a> <a href="index-boxed.html" class="dropdown-item">Homepage Boxed</a> <a href="index-promo-header.html" class="dropdown-item">Promo Header</a> <a href="index-coming-soon.html" class="dropdown-item">Coming Soon</a> <a href="index-coming-soon-newsletter.html" class="dropdown-item">Coming Soon with newsletter</a> <a href="index-onepager.html" class="dropdown-item">One Pager Slideshow</a> </div>
-                          <div class="col-lg-6"> <a href="index-onepager-image.html" class="dropdown-item">One Pager Image</a> <a href="index-onepager-image-full-height.html" class="dropdown-item">One Pager Image Full Height</a> <a href="index-onepager-bg-slideshow.html" class="dropdown-item">One Pager Background Slideshow</a> <a href="index-onepager-dotted-menu-left.html" class="dropdown-item">One Pager Dotted Menu Left</a> <a href="index-onepager-dotted-menu-right.html" class="dropdown-item">One Pager Dotted Menu Right</a> <a href="index-onepager-dotted-menu-bottom.html" class="dropdown-item">One Pager Dotted Menu Bottom</a> <a href="index-onepager-submenu.html" class="dropdown-item">One Pager Submenu</a> </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <h4 class="dropdown-header d-none d-lg-block mt-0">
-                          Industry/Niche Homepages
-                        </h4>
-                        <div class="row">
-                          <div class="col-lg-6"> <a href="demo-travel-blog.html" class="dropdown-item">Travel Blog</a> <a href="index-app-landing.html" class="dropdown-item">App Landing Page</a> <a href="index-music.html" class="dropdown-item">Music Homepage</a> <a href="index-event.html" class="dropdown-item">Event Homepage</a> <a href="index-gym.html" class="dropdown-item">Gym Homepage</a> <a href="index-jobs.html" class="dropdown-item">Jobs Homepage</a> <a href="index-corporate.html" class="dropdown-item">Corporate Homepage</a> <a href="index-restaurant.html" class="dropdown-item">Restaurant Homepage</a> <a href="index-photographer.html" class="dropdown-item">Photographer Homepage</a> <a href="index-freelancer-portfolio.html" class="dropdown-item">Freelancer Homepage</a> </div>
-                          <div class="col-lg-6"> <a href="index-wedding.html" class="dropdown-item">Wedding Homepage</a> <a href="index-realestate-single.html" class="dropdown-item">Real Estate (Single) Homepage</a> <a href="index-technology.html" class="dropdown-item">Technology Homepage</a> <a href="index-forum.html" class="dropdown-item">Forum Homepage</a> <a href="index-charity.html" class="dropdown-item">Charity Homepage</a> <a href="index-church.html" class="dropdown-item">Church Homepage</a> <a href="index-knowledgebase.html" class="dropdown-item">Knowledgebase</a> <a href="index-magazine.html" class="dropdown-item">Magazine Homepage</a> <a href="shop.html" class="dropdown-item">Shop Homepage</a> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Pages -->
-                <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" id="pages-drop" data-toggle="dropdown" data-hover="dropdown">Pages</a>
-                  <!-- Menu -->
-                  <div class="dropdown-menu">
-                    <div class="dropdown dropdown-submenu">
-                      <a href="about.html" class="dropdown-item dropdown-toggle" id="about-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">About</a>
-                      <!-- Dropdown Menu -->
-                      <div class="dropdown-menu" role="menu" aria-labelledby="about-drop"> <a href="about.html" class="dropdown-item">About Us Basic</a> <a href="about-extended.html" class="dropdown-item">About Us Extended</a> <a href="about-me.html" class="dropdown-item">About Me</a> <a href="team.html" class="dropdown-item">Team List</a> <a href="team-grid.html" class="dropdown-item">Team Grid</a> <a href="team-member.html" class="dropdown-item">Team Member</a> <a href="contact.html" class="dropdown-item">Contact</a> <a href="contact.php" class="dropdown-item">Contact (PHP)</a> </div>
-                    </div>
-                    <div class="dropdown dropdown-submenu active">
-                      <a href="blog.html" class="dropdown-item dropdown-toggle" id="blog-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Blog</a>
-                      <!-- Dropdown Menu -->
-                      <div class="dropdown-menu"> <a href="blog.html" class="dropdown-item active">Blog List Right Sidebar</a> <a href="blog-leftbar.html" class="dropdown-item">Blog List Left Sidebar</a> <a href="blog-timeline.html" class="dropdown-item">Blog List Timeline</a> <a href="blog-grid.html" class="dropdown-item">Blog List Grid</a> <a href="blog-post.html" class="dropdown-item">Blog Post</a> <a href="blog-post-video.html" class="dropdown-item">Blog Post With Video</a> <a href="blog-post-slideshow.html" class="dropdown-item">Blog Post With Slideshow</a> <a href="blog-post-audio.html" class="dropdown-item">Blog Post With Audio Clip</a> </div>
-                    </div>
-                    <div class="dropdown dropdown-submenu">
-                      <a href="pricing.html" class="dropdown-item dropdown-toggle" id="pricing-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Pricing</a>
-                      <!-- pricing pages -->
-                      <div class="dropdown-menu"> <a href="pricing.html" class="dropdown-item">Pricing Plans</a> <a href="pricing-tables.html" class="dropdown-item">Comparison Tables</a> </div>
-                    </div>
-                    <div class="dropdown dropdown-submenu">
-                      <a href="timeline.html" class="dropdown-item dropdown-toggle" id="timeline-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Timeline</a>
-                      <!-- timelines -->
-                      <div class="dropdown-menu" role="menu" aria-labelledby="timeline-drop"> <a href="timeline.html" class="dropdown-item">Timeline Default</a> <a href="timeline-left.html" class="dropdown-item">Timeline Left</a> <a href="timeline-right.html" class="dropdown-item">Timeline Right</a> <a href="timeline-stacked.html" class="dropdown-item">Timeline Stacked</a> </div>
-                    </div>
-                    <a href="customers.html" class="dropdown-item">Customers</a> <a href="features.html" class="dropdown-item">Features/Services</a> <a href="login.html" class="dropdown-item">Login</a> <a href="signup.html" class="dropdown-item">Sign Up</a> <a href="starter.html" class="dropdown-item">Starter Snippets</a> <a href="page-404.html" class="dropdown-item">404 Error</a> <a href="page-maintenance.html" class="dropdown-item">Maintenance</a> <a href="page-site-status.html" class="dropdown-item">Site Status</a> <a href="page-titles.html" class="dropdown-item">Page Titles</a>
-                  </div>
-                </li>
-
-                <!-- Features -->
-                <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" id="more-drop" data-toggle="dropdown" data-hover="dropdown">Features</a>
-                  <!-- Dropdown Menu -->
-                  <div class="dropdown-menu">
-                    <div class="dropdown dropdown-submenu dropdown-menu-left">
-                      <a href="headers.html" class="dropdown-item dropdown-toggle" id="headers-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Header Variations (19)</a>
-                      <!-- Header variations -->
-                      <div class="dropdown-menu" role="menu" aria-labelledby="headers-drop"> <a href="header-elements.html" class="dropdown-item">Header Elements</a> <a href="header-offcanvas.html" class="dropdown-item">Header Off Canvas</a> <a href="header-collapse-menu.html" class="dropdown-item">Header Collapse Menu</a> <a href="header-overlay-menu-responsive.html" class="dropdown-item">Header Responsive Overlay Menu</a> <a href="header-overlay-menu.html" class="dropdown-item">Header Overlay Menu</a> <a href="header-collapse-menu-responsive.html" class="dropdown-item">Header Responsive Collapse Menu</a> <a href="header-fullwidth.html" class="dropdown-item">Header Full Width</a> <a href="header-navbar-below.html" class="dropdown-item">Header Navbar Below</a> <a href="header-compact.html" class="dropdown-item">Header Compact</a> <a href="header-dark.html" class="dropdown-item">Header Dark</a> <a href="header-primary.html" class="dropdown-item">Header Primary</a> <a href="header-transparent.html" class="dropdown-item">Header Transparent</a> <a href="header-transparent-dark.html" class="dropdown-item">Header Transparent Dark</a> <a href="header-transparent-primary.html" class="dropdown-item">Header Transparent Primary</a> <a href="header-translucent.html" class="dropdown-item">Header Translucent</a> <a href="header-translucent-dark.html" class="dropdown-item">Header Translucent Dark</a> <a href="header-translucent-primary.html" class="dropdown-item">Header Translucent Primary</a> <a href="header-nav-left.html" class="dropdown-item">Header Nav Left</a> <a href="header-nav-fullheight.html" class="dropdown-item">Header Nav Full Height</a> <a href="header-bottom.html" class="dropdown-item">Header Bottom</a> </div>
-                    </div>
-                    <div class="dropdown dropdown-submenu dropdown-menu-left">
-                      <a href="headers.html" class="dropdown-item dropdown-toggle" id="footers-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Footer Variations (5)</a>
-                      <!-- Header variations -->
-                      <div class="dropdown-menu" role="menu" aria-labelledby="footers-drop"> <a href="footer-light.html" class="dropdown-item">Footer Light</a> <a href="footer-compact.html" class="dropdown-item">Footer Compact</a> <a href="footer-menus.html" class="dropdown-item">Footer Menus</a> <a href="footer-compact-light.html" class="dropdown-item">Footer Compact Light</a> <a href="footer-menus-light.html" class="dropdown-item">Footer Menus Light</a> </div>
-                    </div>
-                    <div class="dropdown dropdown-submenu dropdown-menu-left">
-                      <a href="sliders.html" class="dropdown-item dropdown-toggle" id="slider-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Sliders</a>
-                      <!-- Sliders -->
+                  <!-- Categories -->
+                  <li class="nav-item dropdown">
+                      <a href="#"
+                         class="nav-link dropdown-toggle"
+                         id="pages-drop"
+                         data-toggle="dropdown"
+                         data-hover="dropdown">Categorías</a>
+                      <!-- Menu -->
                       <div class="dropdown-menu">
-                        <!--Slider Revolution -->
-                        <h4 class="dropdown-header">
-                          Slider Revolution
-                        </h4>
-                        <a href="slider-revolution-default.html" class="dropdown-item">Default</a> <a href="slider-revolution-full.html" class="dropdown-item">Full Width</a> <a href="slider-revolution-behind.html" class="dropdown-item">Behind Navbar</a> <a href="slider-revolution-boxed.html" class="dropdown-item">Boxed</a>
-                        <!--Backstretch Slider-->
-                        <h4 class="dropdown-header">
-                          Backstretch
-                        </h4>
-                        <a href="backstretch.html" class="dropdown-item">Background Slideshow</a> <a href="backstretch-boxed.html" class="dropdown-item">Boxed Background Slideshow</a>
-                        <!--Flexslider-->
-                        <h4 class="dropdown-header">
-                          Flexslider
-                        </h4>
-                        <a href="flexslider-default.html" class="dropdown-item">Default</a> <a href="flexslider-full.html" class="dropdown-item">Full Width</a> <a href="flexslider-behind.html" class="dropdown-item">Behind Navbar</a> <a href="flexslider-boxed.html" class="dropdown-item">Boxed</a>
+                          <a href="#" class="dropdown-item">Desarrollo</a>
+                          <a href="#" class="dropdown-item">Céfiros y Trinos</a>
                       </div>
-                    </div>
-                    <a href="grid.html" class="dropdown-item">Grid System</a> <a href="flexbox.html" class="dropdown-item">Flexbox!</a> <a href="colours.html" class="dropdown-item">Theme Colours</a>
-                  </div>
-                </li>
+                  </li>
 
-                <!-- Shop megamenu -->
-                <li class="nav-item dropdown dropdown-mega-menu dropdown-mega-menu-75">
-                  <a href="#" class="nav-link dropdown-toggle" id="shop-drop" data-toggle="dropdown" data-hover="dropdown">Shop</a>
-                  <!-- Dropdown Menu - mega menu-->
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <h3 class="dropdown-header mt-0 pt-0">
-                          Pages
-                        </h3>
-                        <a href="shop.html" class="dropdown-item">Shop Homepage</a> <a href="shop-cart.html" class="dropdown-item">Cart</a> <a href="shop-checkout.html" class="dropdown-item">Checkout</a> <a href="shop-confirmation.html" class="dropdown-item">Confirmation</a> <a href="shop-grid.html" class="dropdown-item">Products Grid</a> <a href="shop-list.html" class="dropdown-item">Products List</a> <a href="shop-product.html" class="dropdown-item">Product View</a>
+                  <!-- Pages -->
+                  <li class="nav-item dropdown">
+                      <a href="#"
+                         class="nav-link dropdown-toggle"
+                         id="pages-drop"
+                         data-toggle="dropdown"
+                         data-hover="dropdown">Páginas</a>
+                      <!-- Menu -->
+                      <div class="dropdown-menu">
+                          <a href="#" class="dropdown-item">Archivo</a>
+                          <a href="#" class="dropdown-item">Etiquetas</a>
+                          <a href="#" class="dropdown-item">Política de privacidad</a>
                       </div>
-                      <div class="col-lg-6 d-none d-lg-block">
-                        <h3 class="dropdown-header mt-0 pt-0">
-                          Widget <span class="badge badge-primary text-uppercase">Hot</span>
-                        </h3>
-                        <div class="dropdown-widget">
-                          <!-- Shop product carousel Uses Owl Carousel plugin All options here are customisable from the data-owl-carousel-settings="{OBJECT}" item via data- attributes: http://www.owlgraphic.com/owlcarousel/#customizing ie. data-settings="{"items": "4", "lazyLoad":"true", "navigation":"true"}" -->
-                          <div class="products-carousel owl-nav-over" data-toggle="owl-carousel" data-owl-carousel-settings='{"items": 1,"responsive":{"0":{"items":1,"nav":true, "dots":false}}}'>
-                            <a href="#">
-                              <img src="assets/img/shop/jacket-1.jpg" alt="Item 1 image" class="lazyOwl img-fluid" />
-                            </a>
-                            <a href="#">
-                              <img src="assets/img/shop/jacket-2.jpg" alt="Item 2 image" class="lazyOwl img-fluid" />
-                            </a>
-                            <a href="#">
-                              <img src="assets/img/shop/jacket-3.jpg" alt="Item 3 image" class="lazyOwl img-fluid" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Elements/shortcodes -->
-                <li class="nav-item dropdown dropdown-mega-menu">
-                  <a href="#" class="nav-link dropdown-toggle" id="elements-drop" data-toggle="dropdown" data-hover="dropdown">Elements</a>
-                  <!-- Dropdown Menu - mega menu-->
-                  <div class="dropdown-menu">
-                    <h4 class="dropdown-header d-none d-lg-block mt-0">
-                      42 pages of elements/snippets <i class="new-tag">Updated!</i>
-                    </h4>
-                    <div class="row">
-                      <div class="col-lg-3"> <a href="elements-alerts.html" class="dropdown-item">Alerts</a> <a href="elements-animation.html" class="dropdown-item">Animations</a> <a href="elements-badges.html" class="dropdown-item">Badges</a> <a href="elements-button-groups.html" class="dropdown-item">Button Groups</a> <a href="elements-buttons.html" class="dropdown-item">Buttons</a> <a href="elements-cards.html" class="dropdown-item">Cards</a> <a href="elements-carousels.html" class="dropdown-item">Carousels</a> <a href="elements-collapse.html" class="dropdown-item">Collapse / Accordions</a> <a href="elements-colour-utils.html" class="dropdown-item">Colours Utils</a> <a href="elements-counters.html" class="dropdown-item">Counters</a> <a href="elements-ctas.html" class="dropdown-item">Call To Action Blocks</a> </div>
-                      <div class="col-lg-3"> <a href="elements-dividers.html" class="dropdown-item">Dividers</a> <a href="elements-dropdowns.html" class="dropdown-item">Dropdowns</a> <a href="elements-forms.html" class="dropdown-item">Forms</a> <a href="elements-forms-input-groups.html" class="dropdown-item">Forms Input Groups</a> <a href="elements-icons.html" class="dropdown-item">Icons</a> <a href="elements-icons-bootstrap-icons.html" class="dropdown-item">Icons: Bootstrap</a> <a href="elements-icons-flags.html" class="dropdown-item">Icons: Flags</a> <a href="elements-icons-fontawesome.html" class="dropdown-item">Icons: Font Awesome</a> <a href="elements-icons-ionicons.html" class="dropdown-item">Icons: Ionicons</a> <a href="elements-icons-linearicons.html" class="dropdown-item">Icons: Linearicons</a> <a href="elements-icons-lineawesome.html" class="dropdown-item">Icons: Line Awesome</a> </div>
-                      <div class="col-lg-3"> <a href="elements-list-groups.html" class="dropdown-item">List Groups</a> <a href="elements-modals.html" class="dropdown-item">Modals</a> <a href="elements-modals-onload.html" class="dropdown-item">Modals Onload</a> <a href="elements-navs.html" class="dropdown-item">Navs</a> <a href="elements-navs-tabbable.html" class="dropdown-item">Tabbable Navs</a> <a href="elements-overlays.html" class="dropdown-item">Overlays</a> <a href="elements-progressbars.html" class="dropdown-item">Progress Bars</a> <a href="elements-select-pickers.html" class="dropdown-item">Select Picker</a> <a href="elements-shadows.html" class="dropdown-item">Shadows</a> <a href="elements-social-media.html" class="dropdown-item">Social Media Branding</a> <a href="elements-spacers.html" class="dropdown-item">Spacers</a> </div>
-                      <div class="col-lg-3"> <a href="elements-spinners.html" class="dropdown-item">Spinners</a> <a href="elements-tables.html" class="dropdown-item">Tables</a> <a href="elements-toasts.html" class="dropdown-item">Toasts</a> <a href="elements-tooltips-popovers.html" class="dropdown-item">Tooltips & Popovers</a> <a href="elements-type-effect.html" class="dropdown-item">Type Effect</a> <a href="elements-typography.html" class="dropdown-item">Typography</a> <a href="elements-utils.html" class="dropdown-item">Utilities</a> <a href="elements-video-blocks.html" class="dropdown-item">Video Blocks</a> <a href="page-titles.html" class="dropdown-item">Page Titles</a> </div>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Mega menu example -->
-                <li class="nav-item dropdown dropdown-persist dropdown-mega-menu dropdown-mega-menu-50">
-                  <a href="#" class="nav-link dropdown-toggle" id="megamenu-drop" data-toggle="dropdown" data-hover="dropdown">Mega Menu</a>
-                  <!-- Dropdown Menu - Mega Menu -->
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-pills nav-pills-border-bottom-inside flex-column flex-lg-row" role="tablist">
-                      <li class="nav-item"> <a class="nav-link p-3 active text-center font-weight-bold text-uppercase" data-toggle="tab" data-target=".menu-tab-1" role="tab">Mega Menu Tab 1</a> </li>
-                      <li class="nav-item"> <a class="nav-link p-3 text-center font-weight-bold text-uppercase" data-toggle="tab" data-target=".menu-tab-2" role="tab">Mega Menu Tab 2</a> </li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content py-3">
-                      <div class="tab-pane active show menu-tab-1" role="tabpanel">
-                        <div class="row text-center">
-                          <div class="col-lg-4 py-2">
-                            <i class="fa fa-tachometer-alt icon-3x op-6"></i>
-                            <h5 class="mt-2">
-                              Fully Optimized
-                            </h5>
-                            <p class="text-sm mb-0">At augue causa eros esse huic letalis neo tation valde.</p>
-                          </div>
-                          <div class="col-lg-4 py-2">
-                            <i class="fa fa-wrench icon-3x op-6"></i>
-                            <h5 class="mt-2">
-                              Free Support
-                            </h5>
-                            <p class="text-sm mb-0">Ludus saepius ut venio.</p>
-                          </div>
-                          <div class="col-lg-4 py-2">
-                            <i class="fa fa-rocket icon-3x op-6"></i>
-                            <h5 class="mt-2">
-                              Free Upgrades
-                            </h5>
-                            <p class="text-sm mb-0">Olim os praesent sagaciter valetudo.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane menu-tab-2" role="tabpanel">
-                        <div class="row text-center">
-                          <div class="col-lg-4 py-2">
-                            <i class="fa fa-chart-line icon-3x op-6"></i>
-                            <h5 class="mt-2">
-                              99.9% Uptime
-                            </h5>
-                            <p class="text-sm mb-0">Bene erat importunus quae vulpes.</p>
-                          </div>
-                          <div class="col-lg-4 py-2">
-                            <i class="fa fa-users icon-3x op-6"></i>
-                            <h5 class="mt-2">
-                              Multiuser
-                            </h5>
-                            <p class="text-sm mb-0">Bene defui dolor ratis.</p>
-                          </div>
-                          <div class="col-lg-4 py-2">
-                            <i class="fa fa-plug icon-3x op-6"></i>
-                            <h5 class="mt-2">
-                              Plug n play
-                            </h5>
-                            <p class="text-sm mb-0">Accumsan damnum ex haero nobis tego tum vel vulpes.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
+                  </li>
               </ul>
             </div>
             <!--/.navbar-collapse -->
@@ -374,492 +172,65 @@
 
   <!-- ======== @Region: #content ======== -->
   <div id="content">
-    <div class="container">
-      <h2 class="title-divider">
-        <span>Company <span class="font-weight-normal text-muted">Blog</span></span>
-        <small>We love to talk!</small>
-      </h2>
-      <div class="row">
+      <div class="container">
+          <h2 class="title-divider">
+              <span>Yo, <span class="font-weight-normal text-muted">Toledano</span></span>
+              <small>Oh tiempo tus piramides</small>
+          </h2>
+          <div class="row">
         <!--Blog Roll Content-->
         <div class="col-md-9 blog-roll blog-list">
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">Jun</span> <span class="date-d">02</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Mike Thompson</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">design</a> / <a href="#" class="text-dark text-uppercase">video</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Aliquam Immitto Importunus Pala Suscipere</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Tue 2nd Jun 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Mike Thompson</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/frog.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Consectetuer diam dignissim et loquor velit voco. Mos paulatim similis suscipere ulciscor utinam validus virtus. Camur ludus praemitto. Appellatio huic jugis olim similis tincidunt turpis zelus.</p>
-                  <p>Luptatum neque nisl vindico wisi. Gravis huic letalis natu nibh roto. Duis eum suscipit vel velit vindico. Enim humo interdico quia sagaciter valetudo. Brevitas cui dolore eu facilisis ludus magna.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 83 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">29</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Mike Thompson</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">coding</a> / <a href="#" class="text-dark text-uppercase">video</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Brevitas Gemino Ideo Velit Vulputate</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Fri 29th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Mike Thompson</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/bee.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Aptent erat genitus iusto pertineo tincidunt ulciscor voco. Abico bene neque nimis quadrum scisco si usitas volutpat. Abico decet si sit.</p>
-                  <p>Abbas commoveo defui occuro praemitto utrum verto. Aliquam fere genitus nulla quadrum sed. Eros gilvus sagaciter torqueo utinam. Euismod occuro te. Camur ex jumentum. Abluo dolore nibh qui sed typicus voco.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 7 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">28</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Alex Jones</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">general</a> / <a href="#" class="text-dark text-uppercase">video</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Gilvus Incassum Ludus Nobis Wisi</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Thu 28th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Alex Jones</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/frog.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Gemino quis valetudo. Euismod paratus proprius tego valde. Ad gemino probo validus. Conventio feugiat luptatum populus refero. Distineo euismod ex imputo tego.</p>
-                  <p>Conventio mos singularis vulputate. Abico dignissim euismod importunus inhibeo iriure luctus proprius vel. Blandit duis iriure iusto suscipit. Abbas abico adipiscing damnum ea ex gravis pneum ratis vel. Dolus nibh quidne roto ut.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 57 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">27</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Alexander Vanjuvic</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">coding</a> / <a href="#" class="text-dark text-uppercase">podcast</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Augue Ideo Luctus Natu Pagus</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Wed 27th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Alexander Vanjuvic</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/water-pump.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Praemitto sit torqueo. Illum magna persto. Acsi dolore genitus letalis luctus paulatim praemitto premo si singularis. Abdo appellatio defui luptatum pagus scisco vero.</p>
-                  <p>Elit erat neo. Distineo euismod nunc probo qui quibus tation turpis. At dolore saepius vulpes. Abigo autem decet esse ille letalis zelus. Conventio fere ludus qui. Fere feugiat minim virtus.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 19 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">24</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Alex Jones</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">culture</a> / <a href="#" class="text-dark text-uppercase">feature</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Caecus Dignissim Interdico Saluto Verto</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Sun 24th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Alex Jones</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <object width="560" height="315">
-                      <param name="movie" value="//www.youtube.com/v/qpWlaOeGZ_4?hl=en_US&amp;version=3&amp;rel=0">
-                      </param>
-                      <param name="allowFullScreen" value="true">
-                      </param>
-                      <param name="allowscriptaccess" value="always">
-                      </param>
-                      <embed src="//www.youtube.com/v/qpWlaOeGZ_4?hl=en_US&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed>
-                    </object>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Minim occuro tation. Incassum jumentum nisl pagus. Caecus distineo et huic illum letalis quidem tamen. Adipiscing conventio defui nunc secundum vereor virtus.</p>
-                  <p>At elit nibh qui typicus. Acsi esse gemino macto pala qui saluto scisco sudo voco. Accumsan humo lenis paulatim pneum sudo. Gemino ille nibh pala plaga quidne typicus. Acsi in praemitto ratis ullamcorper.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 98 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">23</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Alex Jones</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">weather</a> / <a href="#" class="text-dark text-uppercase">news</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Brevitas Dolor Luctus Turpis Velit</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Sat 23rd May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Alex Jones</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <div class="slider-wrapper">
-                      <div class="flexslider slider-mini-nav" data-slidernav="auto" data-transition="fade">
-                        <div class="slides">
-                          <div class="slide">
-                            <img src="assets/img/blog/ape.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                          </div>
-                          <div class="slide">
-                            <img src="assets/img/blog/frog.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                          </div>
-                          <div class="slide">
-                            <img src="assets/img/blog/butterfly.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                          </div>
-                          <div class="slide">
-                            <img src="assets/img/blog/fly.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                          </div>
+            {% for entry in entries %}
+                <div class="row blog-post">
+                    <div class="col-md-1 date-md">
+                        <!-- Date desktop -->
+                        <div class="date-wrapper">
+                            <span class="date-m bg-primary">{{ entry.pub_date | date:"M" }}</span>
+                            <span class="date-d">{{ entry.pub_date | date:'d' }}</span>
+                            <span class="date-m bg-primary">{{ entry.pub_date | date:"Y" }}</span>
                         </div>
-                      </div>
+                        <!-- Meta details desktop -->
+                        <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> Javier </p>
                     </div>
-                  </div>
+                    <div class="col-md-11">
+                        <div class="text-xs">
+                            <a href="#" class="text-primary text-uppercase">{{ entry.category }}</a> /
+                            <span class="text-dark text-uppercase">
+                                {% for tag in entry.tags.all %} {{ tag }}{% endfor %}
+                            </span>
+                        </div>
+                        <h4 class="title media-heading">
+                            <a href="#">{{ entry.title }}</a>
+                        </h4>
+                        <!-- Meta details mobile -->
+                        <ul class="list-inline meta text-muted">
+                            <li class="list-inline-item"><i class="fa fa-calendar"></i> {{ entry.pub_date }}</li>
+                            <li class="list-inline-item"><i class="fa fa-user"></i> Javier</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-md-4 push-md-8">
+                                <div class="blog-media">
+                                    <a href="#">
+                                        <img src="http://placekitten.com/200/200" alt="{{ entry.title }}" class="img-fluid" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 pull-md-4">
+                                {{ entry.body_html | safe }}
+                                <ul class="list-inline links">
+                                    <li class="list-inline-item">
+                                        <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 83 Comments</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Bene saepius usitas verto. Abdo at augue iustum letalis quadrum sudo suscipit zelus. Abluo erat luctus ludus nobis rusticus sudo.</p>
-                  <p>Abbas aliquam dolore facilisis gemino saepius. Abico aptent augue camur duis facilisi sagaciter tum turpis. Dignissim elit illum modo paulatim usitas. Ille incassum paulatim refero. Abigo in usitas. Comis dignissim duis eros esca iustum pagus veniam.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 51 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">22</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Tim Rice</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">coding</a> / <a href="#" class="text-dark text-uppercase">feature</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Eum Praemitto Rusticus Validus Vindico</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Fri 22nd May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Tim Rice</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/113479203&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Aptent dignissim iaceo quadrum quibus vulputate. Defui elit lucidus odio venio. Enim natu olim. Facilisi letalis loquor nunc praemitto roto saepius tego uxor veniam.</p>
-                  <p>Natu nibh nunc qui ratis tincidunt. Appellatio brevitas camur cui gilvus letalis macto nostrud roto vereor. Caecus immitto mauris paulatim venio verto. Aliquip commodo natu os suscipere. Euismod gravis ibidem iustum nulla sit tum.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 0 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">14</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Mike Thompson</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">culture</a> / <a href="#" class="text-dark text-uppercase">feature</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Commodo Decet Iaceo Mos Nunc</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Thu 14th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Mike Thompson</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/fly.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Accumsan aptent decet esse lobortis lucidus minim mos plaga quibus. Dolor iusto nutus premo vicis. Genitus macto saluto tamen torqueo valde.</p>
-                  <p>Abluo lenis quia. Imputo inhibeo odio. Abico conventio ea macto plaga venio. Eu incassum iriure nunc quidne secundum si sino. Commoveo distineo duis inhibeo loquor ratis. Adipiscing occuro scisco. Esse euismod gravis hendrerit nimis refoveo singularis typicus.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 93 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">12</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Alexander Vanjuvic</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">weather</a> / <a href="#" class="text-dark text-uppercase">event</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Abdo Iusto Letalis Occuro Praemitto</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Tue 12th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Alexander Vanjuvic</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/frog.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Camur esse tation. Mauris os sagaciter ut. Amet dolus inhibeo nobis nutus pertineo pneum sudo vindico. Ad humo macto nulla quibus typicus uxor.</p>
-                  <p>At ille jugis luptatum pala patria similis utinam wisi. Abluo huic praemitto. Abigo blandit capto esse ideo laoreet modo. Dolore enim importunus pneum typicus ut. Aliquam consequat et facilisis olim praemitto si turpis.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 11 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">11</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Alex Jones</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">coding</a> / <a href="#" class="text-dark text-uppercase">news</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Euismod Ex Immitto Saepius Velit</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Mon 11th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Alex Jones</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/butterfly.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>In lucidus neque patria venio. Gemino genitus nutus patria probo saluto virtus. Acsi importunus occuro patria vel velit venio. Brevitas commodo utinam virtus.</p>
-                  <p>Abigo antehabeo distineo elit genitus nostrud quidne saluto. Consequat dignissim dolus ibidem loquor nibh occuro patria sudo. Appellatio decet ea haero nimis. Commodo quidne te. Comis commoveo gemino singularis. Acsi bene interdico nobis patria voco.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 61 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Blog post -->
-          <div class="row blog-post">
-            <div class="col-md-1 date-md">
-              <!-- Date desktop -->
-              <div class="date-wrapper"> <span class="date-m bg-primary">May</span> <span class="date-d">09</span> </div>
-              <!-- Meta details desktop -->
-              <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> <a href="#">Kylie Michaels</a> </p>
-            </div>
-            <div class="col-md-11">
-              <div class="text-xs"><a href="#" class="text-primary text-uppercase">jobs</a> / <a href="#" class="text-dark text-uppercase">podcast</a></div>
-              <h4 class="title media-heading">
-                <a href="blog-post.html">Amet Conventio Damnum Modo Nibh</a>
-              </h4>
-              <!-- Meta details mobile -->
-              <ul class="list-inline meta text-muted">
-                <li class="list-inline-item"><i class="fa fa-calendar"></i> Sat 9th May 2020</li>
-                <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#">Kylie Michaels</a></li>
-              </ul>
-              <div class="row">
-                <div class="col-md-4 push-md-8">
-                  <div class="blog-media">
-                    <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                        ">
-                      <img src="assets/img/blog/ladybird.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-8 pull-md-4">
-                  <p>Blandit distineo saepius scisco sed. Appellatio camur ea luctus nisl quidem vicis. At bene ea gravis paratus quibus tincidunt uxor zelus.</p>
-                  <p>At commodo damnum exerci melior nunc pala pecus saepius virtus. At interdico iusto quibus sed turpis. Patria pneum probo quae typicus vero. Esse pala volutpat. At damnum distineo inhibeo ludus nunc olim pala qui suscipere.</p>
-                  <ul class="list-inline links">
-                    <li class="list-inline-item">
-                      <a href="blog-post.html" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-right"></i> Read more</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="blog-post.html#comments" class="btn btn-secondary btn-sm"><i class="fa fa-comment"></i> 42 Comments</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+            {% endfor %}
+
           <div class="pagination">
             <button type="button" class="btn btn-secondary btn-lg btn-block">Load More</button>
           </div>
@@ -1329,7 +700,6 @@
                 <a href="#">Forgotten password?</a>
               </p>
             </div>
-        </div>
         <!-- /.modal-content -->
         </form>
       </div>
