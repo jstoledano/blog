@@ -1,15 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Blog | AppStrap Bootstrap Theme by Themelize.me</title>
+  <title>Blog | toledano.org</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- @todo: fill with your company info or remove -->
-  <meta name="description" content="">
-  <meta name="author" content="Themelize.me">
+  <meta name="description" content="Blog personal de toledano.org">
+  <meta name="author" content="Javier Sanchez toledano">
 
   <!-- Bootstrap v4.5.0 CSS via CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -17,13 +18,13 @@
   <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
 
   <!-- Theme style -->
-  <link href="assets/css/theme-style.min.css" rel="stylesheet">
+  <link href="{% static 'blog/css/theme-style.min.css' %}" rel="stylesheet">
 
   <!--Your custom colour override-->
-  <link href="#" id="colour-scheme" rel="stylesheet">
+  <link href="{% static 'blog/css/colour-slate.min.css' %}" id="colour-scheme" rel="stylesheet">
 
   <!-- Your custom override -->
-  <link href="assets/css/custom-style.css" rel="stylesheet">
+  <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
 
 
 
@@ -31,7 +32,7 @@
   <!-- Iconset: Font Awesome 5.12.0 via CDN -->
   <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
   <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
-  <link href="assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="{% static 'blog/plugins/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
   <!-- Iconset: ionicons - http://ionicons.com/ -->
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <!-- Iconset: Linearicons - https://linearicons.com/free -->
@@ -1348,11 +1349,10 @@
 
 
   <!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
-
   <!--Custom scripts & AppStrap API integration -->
-  <script src="assets/js/custom-script.js"></script>
+  <script src="{% static 'blog/js/custom-script.js' %}"></script>
   <!--AppStrap scripts mainly used to trigger libraries/plugins -->
-  <script src="assets/js/script.min.js"></script>
+  <script src="{% static 'blog/js/script.js' %}"></script>
 </body>
 
 </html>
