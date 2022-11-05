@@ -177,3 +177,10 @@ class Entry(Traceability):
             'blog:entry_detail',
             kwargs={'category': self.category.slug, 'slug': self.slug}
         )
+
+    def resumen(self):
+        if self.summary:
+            return safe(striptags(self.summary))
+        else:
+            return safe(striptags(truncatechars_html(self.body_html, 450)))
+
