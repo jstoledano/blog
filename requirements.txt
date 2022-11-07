@@ -9,3 +9,6 @@ pytz
 coverage
 django_coverage_plugin
 factory_boy
+
+django-taggit-templatetags2
+django-taggit-autosuggest

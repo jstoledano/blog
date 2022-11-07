@@ -185,9 +185,9 @@
                     <div class="col-md-1 date-md">
                         <!-- Date desktop -->
                         <div class="date-wrapper">
-                            <span class="date-m bg-primary">{{ entry.pub_date | date:"M" }}</span>
-                            <span class="date-d">{{ entry.pub_date | date:'d' }}</span>
-                            <span class="date-m bg-primary">{{ entry.pub_date | date:"Y" }}</span>
+                            <span class="date-m bg-primary">{{ entry.pub_date|date:"M" }}</span>
+                            <span class="date-d">{{ entry.pub_date|date:'d' }}</span>
+                            <span class="date-m bg-primary">{{ entry.pub_date|date:"Y" }}</span>
                         </div>
                         <!-- Meta details desktop -->
                         <p class="text-muted text-sm"> <i class="fa fa-user text-xs"></i> Javier </p>
@@ -256,13 +256,9 @@
               <span>Tags</span>
             </h4>
             <div class="tag-cloud">
-              <span class="badge"><a href="#">culture</a> (74)</span>
-              <span class="badge"><a href="#">general</a> (51)</span>
-              <span class="badge"><a href="#">coding</a> (18)</span>
-              <span class="badge"><a href="#">design</a> (32)</span>
-              <span class="badge"><a href="#">weather</a> (90)</span>
-              <span class="badge"><a href="#">jobs</a> (7)</span>
-              <span class="badge"><a href="#">health</a> (86)</span>
+                <ul class="tag-cloud">
+
+                </ul>
             </div>
           </div>
 
@@ -295,8 +291,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/bee.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -311,8 +306,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/bee.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -327,8 +321,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/butterfly.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -343,8 +336,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/bee.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -362,8 +354,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/bee.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -378,8 +369,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/bee.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -394,8 +384,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/bee.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -410,8 +399,7 @@
                 <div class="row blog-post">
                   <div class="col-4">
                     <div class="blog-media">
-                      <a href="blog-post<?php echo OUTPUT_FILE_TYPE; ?>
-                          ">
+                      <a href="#">
                         <img src="assets/img/blog/water-pump.jpg" alt="Picture of frog by Ben Fredericson" class="img-fluid" />
                       </a>
                     </div>
@@ -583,19 +571,7 @@
       </address>
     </div>
   </aside>
-  <!-- Style switcher - demo only - @todo: remove in production -->
-  <div class="colour-switcher">
-    <a href="#" class="colour-switcher-toggle" data-toggle="class" data-target=".colour-switcher"> <i class="fa fa-paint-brush"></i> </a>
-    <h5 class="text-uppercase my-0">
-      Theme Colours
-    </h5>
-    <hr />
-    <div class="theme-colours"> <a href="#green" class="green active" data-toggle="tooltip" data-placement="right" data-original-title="Green (Default)">Green</a> <a href="#red" class="red" data-toggle="tooltip" data-placement="right" data-original-title="Red">Red</a> <a href="#blue" class="blue" data-toggle="tooltip" data-placement="right" data-original-title="Blue">Blue</a> <a href="#purple" class="purple" data-toggle="tooltip" data-placement="right" data-original-title="Purple">Purple</a> <a href="#pink" class="pink" data-toggle="tooltip" data-placement="right" data-original-title="Pink">Pink</a> <a href="#orange" class="orange" data-toggle="tooltip" data-placement="right" data-original-title="Orange">Orange</a> <a href="#lime" class="lime" data-toggle="tooltip" data-placement="right" data-original-title="Lime">Lime</a> <a href="#blue-dark" class="blue-dark" data-toggle="tooltip" data-placement="right" data-original-title="Blue-dark">Blue-dark</a> <a href="#red-dark" class="red-dark" data-toggle="tooltip" data-placement="right" data-original-title="Red-dark">Red-dark</a> <a href="#brown" class="brown" data-toggle="tooltip" data-placement="right" data-original-title="Brown">Brown</a> <a href="#cyan-dark" class="cyan-dark" data-toggle="tooltip" data-placement="right" data-original-title="Cyan-dark">Cyan-dark</a> <a href="#yellow" class="yellow" data-toggle="tooltip" data-placement="right" data-original-title="Yellow">Yellow</a> <a href="#slate" class="slate" data-toggle="tooltip" data-placement="right" data-original-title="Slate">Slate</a> <a href="#olive" class="olive" data-toggle="tooltip" data-placement="right" data-original-title="Olive">Olive</a> <a href="#teal" class="teal" data-toggle="tooltip" data-placement="right" data-original-title="Teal">Teal</a> <a href="#green-bright" class="green-bright" data-toggle="tooltip" data-placement="right" data-original-title="Green-bright">Green-bright</a> </div>
-    <hr />
-    <p class="text-xs text-muted">Cookies are NOT enabled so colour selection is not persistent.</p>
-    <p class="text-xs my-0"><a href="index.html">Back to main homepage</a></p>
-    <p class="text-xs my-0"><a href="intro.html">Back to intro page</a></p>
-  </div>
+
   <!--Hidden elements - excluded from jPanel Menu on mobile-->
   <div class="hidden-elements js-off-canvas-exclude">
     <!--@modal - signup modal-->
@@ -667,47 +643,7 @@
     </div>
     <!-- /.modal -->
 
-    <!--@modal - login modal-->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <form action="login.html">
-            <div class="modal-header bg-light">
-              <h4 class="modal-title">
-                Login
-              </h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label class="sr-only" for="login-email">Email</label>
-                <input type="email" id="login-email" class="form-control email" placeholder="Email">
-              </div>
-              <div class="form-group mb-0">
-                <label class="sr-only" for="login-password">Password</label>
-                <input type="password" id="login-password" class="form-control password mb-1" placeholder="Password">
-              </div>
-            </div>
-            <div class="modal-footer bg-light py-3">
-              <div class="d-flex align-items-center">
-                <button type="button" class="btn btn-primary">Login</button>
-                <button type="button" class="btn btn-link ml-1" data-dismiss="modal" aria-hidden="true">Cancel</button>
-              </div>
-              <p class="text-xs text-right text-lh-tight op-8 my-0 ml-auto">
-                Not a member? <a href="#" class="signup">Sign up now!</a>
-                <br />
-                <a href="#">Forgotten password?</a>
-              </p>
-            </div>
-        <!-- /.modal-content -->
-        </form>
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
   </div>
-
-
   <!--jQuery 3.3.1 via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Popper 1.16.0 via CDN, needed for Bootstrap Tooltips & Popovers -->

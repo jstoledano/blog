@@ -184,3 +184,8 @@ class Entry(Traceability):
         else:
             return safe(striptags(truncatechars_html(self.body_html, 450)))
 
+    def get_tags(self):
+        tags = []
+        for tag in self.tags.all():
+            tags.append(str(tag))
+        return tags
