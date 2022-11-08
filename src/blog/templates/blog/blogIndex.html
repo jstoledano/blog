@@ -1,2 +1,20 @@
 {% extends "blog/base.html" %}
 {% load static %}
+
+{% block content %}
+	<div class="posts">
+    {% for entry in entries %}
+        <div class="post">
+            <h1 class="post-title" href="#">
+                <a href="#">{{ entry.title }}</a>
+            </h1>
+            <span class="post-date">{{ entry.pub_date }}</span>
+            <span class="post-tags">
+                {{ entry.category }}
+            </span>
+            <p>{{ entry.resumen }}</p>
+            <a class="read-more" href="{{ article.url }}">Continue reading »</a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock content %}
