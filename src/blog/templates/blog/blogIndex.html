@@ -8,7 +8,12 @@
             <h1 class="post-title" href="#">
                 <a href="{% url 'blog:entry' entry.category entry.slug %}">{{ entry.title }}</a>
             </h1>
-            <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ entry.pub_date }} en <i class="fa fa-folder-open-o" aria-hidden="true"></i> {{ entry.category }}</span>
+            <span class="post-date">
+                <i class="fa fa-calendar" aria-hidden="true"></i> {{ entry.pub_date }}
+                en <i class="fa fa-folder-open-o" aria-hidden="true"></i> {{ entry.category }}</span>
+            <span class="post-date">
+                Etiquetas: {% for tag in entry.tags.all %}<i class="fa fa-tag" aria-hidden="true"></i>{{ tag }} {% endfor %}
+            </span>
             <p>{{ entry.resumen }}</p>
             <a class="read-more" href="{% url 'blog:entry' entry.category entry.slug %}">Sigue leyendo »</a>
         </div>

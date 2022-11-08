@@ -470,12 +470,12 @@
                         <div class="card card-silent mb-lg-4 border-0 flex-ew"
                              data-url="{{ entry.get_absolute_url }}">
                             <img class="card-img img-fluid"
-                                 data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://source.unsplash.com/5ido2uN-7V0/540x320/{% endif %}"
+                                 data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://picsum.photos/640/480{% endif %}"
                                  alt="{{ entry.title }}" data-toggle="blazy">
                             <div class="card-body px-0">
                                 <h4 class="card-title mb-1">{{ entry.title }}</h4>
                                 <p class="card-text text-uppercase text-xs">
-                                    <i class="far fa-comment"></i> {{ entry.category }}
+                                    <i class="far fa-folder-open"></i> {{ entry.category }}
                                     <span class="px-1">/</span>
                                     <i class="far fa-clock"></i> {{ entry.pub_date }}</p>
                             </div>
@@ -484,18 +484,21 @@
 
                     <div class="col-lg-5">{% else %}
                         <div class="row row-hover py-1 py-lg-3 align-items-center"
-                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
+                             data-url="{% url 'blog:entry' entry.category entry.slug %}">
                             <div class="col-3">
                                 <img class="img-fluid" data-toggle="blazy"
-                                     data-src="https://source.unsplash.com/5ido2uN-7V0/100x100/"
-                                     alt="Abbas Dolor Huic Nisl Paratus Pertineo Qui Vero">
+                                     data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://picsum.photos/100/100{% endif %}"
+                                     alt="{{ entry.title }}">
                             </div>
                             <div class="col-9 pl-0">
                                 <h6 class="mb-1">
                                     {{ entry.title }}
                                 </h6>
-                                <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
-                                        class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
+                                <p class="text-uppercase text-xs mb-0">
+                                    <span class="text-primary"><i class="far fa-folder-open"></i>  {{ entry.category }}</span>
+                                    <span class="px-1">/</span>
+                                    <i class="far fa-clock"></i> Mar 13 2020
+                                </p>
                             </div>
                         </div>
                         <hr class="my-1"/>
