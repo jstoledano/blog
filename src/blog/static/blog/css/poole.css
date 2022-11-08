@@ -59,6 +59,7 @@ html {
 }
 
 body {
+  font-family: "Merriweather", serif;
   color: #515151;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
@@ -341,6 +342,8 @@ tbody tr:nth-child(odd) th {
 }
 .page-title,
 .post-title {
+  font-family: "Open Sans",sans-serif;
+  text-rendering: geometricPrecision;
   margin-top: 0;
 }
 
@@ -348,11 +351,19 @@ tbody tr:nth-child(odd) th {
 .post-date {
   display: block;
   margin-top: -.5rem;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
   color: #9a9a9a;
+
+  display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.7rem;
+    line-height: 2.2rem;
+    color: #9EABB3;
 }
 
 .post-tags {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
   display: inline;
   margin-bottom: 1rem;
   color: #9a9a9a;
@@ -399,10 +410,11 @@ tbody tr:nth-child(odd) th {
 
 .read-more {
   padding: .5rem .8rem;
-  border: 1px solid #eee;
+  border: 1px solid #5D6D7E;
   font-size: .8rem;
   margin-top: 1rem;
   font-weight: bold;
+  color: #5D6D7E;
 }
 
 /*
