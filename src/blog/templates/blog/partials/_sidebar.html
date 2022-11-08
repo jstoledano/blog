@@ -1,0 +1,23 @@
+{% load static %}
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="{% url 'blog:index' %}">
+					<img class="profile-picture" src="{% static 'blog/img/homes/cv-portfolio.jpg' %}">
+					Javier
+				</a>
+			</h1>
+			<p class="lead">Fullstack Developer </p>
+		</div>
+		<nav class="sidebar-social">
+            <a class="sidebar-social-item" href="{% url 'blog:blogIndex' %}"><i class="fa fa-home"></i></a>
+			<a class="sidebar-social-item" href="https://www.linkedin.com/in/javier-sanchez-toledano/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a class="sidebar-social-item" href="https://github.com/jstoledano" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+			<a class="sidebar-social-item" href="https://twitter.com/jstoledano"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+		</nav>
+
+
+	</div>
+</div>

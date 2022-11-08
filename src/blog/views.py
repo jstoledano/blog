@@ -26,7 +26,6 @@ class BlogIndex(ListView):
     paginate_by = 6
 
 
-
 class CategoryList(ListView):
     model = models.Category
     template_name = 'blog/category_list.html'

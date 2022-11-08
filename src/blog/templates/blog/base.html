@@ -21,10 +21,6 @@
 
 		<title>{% block title %}Blog Javier Sanchez Toledano{% endblock title %}</title>
 
-		<!-- CSS -->
-		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
-		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
-
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
         <link rel="stylesheet" type="text/css" href="https://media.toledano.org/theme/css/zenburn.css">    <link rel="dns-prefetch" href="https://yo.toledano.org"/>
             <link rel="dns-prefetch" href="//www.gstatic.com"/>
@@ -46,17 +42,29 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
 		<!-- Feeds -->
-		{% include 'blog/fragments/feeds.html' %}
+		{% include 'blog/partials/_feeds.html' %}
 
 		<!-- Analytics -->
-		{% include 'blog/fragments/google_analytics.html' %}
+		{% include 'blog/partials/_google_analytics.html' %}
 	</head>
 
 	<body>
-		{% include 'blog/sidebar.html' %}
+		{% include 'blog/partials/_sidebar.html' %}
 		<div class="content container">
 			{% block content %}
 			{% endblock %}
+
+            <p class="sidebar-footer">
+                &copy; 2022 |   Publicado usando <em><a itemprop="url" href="https://python.org" target="_blank">Python</a></em> y
+                <a itemprop="url" href="https://djangoframework.com" target="_blank">Django Framework</a> |
+                Licencia
+                <a itemprop="url" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank">
+                  <img
+                    alt="Licencia Creative Commons"
+                    style="border-width:0; display: inline; margin: 0; border-radius: 0;"
+                    src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
+                </a>
+            </p>
 		</div>
 	</body>
 </html>

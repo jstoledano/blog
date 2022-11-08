@@ -83,8 +83,9 @@ html {
 
 .sidebar-about h1 {
   margin-top: 0;
-  font-family: "Merriweather", serif;
-  letter-spacing: .01rem;
+  /* font-family: "Merriweather", serif; */
+  font-family: "Open Sans",sans-serif;
+  letter-spacing: .02rem;
   font-size: 1.8rem;
   line-height: 1.75em;
   color: #3a4145;
@@ -136,9 +137,11 @@ a.sidebar-social-item.active:focus {
   color: #fff;
 }
 .sidebar-footer {
-  font-size: .7rem;
+  font-family: "Open Sans",sans-serif;
+  font-size: .75rem;
   margin-bottom: 0;
   margin-top: .5rem;
+  color: #9EABB3;
 }
 
 /* Sticky sidebar
