@@ -1,0 +1,80 @@
+{% extends "blog/base.html" %}
+
+{% block metadata %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ entry.get_absolute_url }}"
+      },
+      "publisher": {
+        "@type" : "Organization",
+        "url" : "https://facebook.com/yo.toledano",
+        "name": "Blog Toledano",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ SITELOGO }}",
+          "width": 307,
+          "height": 54
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Javier Sanchez Toledano",
+        "image": "https://media.toledano.org/images/yo.jpg",
+        "url": "https://yo.toledano.org",
+        "description": "Soy programador en Django+Python y Flutter. Auditor líder certificado en la norma ISO 9001:2008. Fotógrafo aficionado."
+      },
+      "headline": "{{ entry.title|striptags  }}",
+      "url": "{{ entry.get_absolute_url }}",
+      "datePublished": "{{ entry.pub_date|date:"c" }}",
+      "dateModified": "{{ entry.pub_date|date:"c" }}",
+      {% if entry.cover %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ entry.cover }}"
+      },
+      {% else %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "entry.cover",
+        "height": 1392,
+        "width": 696
+      },
+      {% endif %}
+      "keywords": "{{ entry.category.slug }}{% for tag in entry.tags.all %} tag-{{ tag.slug }}{% endfor %}",
+      "description": "{{ entry.resumen }}"
+    }
+  </script>
+{% endblock metadata %}
+
+{% block title %}{{ entry.title }}{% endblock title %}
+
+{% block content %}
+<div class="post">
+	<h1 class="post-title">{{ entry.title }}</h1>
+	{% include 'blog/partials/_metadata.html' %}
+
+    <div id="main">
+	    {{ entry.body_html | safe }}
+    </div>
+    <div id="extend">
+        {{ entry.extend_html | safe }}
+    </div>
+
+    <span class="post-tags">
+        Tags:
+        <ul>
+            {% for tag in entry.tags.all %}
+                <li>{{ tag }}</li>
+            {% endfor %}
+        </ul>
+    </span>
+</div>
+    <div id="comments">
+        {% include 'blog/partials/_comments.html' %}
+    </div>
+
+{% endblock %}

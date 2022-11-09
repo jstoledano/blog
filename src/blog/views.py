@@ -19,6 +19,13 @@ class IndexView(ListView):
     context_object_name = 'entries'
 
 
+class BlogIndex(ListView):
+    template_name = 'blog/blogIndex.html'
+    context_object_name = 'entries'
+    model = models.Entry
+    paginate_by = 6
+
+
 class CategoryList(ListView):
     model = models.Category
     template_name = 'blog/category_list.html'
@@ -37,4 +44,5 @@ class CategoryDetail(DetailView):
 
 class EntryDetail(DetailView):
     model = models.Entry
+    template_name = 'blog/article.html'
     context_object_name = 'entry'

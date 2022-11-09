@@ -8,34 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-    <!-- @todo: fill with your company info or remove -->
     <meta name="description" content="">
     <meta name="author" content="{{ author }}">
 
-    <!-- Bootstrap v4.5.0 CSS via CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
-
-    <!-- Theme style -->
     <link href="{% static 'blog/css/theme-style.min.css' %}" rel="stylesheet">
-
-    <!--Your custom colour override-->
     <link href="{% static 'blog/css/colour-slate.min.css' %}" id="colour-scheme" rel="stylesheet">
-
-    <!-- Your custom override -->
     <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
 
-
-    <!-- Optional: ICON SETS -->
-    <!-- Iconset: Font Awesome 5.12.0 via CDN -->
     <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-    <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
     <link href="{% static 'blog/plugins/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
-    <!-- Iconset: ionicons - http://ionicons.com/ -->
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-    <!-- Iconset: Linearicons - https://linearicons.com/free -->
     <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
-    <!-- Iconset: Lineawesome - https://icons8.com/articles/line-awesome -->
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
 
 
@@ -48,33 +32,23 @@
     <meta name="msapplication-config" content="{% static 'blog/favicons/browserconfig.xml' %}">
     <meta name="theme-color" content="#ffffff">
 
-
-    <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
 
-    <!--Plugin: Retina.js (high def image replacement) - @see: http://retinajs.com/-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
 </head>
-<!--To implement the boxed page layout simply add the class .page-boxed to the body badge like below -->
 
-<!-- ======== @Region: body ======== -->
 <body class="page page-onepager header-ontop page-index-freelancer-portfolio navbar-layout-default">
-
-<!-- @plugin: page loading indicator, delete to remove loader -->
-<div class="page-loader" data-toggle="page-loader"></div>
 
 <a id="#top" href="#content" class="sr-only">Ir al contenido</a>
 
-<!-- ======== @Region: #header ======== -->
 <div id="header" class="w-100 pos-fixed pos-t scroll-state-hidden"
      data-scroll="scroll-state" data-scroll-amount="500"
      data-scroll-setting='{"effectIn":"slideInDown", "effectOut":"slideOutUp", "effectDuration":"0.3", "breakpoint":"992"}'>
 
-    <!--Header & Branding region-->
     <div class="header header-dark py-2 bg-dark bg-op-9 border-bottom-0">
         <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
         <div class="header-inner container">
@@ -122,7 +96,7 @@
                         <li class="nav-item"><a href="#experience" data-toggle="scroll-link"
                                                 data-scroll-link-nooffset=true class="nav-link link-effect-underline">
                             Experiencia </a></li>
-                        <li class="nav-item"><a href="#blog" data-toggle="scroll-link" data-scroll-link-nooffset=true
+                        <li class="nav-item"><a href="{% url 'blog:blogIndex' %}" data-toggle="scroll-link" data-scroll-link-nooffset=true
                                                 class="nav-link link-effect-underline"> Blog </a></li>
                         <li class="nav-item"><a href="#contact" data-toggle="scroll-link" data-scroll-link-nooffset=true
                                                 class="nav-link link-effect-underline"> Contacto </a></li>
@@ -496,12 +470,12 @@
                         <div class="card card-silent mb-lg-4 border-0 flex-ew"
                              data-url="{{ entry.get_absolute_url }}">
                             <img class="card-img img-fluid"
-                                 data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://source.unsplash.com/5ido2uN-7V0/540x320/{% endif %}"
+                                 data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://picsum.photos/640/480{% endif %}"
                                  alt="{{ entry.title }}" data-toggle="blazy">
                             <div class="card-body px-0">
                                 <h4 class="card-title mb-1">{{ entry.title }}</h4>
                                 <p class="card-text text-uppercase text-xs">
-                                    <i class="far fa-comment"></i> {{ entry.category }}
+                                    <i class="far fa-folder-open"></i> {{ entry.category }}
                                     <span class="px-1">/</span>
                                     <i class="far fa-clock"></i> {{ entry.pub_date }}</p>
                             </div>
@@ -510,18 +484,21 @@
 
                     <div class="col-lg-5">{% else %}
                         <div class="row row-hover py-1 py-lg-3 align-items-center"
-                             data-url="https://wrapbootstrap.com/theme/appstrap-responsive-website-template-WB0C6D0H4?ref=tme">
+                             data-url="{% url 'blog:entry' entry.category entry.slug %}">
                             <div class="col-3">
                                 <img class="img-fluid" data-toggle="blazy"
-                                     data-src="https://source.unsplash.com/5ido2uN-7V0/100x100/"
-                                     alt="Abbas Dolor Huic Nisl Paratus Pertineo Qui Vero">
+                                     data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://picsum.photos/100/100{% endif %}"
+                                     alt="{{ entry.title }}">
                             </div>
                             <div class="col-9 pl-0">
                                 <h6 class="mb-1">
                                     {{ entry.title }}
                                 </h6>
-                                <p class="text-uppercase text-xs mb-0"><span class="text-primary">travel</span> <span
-                                        class="px-1">/</span> <i class="far fa-clock"></i> Mar 13 2020</p>
+                                <p class="text-uppercase text-xs mb-0">
+                                    <span class="text-primary"><i class="far fa-folder-open"></i>  {{ entry.category }}</span>
+                                    <span class="px-1">/</span>
+                                    <i class="far fa-clock"></i> Mar 13 2020
+                                </p>
                             </div>
                         </div>
                         <hr class="my-1"/>
