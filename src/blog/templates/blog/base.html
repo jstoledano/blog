@@ -2,24 +2,23 @@
 <!DOCTYPE html>
 <html lang="es-mx" prefix="og: http://ogp.me/ns#">
 	<head>
+        <title>{% block title %}Blog Toledano{% endblock title %}</title>
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+
 		<link href="http://gmpg.org/xfn/11" rel="profile">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
+        {% include 'blog/partials/_analytics.html' %}
+        <meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="pragma" content="cache">
+        <meta http-equiv="cache-control" content="cache">
+        <meta http-equiv="vary" content="content-language">
+        <meta http-equiv="Cache-control" content="max-age=2592000, public">
+
 		<!-- Metadata -->
-		{% block metadata %}
-			<meta name="description" content="{{ BIO }}" />
-			<meta property="og:description" content="{{ BIO }}" />
-			<meta property="og:title" content="{{ SITENAME }}{% if SITESUBTITLE %} - {{ SITESUBTITLE }}{% endif %}" />
-			<meta property="og:type" content="website" />
-			<meta property="og:url" content="{{ SITEURL }}" />
-		{% endblock %}
-		<meta property="og:image" content="{{ SITEURL }}/images/{{ PROFILE_IMAGE }}" />
-
-		<!-- Enable responsiveness on mobile devices-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-		<title>{% block title %}Blog Javier Sanchez Toledano{% endblock title %}</title>
+		{% block metadata %}{% endblock metadata %}
 
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
         <link rel="stylesheet" type="text/css" href="https://media.toledano.org/theme/css/zenburn.css">    <link rel="dns-prefetch" href="https://yo.toledano.org"/>
@@ -45,16 +44,13 @@
 		{% include 'blog/partials/_feeds.html' %}
 
 		<!-- Analytics -->
-		{% include 'blog/partials/_google_analytics.html' %}
+
 	</head>
 
 	<body>
 		{% include 'blog/partials/_sidebar.html' %}
 		<div class="content container">
-			{% block content %}
-			{% endblock %}
-
-
+			{% block content %}{% endblock %}
 		</div>
 	</body>
 </html>
