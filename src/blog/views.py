@@ -44,4 +44,5 @@ class CategoryDetail(DetailView):
 
 class EntryDetail(DetailView):
     model = models.Entry
+    template_name = 'blog/article.html'
     context_object_name = 'entry'

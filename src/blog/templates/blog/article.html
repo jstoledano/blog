@@ -1,30 +1,28 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
 {% block metadata %}
-	<meta name="description" content="{% if article.description %}{{ article.description }}{% else %}{{ BIO }}{% endif %}">
-	<meta property="og:description" content="{% if article.description %}{{ article.description }}{% else %}{{ BIO }}{% endif %}">
-	<meta property="og:title" content="{{ article.title }}" />
+	<meta name="description" content="{{ entry.resumen }}">
+	<meta property="og:description" content="{{ entry.resumen }}">
+	<meta property="og:title" content="{{ entry.title }}" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+	<meta property="og:url" content="{{ entry.get_absolute_url }}" />
 {% endblock %}
 
 {% block content %}
 <div class="post">
-	<h1 class="post-title">{{ article.title }}</h1>
-	<span class="post-date">{{ article.locale_date }}</span>
-	{{ article.content }}
+	<h1 class="post-title">{{ entry.title }}</h1>
+	<span class="post-date">{{ entry.pub_date }}</span>
+	{{ entry.body_html | safe }}
 
-	{% if article.tags %}
+	{% if article.tags.all %}
 		<span class="post-tags">
 			Tags:
 			<ul>
-				{% for tag in article.tags %}
-					<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+				{% for tag in entry.tags.all %}
+					<li>{{ tag }}</li>
 				{% endfor %}
 			</ul>
 		</span>
 	{% endif %}
-
-	{% include 'partials/disqus.html' %}
 </div>
 {% endblock %}
