@@ -174,6 +174,18 @@ class Entry(Traceability):
 
     def get_absolute_url(self) -> str:
         return reverse(
-            'blog:entry_detail',
+            'blog:entry',
             kwargs={'category': self.category.slug, 'slug': self.slug}
         )
+
+    def resumen(self):
+        if self.summary:
+            return safe(striptags(self.summary))
+        else:
+            return safe(striptags(truncatechars_html(self.body_html, 450)))
+
+    def get_tags(self):
+        tags = []
+        for tag in self.tags.all():
+            tags.append(str(tag))
+        return tags
