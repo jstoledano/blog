@@ -53,28 +53,18 @@
 {% block title %}{{ entry.title }}{% endblock title %}
 
 {% block content %}
-<div class="post">
-	<h1 class="post-title">{{ entry.title }}</h1>
-	{% include 'blog/partials/_metadata.html' %}
-
-    <div id="main">
-	    {{ entry.body_html | safe }}
+    <div class="post">
+        <h1 class="post-title">{{ entry.title }}</h1>
+        {% include 'blog/partials/_metadata.html' %}
+        <div id="main">
+            {{ entry.body_html | safe }}
+        </div>
+        <div id="extend">
+            {{ entry.extend_html | safe }}
+        </div>
     </div>
-    <div id="extend">
-        {{ entry.extend_html | safe }}
-    </div>
 
-    <span class="post-tags">
-        Tags:
-        <ul>
-            {% for tag in entry.tags.all %}
-                <li>{{ tag }}</li>
-            {% endfor %}
-        </ul>
-    </span>
-</div>
     <div id="comments">
         {% include 'blog/partials/_comments.html' %}
     </div>
-
 {% endblock %}

@@ -22,15 +22,7 @@
     <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
 
-
-    <!-- Le fav and touch icons - @todo: fill with your icons or remove, try https://realfavicongenerator.net -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'blog/favicons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/favicons/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/favicons/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'blog/favicons/manifest.json' %}">
-    <link rel="shortcut icon" href="{% static 'blog/favicons/favicon.ico' %}">
-    <meta name="msapplication-config" content="{% static 'blog/favicons/browserconfig.xml' %}">
-    <meta name="theme-color" content="#ffffff">
+    {% include 'blog/partials/_favicons.html' %}
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
@@ -64,7 +56,7 @@
             </div>
             <!-- other header content -->
             <div class="header-block order-lg-12">
-                <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+                <mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu>
                 <a href="#top" class="btn btn-link btn-icon text-white d-lg-none"
                    data-toggle="collapse" data-target=".navbar-main"
                    data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'>
@@ -112,7 +104,7 @@
 <div id="highlighted" class="border-bottom-0 bg-dark">
     <!-- Image Banner: Use the the data-bg-img functionality to create a simple image banner Use spacer classes to make the banner larger with padding, allows for easy responsive changes too see: elements-ctas.htm To make the banner full height/screen add the attributes: data-toggle="full-height" data-offset="#header" -->
     <div class="bg-white overlay overlay-op-8 text-center text-lg-left pt-8 pb-7 flex-valign"
-         data-bg-img="{% static '/blog/img/backgrounds/freelancer.jpg' %}"
+         data-bg-img="{% static '/img/fondo.jpg' %}"
          data-css='{"background-position": "center top","background-attachment": "fixed"}'
          data-toggle="full-height" data-breakpoint="992" data-scroll="scrollax" data-scrollax-y-ratio="off">
         <div class="container">
@@ -144,7 +136,7 @@
             </h2>
             <div class="row">
                 <div class="col-lg-4 order-lg-2">
-                    <img src="{% static 'blog/img/homes/cv-portfolio.jpg' %}"
+                    <img src="{% static 'img/yo.jpg' %}"
                          alt="Me"
                          class="img-fluid rounded-circle op-7 border-white border-w-5 w-30 w-lg-80 mt-lg-4-neg d-none d-lg-block"/>
                 </div>
