@@ -93,6 +93,7 @@ html {
 
 .sidebar-about .lead {
   font-size: .8rem;
+  color: ghostwhite;
 }
 
 .sidebar-about .profile-picture {
@@ -141,7 +142,7 @@ a.sidebar-social-item.active:focus {
   font-size: .55rem;
   margin-bottom: 0;
   margin-top: .5rem;
-  color: #9EABB3;
+  color: white;
 }
 
 /* Sticky sidebar
