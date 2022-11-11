@@ -1,6 +1,7 @@
 .idea/
 .env
 db.sqlite3
+assets/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
