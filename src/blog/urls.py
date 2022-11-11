@@ -9,10 +9,12 @@
 #      python: 3.10
 
 from django.urls import path
+from django.views.generic.base import TemplateView
 
 from . import views
 
 urlpatterns = [
+    path('robots.txt', TemplateView.as_view(template_name='blog/robots.txt', content_type="text/plain")),
     path('blog/', views.BlogIndex.as_view(), name='blogIndex'),
     path('category/', views.CategoryList.as_view(), name='category_list'),
     path('category/<str:slug>', views.CategoryDetail.as_view(), name='category_detail'),
