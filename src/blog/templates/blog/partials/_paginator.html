@@ -1,0 +1,19 @@
+{% if page_obj.paginator.num_pages > 1 %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1" style="padding-right: .5em;">&laquo;primera</a>
+                <a href="?page={{ page_obj.previous_page_number }}">anterior</a>
+            {% endif %}
+
+            <span style="padding: 0 1em; font-weight: bolder; color: #5D6D7E!important">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" style="padding-left: .5em;">última&raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endif %}
