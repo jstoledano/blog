@@ -88,7 +88,7 @@ STATICFILES_DIRS = [
     'static',     # your static/ files folder
     'blog/static',
 ]
-
+STATIC_ROOT = 'assets'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Taggit
