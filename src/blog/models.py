@@ -9,10 +9,8 @@
 #      python: 3.10
 import uuid
 from datetime import datetime
-from typing import List
 
 import markdown
-from django.conf import settings
 from django.db import models
 from django.template.defaultfilters import truncatechars_html, striptags, safe
 from django.urls import reverse

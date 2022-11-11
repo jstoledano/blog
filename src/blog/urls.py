@@ -9,10 +9,17 @@
 #      python: 3.10
 
 from django.urls import path
+from django.contrib.sitemaps.views import sitemap
 
 from . import views
+from .sitemaps import BlogSitemap
+
+sitemaps = {
+    'blog': BlogSitemap,
+}
 
 urlpatterns = [
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('blog/', views.BlogIndex.as_view(), name='blogIndex'),
     path('category/', views.CategoryList.as_view(), name='category_list'),
     path('category/<str:slug>', views.CategoryDetail.as_view(), name='category_detail'),
