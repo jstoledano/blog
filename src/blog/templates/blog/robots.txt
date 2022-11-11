@@ -1,0 +1,4 @@
+User-Agent: *
+Disalow: /cat/
+
+Sitemap: https://toledano.org/sitemap.xml
