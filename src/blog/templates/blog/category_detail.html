@@ -1,1 +1,21 @@
-<h1>{{ category }}</h1>
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Archivo de la categoría {{ entries.name }} | Blog Toledano{% endblock %}
+
+{% block content %}
+    <div class="posts">
+        <h1>Archivo de la categoría {{ entries.name }}</h1>
+        {% if entries.description %}
+        <p><blockquote>
+            {{ entries.description }}
+        </blockquote></p>
+        {% endif %}
+    </div>
+	<div class="posts">
+    {% for entry in entries.entry_category.all %}
+        {% include 'blog/partials/_loop.html' %}
+    {% endfor %}
+    </div>
+    {% include 'blog/partials/_paginator.html' %}
+{% endblock content %}
