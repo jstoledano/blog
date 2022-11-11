@@ -462,7 +462,7 @@
                         <div class="card card-silent mb-lg-4 border-0 flex-ew"
                              data-url="{{ entry.get_absolute_url }}">
                             <img class="card-img img-fluid"
-                                 data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://picsum.photos/640/480{% endif %}"
+                                 data-src="{% if entry.cover %}{{ entry.cover }}{% else %}http://placeimg.com/640/480/tech{% endif %}"
                                  alt="{{ entry.title }}" data-toggle="blazy">
                             <div class="card-body px-0">
                                 <h4 class="card-title mb-1">{{ entry.title }}</h4>
@@ -479,7 +479,7 @@
                              data-url="{% url 'blog:entry' entry.category entry.slug %}">
                             <div class="col-3">
                                 <img class="img-fluid" data-toggle="blazy"
-                                     data-src="{% if entry.cover %}{{ entry.cover }}{% else %}https://picsum.photos/100/100{% endif %}"
+                                     data-src="{% if entry.cover %}{{ entry.cover }}{% else %}http://placeimg.com/100/100/tech{% endif %}"
                                      alt="{{ entry.title }}">
                             </div>
                             <div class="col-9 pl-0">
