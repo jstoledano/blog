@@ -1,0 +1,8 @@
+<div class="post">
+    <h1 class="post-title" href="#">
+        <a href="{% url 'blog:entry' entry.category.slug entry.slug %}">{{ entry.title }}</a>
+    </h1>
+    {% include 'blog/partials/_metadata.html' %}
+    <p>{{ entry.resumen }}</p>
+    <a class="read-more" href="{% url 'blog:entry' entry.category.slug entry.slug %}">Sigue leyendo »</a>
+</div>

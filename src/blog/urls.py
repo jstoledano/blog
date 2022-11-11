@@ -24,7 +24,7 @@ urlpatterns = [
     path('robots.txt', TemplateView.as_view(template_name='blog/robots.txt', content_type="text/plain")),
     path('blog/', views.BlogIndex.as_view(), name='blogIndex'),
     path('category/', views.CategoryList.as_view(), name='category_list'),
-    path('category/<str:slug>', views.CategoryDetail.as_view(), name='category_detail'),
+    path('category/<str:slug>', views.CategoryDetail.as_view(), name='category'),
     path('<str:category>/<str:slug>', views.EntryDetail.as_view(), name='entry'),
     path('', views.IndexView.as_view(), name='index'),
 ]

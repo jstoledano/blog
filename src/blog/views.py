@@ -30,13 +30,13 @@ class CategoryList(ListView):
     model = models.Category
     template_name = 'blog/category_list.html'
     context_object_name = 'categories'
-    paginate_by = 6
+    paginate_by = 10
 
 
 class CategoryDetail(DetailView):
     model = models.Category
     template_name = 'blog/category_detail.html'
-    context_object_name = 'category'
+    context_object_name = 'entries'
     paginate_by = 6
     allow_empty = True
     slug_field = 'slug'
