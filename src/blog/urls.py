@@ -8,12 +8,13 @@
 #     licence: MIT
 #      python: 3.10
 
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path
 from django.views.generic.base import TemplateView
-from django.contrib.sitemaps.views import sitemap
 
 from . import views
 from .sitemaps import BlogSitemap
+
 
 sitemaps = {
     'blog': BlogSitemap,

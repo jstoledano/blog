@@ -1,5 +1,4 @@
 # coding: utf-8
-
 #         app: org.toledano.blogApp
 #      module: blog.views
 # description: Views for blog app
@@ -8,7 +7,9 @@
 #     licence: MIT
 #      python: 3.10
 
+from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.http import HttpResponseServerError
 
 from . import models
 
@@ -46,3 +47,15 @@ class EntryDetail(DetailView):
     model = models.Entry
     template_name = 'blog/article.html'
     context_object_name = 'entry'
+
+
+def error404(request, exception):
+    response = render(request, "404.html")
+    response.status_code = 404
+    return response
+
+
+def error500(request):
+    response = render(request, "500.html")
+    response.status_code = 500
+    return response
