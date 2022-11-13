@@ -1,12 +1,12 @@
 from pathlib import Path
 import environ
-env = environ.Env(DEBUG=(bool, False),)
+env = environ.Env()
 environ.Env.read_env('.env')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
-DEBUG = env.bool('DJANGO_DEBUG', default=True)
+DEBUG = env('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS')
 
@@ -43,7 +43,7 @@ ROOT_URLCONF = 'blogApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS':  [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'debug': DEBUG,
