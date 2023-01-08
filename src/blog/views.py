@@ -21,7 +21,7 @@ class IndexView(ListView):
 
 
 class BlogIndex(ListView):
-    template_name = 'blog/blogIndex.html'
+    template_name = 'index.html'
     context_object_name = 'entries'
     model = models.Entry
     paginate_by = 6
