@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% include 'partials/_seo.html' %}
+    {% include 'partials/_styles.html' %}
+
+    <title>Portada del Blog</title>
+</head>
+
+<body class="{% if request.path == '/blog/' %}homefirstpage{% endif %}">
+    {% include 'partials/_navbar.html' %}
+
+    <main role="main" class="site-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'partials/_footer.html' %}
+</body>
+
+</html>

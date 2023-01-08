@@ -1,0 +1,22 @@
+{% load static %}
+<footer class="bg-white border-top p-3 text-muted small">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div>
+          <span class="navbar-brand mr-3 mb-0"><strong>toledano.org</strong></span>
+          <span>Copyright © {% now "Y" %}.</span>
+        </div>
+        <div>
+            Publicado usando <em><a itemprop="url" href="https://python.org" target="_blank">Python</a></em> y
+            <a itemprop="url" href="https://djangoframework.com" target="_blank">Django Framework</a>.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Scripts: popper, bootstrap, theme, lunr -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
+
+  {% include 'partials/_tracking-footer.html' %}
