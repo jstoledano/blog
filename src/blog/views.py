@@ -9,7 +9,6 @@
 
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.http import HttpResponseServerError
 
 from . import models
 
@@ -21,10 +20,18 @@ class IndexView(ListView):
 
 
 class BlogIndex(ListView):
+    queryset = models.Entry.objects.exclude(featured=True)[4:]
     template_name = 'index.html'
     context_object_name = 'entries'
     model = models.Entry
-    paginate_by = 6
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['sticky'] = models.Entry.objects.filter(featured=True)[0]
+        context['primeros'] = models.Entry.objects.all()[:4]
+        context['featured'] = models.Entry.objects.filter(featured=True)[1:6]
+        return context
 
 
 class CategoryList(ListView):

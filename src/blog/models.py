@@ -134,7 +134,7 @@ class Entry(Traceability):
     class Meta:
         verbose_name_plural = 'Entradas'
         verbose_name = 'Entrada'
-        ordering = ['-id', '-pub_date']
+        ordering = ['-pub_date', '-id', ]
         unique_together = ('slug', 'category')
         get_latest_by = 'pub_date'
 
@@ -180,7 +180,13 @@ class Entry(Traceability):
         if self.summary:
             return safe(striptags(self.summary))
         else:
-            return safe(striptags(truncatechars_html(self.body_html, 450)))
+            return safe(striptags(truncatechars_html(self.body_html, 186)))
+
+    def imagen(self):
+        if self.cover:
+            return self.cover
+        else:
+            return "http://placeimg.com/200/160/tech"
 
     def get_tags(self):
         tags = []

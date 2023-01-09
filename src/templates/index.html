@@ -1,1 +1,109 @@
 {% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  {% if request.path == '/blog/' and not page_obj.has_previous %}
+    <!-- Se inicia con resumen de artículos, enfatizando los 4 primeros -->
+    <div class="row remove-site-content-margin">
+      {% with entry=primeros.0 %}
+        <div class="col-md-6"><!-- firstEntry firstColumn -->
+          <div class="card border-0 mb-4 box-shadow">
+            <a href="{% url 'blog:entry' entry.category.slug entry.slug %}">
+              <div class="topfirstimage"
+                style="background-image: url({{ entry.imagen }}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+            </a>
+            <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+              <h2 class="h4 font-weight-bold">
+                <a class="text-dark" href="{% url 'blog:entry' entry.category.slug entry.slug %}">{{ entry.title }}</a>
+              </h2>
+              <p class="excerpt">
+                {{ entry.resumen }}
+              </p>
+              {% include 'partials/_catlist.html' %}
+            </div>
+          </div>
+        </div><!-- firstEntry firstColum -->
+      {% endwith %}
+
+    <div class="col-md-6"><!-- secondColumn -->
+      {% with entry=primeros.1 %}<!-- second entry -->
+      <div class="mb-3 d-flex align-items-center">
+        <div class="col-md-4">
+          <a href="{{ entry.get_absolute_url }}">
+            <img class="w-100" src="{{ entry.imagen }}" alt="{{ second_post.title }}">
+          </a>
+        </div>
+        <div>
+          <h2 class="mb-2 h6 font-weight-bold">
+            <a class="text-dark" href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+          </h2>
+          {% include 'partials/_catlist.html' %}
+        </div>
+      </div>
+      {% endwith %}<!-- ./second entry -->
+
+      {% with entry=primeros.2 %}
+        <div class="mb-3 d-flex align-items-center">
+          <div class="col-md-4">
+            <a href="{{ entry.get_absolute_url }}">
+              <img class="w-100" src="{{ entry.imagen }}" alt="{{ entry.title }}">
+            </a>
+          </div>
+          <div>
+            <h2 class="mb-2 h6 font-weight-bold">
+              <a class="text-dark" href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+            </h2>
+            {% include 'partials/_catlist.html' %}
+          </div>
+        </div>
+      {% endwith %}
+
+      {% with entry=primeros.3 %}
+        <div class="mb-3 d-flex align-items-center">
+          <div class="col-md-4">
+            <a href="{{ entry.get_absolute_url }}">
+              <img class="w-100" src="{{ entry.imagen }}" alt="{{ entry.title }}">
+            </a>
+          </div>
+          <div>
+            <h2 class="mb-2 h6 font-weight-bold">
+              <a class="text-dark" href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+            </h2>
+            {% include 'partials/_catlist.html' %}
+          </div>
+        </div>
+      {% endwith %}
+    </div><!-- ./secondColumn -->
+    </div><!-- ./row -->
+
+      {% if sticky %}
+          <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+          <div class="pl-4 pr-0 h-100 tofront">
+            <div class="row justify-content-between">
+              <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+                <h1 class="mb-3">{{sticky.title}}</h1>
+                <p class="mb-3 lead">
+                  {{ sticky.resumen }}
+                </p>
+                <a href="{{ sticky.get_absolute_url }}" class="btn btn-dark">Sigue Leyendo</a>
+              </div>
+              <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{ sticky.imagen }});">
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+  {% endif %}
+
+  <div class="row mt-3">
+    <div class="col-md-8 main-loop">
+      <h4 class="font-weight-bold spanborder"><span>Todas las historias</span></h4>
+      {% include 'partials/_loop.html' %}
+      {% include 'partials/_pagination.html' %}
+    </div>
+    <div class="col-md-4">
+      {% include 'partials/_sidebar-featured.html' %}
+    </div>
+  </div>
+</div><!-- ./container -->
+{% endblock content %}
