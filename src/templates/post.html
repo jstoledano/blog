@@ -1,6 +1,57 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}{{ entry.title }} - toledano.org{% endblock title %}
+
+{% block metadata %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ entry.get_absolute_url }}"
+      },
+      "publisher": {
+        "@type" : "Organization",
+        "url" : "https://facebook.com/yo.toledano",
+        "name": "Blog Toledano",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ SITELOGO }}",
+          "width": 307,
+          "height": 54
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Javier Sanchez Toledano",
+        "image": "https://media.toledano.org/images/yo.jpg",
+        "url": "https://yo.toledano.org",
+        "description": "Soy programador en Django+Python y Flutter. Auditor líder certificado en la norma ISO 9001:2008. Fotógrafo aficionado."
+      },
+      "headline": "{{ entry.title|striptags  }}",
+      "url": "{{ entry.get_absolute_url }}",
+      "datePublished": "{{ entry.pub_date|date:"c" }}",
+      "dateModified": "{{ entry.pub_date|date:"c" }}",
+      {% if entry.cover %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ entry.cover }}"
+      },
+      {% else %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "entry.cover",
+        "height": 1392,
+        "width": 696
+      },
+      {% endif %}
+      "keywords": "{{ entry.category.slug }}{% for tag in entry.tags.all %} tag-{{ tag.slug }}{% endfor %}",
+      "description": "{{ entry.resumen }}"
+    }
+  </script>
+{% endblock metadata %}
 
 {% block content %}
 <div class="container">
@@ -15,9 +66,7 @@
 					</p>
 					<h1 class="display-4 mb-4 article-headline">{{ entry.title }}</h1>
 					<div class="d-flex align-items-center">
-						{% if entry.author.avatar %}
-						<img class="rounded-circle" src="{{ entry.author.avatar }}" alt="{{ entry.author.name }}" width="70" />
-						{% endif %}
+						<img class="rounded-circle" src="https://media.toledano.org/images/yo.jpg" alt="Javier Sanchez Toledano" width="70" />
 						<small class="ml-3"> {{ entry.author.first_name }} {{ entry.author.last_name }}<span><a target="_blank" href="{{ entry.author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-1">Twitter</a></span>
               <span class="text-muted d-block mt-1"><i class="fa fa-calendar" aria-hidden="true"></i> {{ entry.pub_date }}</span>
 						</small>
@@ -39,16 +88,16 @@
 		<div class="col-lg-2 pr-4 mb-4 col-md-12">
 			<div class="sticky-top sticky-top-offset text-center">
 				<div class="text-muted">
-					Share this
+					Comparte
 				</div>
 				<div class="share d-inline-block">
 					<!-- AddToAny BEGIN -->
-					<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-						<a class="a2a_button_facebook"></a>
-						<a class="a2a_button_twitter"></a>
-					</div>
-					<script async src="https://static.addtoany.com/menu/entry.js"></script>
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_linkedin"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+          </div>
 					<!-- AddToAny END -->
 				</div>
 			</div>
@@ -59,20 +108,41 @@
 			<!-- Article -->
 			<article class="article-post">
 				{{ entry.body_html | safe }}
+        {{ entry.extend_html | safe }}
 			</article>
 
 			<!-- Tags -->
 			<div class="mb-4">
-				<span class="taglist">
+				<span class="taglist"><strong>Etiquetas: </strong>
 					{% for tag in entry.tags.all %}
 					  <i class="fa fa-tag" aria-hidden="true"></i>{{ tag }}
 					{% endfor %}
 				</span>
 			</div>
 
+      {% include 'partials/_author_box.html' %}
+      {% include 'partials/_comments.html' %}
+
+		</div>
+	</div>
+</div>
 
 
 
+<!-- Aletbar Prev/Next -->
+<div class="alertbar">
+	<div class="container">
+		<div class="row prevnextlinks small font-weight-bold">
+			{% if entry.anterior %}
+			<div class="col-md-6 rightborder pl-0">
+				<a class="text-dark" href="{{ entry.anterior.get_absolute_url }}">{% if entry.anterior.cover %} <img height="30px" class="mr-1" src="{{ entry.anterior.imagen }}"> {% endif %} {{ entry.anterior.title }}</a>
+			</div>
+			{% endif %}
+			{% if entry.siguiente %}
+			<div class="col-md-6 text-right pr-0">
+				<a class="text-dark" href="{{ entry.siguiente.get_absolute_url }}"> {{ entry.siguiente.title }} {% if entry.siguiente.cover %} <img height="30px" class="ml-1" src="{{ entry.siguiente.cover }}"> {% endif %}</a>
+			</div>
+			{% endif %}
 		</div>
 	</div>
 </div>

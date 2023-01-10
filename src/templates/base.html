@@ -8,8 +8,8 @@
 
     {% include 'partials/_seo.html' %}
     {% include 'partials/_styles.html' %}
-
-    <title>Portada del Blog</title>
+    {% block metadata %}{% endblock metadata %}
+  <title>{% block title %}Blog Toledano{% endblock title %}</title>
 </head>
 
 <body class="{% if request.path == '/blog/' %}homefirstpage{% endif %}">

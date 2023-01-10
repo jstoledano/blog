@@ -182,6 +182,18 @@ class Entry(Traceability):
         else:
             return safe(striptags(truncatechars_html(self.body_html, 186)))
 
+    def siguiente(self):
+        try:
+            return self.get_next_by_pub_date()
+        except self.DoesNotExist:
+            return None
+
+    def anterior(self):
+        try:
+            return self.get_previous_by_pub_date()
+        except self.DoesNotExist:
+            return None
+
     def imagen(self):
         if self.cover:
             return self.cover

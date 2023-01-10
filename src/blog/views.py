@@ -29,7 +29,7 @@ class BlogIndex(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['sticky'] = models.Entry.objects.filter(featured=True)[0]
-        context['primeros'] = models.Entry.objects.all()[:4]
+        context['primeros'] = models.Entry.objects.filter(featured=False)[:4]
         context['featured'] = models.Entry.objects.filter(featured=True)[1:6]
         return context
 
