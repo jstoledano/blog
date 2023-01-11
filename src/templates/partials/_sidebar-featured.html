@@ -1,0 +1,22 @@
+{% load static %}
+<div class="sticky-top sticky-top-offset">
+  <h4 class="font-weight-bold spanborder"><span>Destacados</span></h4>
+  <ol class="list-featured">
+    {% for post in featured %}
+      <li class="mb-4">
+        <span>
+          <h6 class="font-weight-bold">
+            <a href="{{ post.get_absolute_url }}" class="text-dark">{{ post.title }}</a>
+          </h6>
+          <span class="d-block text-muted">
+            <span class="catlist">
+              <a class="text-capitalize text-muted smoothscroll" href="{% url 'blog:category' post.category.slug %}">
+                <i class="fa-regular fa-folder-open" aria-hidden="true"></i> {{ post.category }}
+              </a>
+            </span>
+          </span>
+        </span>
+      </li>
+    {% endfor %}
+  </ol>
+</div>

@@ -1,0 +1,24 @@
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:blogIndex' %}"><i class="fa fa-house"></i> Home</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:index' %}"><i class="fa fa-book-open"></i> Curriculum Vitae</a>
+</li>
+<li class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    href="#" role="button"
+    data-toggle="dropdown" aria-expanded="false">
+    <i class="fa-regular fa-folder-open"></i> Categorías
+  </a>
+  <div class="dropdown-menu">
+    {% for cat in categories %}
+      <a class="dropdown-item" href="{% url 'blog:category' cat.slug %}">
+        <i class="fa fa-{{ cat.icon }}"></i> {{ cat.name }}
+      </a>
+    {% endfor %}
+  </div>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:sitemap' %}"><i class="fa fa-sitemap"></i> Archivo</a>
+</li>

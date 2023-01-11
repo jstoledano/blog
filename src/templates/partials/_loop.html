@@ -1,0 +1,28 @@
+{% load static %}
+{% for post in object_list %}
+  <div class="mb-5 d-flex justify-content-between main-loop-card">
+    <div class="pr-3">
+      <h2 class="mb-1 h4 font-weight-bold">
+        <a class="text-dark" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="excerpt">
+         {{ post.resumen }}
+      </p>
+      <small class="d-block text-muted">
+        <span class="catlist">
+          <a class="text-capitalize text-muted smoothscroll"
+             href="{% url 'blog:category' post.category.slug %}">
+            <i class="fa-regular fa-folder-open" aria-hidden="true"></i> {{ post.category }}</a>
+        </span>
+      </small>
+      <small class="text-muted">
+        <i class="fa fa-calendar" aria-hidden="true"></i> {{ post.pub_date }}
+      </small>
+    </div>
+    <div class="col-md-3 pr-0 text-right">
+      <a href="{{ post.get_absolute_url }}">
+      <img class="w-100" src="{{ post.imagen }}" alt="{{ post.title }}">
+      </a>
+    </div>
+  </div>
+{% endfor %}

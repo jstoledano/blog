@@ -9,7 +9,7 @@
 #      python: 3.10
 
 from django.contrib.sitemaps.views import sitemap
-from django.urls import path
+from django.urls import path, include
 from django.views.generic.base import TemplateView
 
 from . import views
@@ -28,5 +28,7 @@ urlpatterns = [
     path('category/', views.CategoryList.as_view(), name='category_list'),
     path('category/<str:slug>', views.CategoryDetail.as_view(), name='category'),
     path('<str:category>/<str:slug>', views.EntryDetail.as_view(), name='entry'),
+    path('pages/', include('django.contrib.flatpages.urls')),
+    path('archivo.html', views.Archivo.as_view(), name='sitemap'),
     path('', views.IndexView.as_view(), name='index')
 ]

@@ -1,0 +1,13 @@
+{% load static %}
+<div>
+  <small class="d-block text-muted">
+    <span class="catlist">
+      <a class="text-capitalize text-muted smoothscroll"
+         href="{% url 'blog:category' entry.category.slug %}">
+        <i class="fa-regular fa-folder-open" aria-hidden="true"></i> {{ entry.category }}</a>
+    </span>
+  </small>
+  <small class="text-muted">
+    <i class="fa fa-calendar" aria-hidden="true"></i> {{ entry.pub_date }}
+  </small>
+</div>
