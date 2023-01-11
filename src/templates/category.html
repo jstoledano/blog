@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Categoría {{ entries.name }} - toledano.org{% endblock title %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+    <div class="h-100 tofront">
+      <div class="col-md-8 pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+        <h1 class="display-3 mb-3 article-headline"><i class="fa fa-{{ entries.icon }}"></i> {{ entries.name }}</h1>
+        <div class="lead">
+          {{ entries.description_html | safe }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-8 main-loop">
+      <h4 class="font-weight-bold spanborder"><span>Todas las historias</span></h4>
+      {% for post in entries.entry_category.all %}
+  <div class="mb-5 d-flex justify-content-between main-loop-card">
+    <div class="pr-3">
+      <h2 class="mb-1 h4 font-weight-bold">
+        <a class="text-dark" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="excerpt">
+         {{ post.resumen }}
+      </p>
+      <small class="d-block text-muted">
+        <span class="catlist">
+          <a class="text-capitalize text-muted smoothscroll"
+             href="{% url 'blog:category' post.category.slug %}">
+            <i class="fa-regular fa-folder-open" aria-hidden="true"></i> {{ post.category }}</a>
+        </span>
+      </small>
+      <small class="text-muted">
+        <i class="fa fa-calendar" aria-hidden="true"></i> {{ post.pub_date }}
+      </small>
+    </div>
+    <div class="col-md-3 pr-0 text-right">
+      <a href="{{ post.get_absolute_url }}">
+      <img class="w-100" src="{{ post.imagen }}" alt="{{ post.title }}">
+      </a>
+    </div>
+  </div>
+{% endfor %}
+
+      {% include 'partials/_pagination.html' %}
+    </div>
+    <div class="col-md-4">
+      {% include 'partials/_sidebar-featured.html' %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

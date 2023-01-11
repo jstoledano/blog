@@ -8,7 +8,7 @@
 #      python: 3.10
 
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 
 from . import models
 
@@ -43,11 +43,16 @@ class CategoryList(ListView):
 
 class CategoryDetail(DetailView):
     model = models.Category
-    template_name = 'blog/category_detail.html'
+    template_name = 'category.html'
     context_object_name = 'entries'
-    paginate_by = 6
+    paginate_by = 10
     allow_empty = True
     slug_field = 'slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['featured'] = models.Entry.objects.filter(featured=True)[:5]
+        return context
 
 
 class EntryDetail(DetailView):
@@ -66,3 +71,15 @@ def error500(request):
     response = render(request, "500.html")
     response.status_code = 500
     return response
+
+
+class Archivo(TemplateView):
+    template_name = 'archivo.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(Archivo, self).get_context_data(**kwargs)
+        ctx['cats'] = models.Category.objects.all()
+        ctx['entries'] = models.Entry.objects\
+            .order_by('-pub_date', '-id')\
+            .filter(status=models.Entry.LIVE_STATUS)
+        return ctx

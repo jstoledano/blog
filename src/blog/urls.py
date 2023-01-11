@@ -29,5 +29,6 @@ urlpatterns = [
     path('category/<str:slug>', views.CategoryDetail.as_view(), name='category'),
     path('<str:category>/<str:slug>', views.EntryDetail.as_view(), name='entry'),
     path('pages/', include('django.contrib.flatpages.urls')),
+    path('archivo.html', views.Archivo.as_view(), name='sitemap'),
     path('', views.IndexView.as_view(), name='index')
 ]

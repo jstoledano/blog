@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Archivo - toledano.org{% endblock title %}
+
+{% block content %}
+  <main id="content" class="content" role="main" itemprop="mainContentOfPage" itemscope="" itemtype="http://schema.org/Blog">
+    <article class="post">
+      <div class="container">
+
+        <div id="cats">
+          <h2><i class="fa fa-folder-open"></i> Lista de Temas</h2>
+          <ul>{% for cat in cats %}
+            <li>
+              <i class="fa fa-{{ cat.icon }}"></i>
+              <a href="{% url 'blog:category' slug=cat.slug %}">
+                <strong>{{ cat }}</strong>
+              </a>
+              - {{ cat.description }}
+            </li>
+          {% endfor %}</ul>
+        </div>
+
+        <div id="articles">
+          <h2><i class="fa fa-newspaper-o"></i> Artículos</h2>
+          <ul>
+            {% for entry in entries %}
+            <li>
+              <i class="fa fa-{{ entry.category.icon }}"></i>
+              <a href="{% url 'blog:entry' entry.category.slug entry.slug %}"
+                 itemprop="url" rel="bookmark">
+                {{ entry.title }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </article>
+  </main>
+{% endblock content %}
