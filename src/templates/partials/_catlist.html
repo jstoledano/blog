@@ -3,7 +3,7 @@
   <small class="d-block text-muted">
     <span class="catlist">
       <a class="text-capitalize text-muted smoothscroll"
-         href="{% url 'blog:category' entry.category.slug %}">
+         href="{{ entry.category.get_absolute_url }}">
         <i class="fa-regular fa-folder-open" aria-hidden="true"></i> {{ entry.category }}</a>
     </span>
   </small>
