@@ -86,7 +86,7 @@ class Category(Traceability):
         return f'/category/{self.slug}'
 
     def get_absolute_url(self) -> str:
-        return reverse('blog:category_detail', args=[self.slug])
+        return reverse('blog:category', args=[self.slug])
 
 
 class Entry(Traceability):
