@@ -198,7 +198,7 @@ class Entry(Traceability):
         if self.cover:
             return self.cover
         else:
-            return "http://placeimg.com/200/160/tech"
+            return "https://picsum.photos/200/160/tech"
 
     def get_tags(self):
         tags = []

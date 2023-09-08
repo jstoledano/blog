@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  {% if request.path == '/blog/' and not page_obj.has_previous %}
+  {% if request.path == '/' and not page_obj.has_previous %}
     <!-- Se inicia con resumen de artículos, enfatizando los 4 primeros -->
     <div class="row remove-site-content-margin">
       {% with entry=primeros.0 %}

@@ -24,12 +24,11 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('ads.txt', TemplateView.as_view(template_name='blog/ads.txt', content_type='text/plain')),
     path('robots.txt', TemplateView.as_view(template_name='blog/robots.txt', content_type="text/plain")),
-    path('cv/', views.IndexView.as_view(), name='cv'),
-    path('blog/', views.BlogIndex.as_view(), name='blogIndex'),
     path('category/', views.CategoryList.as_view(), name='category_list'),
     path('category/<str:slug>', views.CategoryDetail.as_view(), name='category'),
     path('<str:category>/<str:slug>', views.EntryDetail.as_view(), name='entry'),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('archivo.html', views.Archivo.as_view(), name='sitemap'),
-    path('', views.BlogIndex.as_view(), name='index')
+    path('cv/', views.IndexView.as_view(), name='cv'),
+    path('', views.BlogIndex.as_view(), name='index'),
 ]

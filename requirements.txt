@@ -1,11 +1,8 @@
 Django
-ipython
 django-environ
 django-authtools
 markdown
 django-taggit
 pytz
-
-coverage
-django_coverage_plugin
-factory_boy
+psycopg2
+pygments
