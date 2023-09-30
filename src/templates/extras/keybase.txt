@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/toledano
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://yo.toledano.org
+  * I am toledano (https://keybase.io/toledano) on keybase.
+  * I have a public key ASCvn1ohY2DumiFX26lt5WLZe_w4biAYdDDyxLTfFWhDfQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01014852f2db278d2137abe93f2f7b47c1af67516c29e64dcd56e5166cd9de33f7670a",
+            "host": "keybase.io",
+            "kid": "0120af9f5a216360ee9a2157dba96de562d97bfc386e20187430f2c4b4df1568437d0a",
+            "uid": "9358bbc91b1516fed2b26c633f5c5e19",
+            "username": "toledano"
+        },
+        "service": {
+            "hostname": "yo.toledano.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.22"
+    },
+    "ctime": 1494781350,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1494781284,
+        "hash": "1d71121567764ef0612ecbe463cae11a9a8b31cd384c63dbd8a39f5fd019eb06a756ab90531d70224491cb95b31ecbce2e36fdcd5b138a331b7ed13f735ed5db",
+        "seqno": 1081865
+    },
+    "prev": "79835c93d1ca20921fc7c4c4185fad94b939f52558a66faa811cb332d5650e9d",
+    "seqno": 28,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgr59aIWNg7pohV9upbeVi2Xv8OG4gGHQw8sS03xVoQ30Kp3BheWxvYWTFAvl7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxNDg1MmYyZGIyNzhkMjEzN2FiZTkzZjJmN2I0N2MxYWY2NzUxNmMyOWU2NGRjZDU2ZTUxNjZjZDlkZTMzZjc2NzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYWY5ZjVhMjE2MzYwZWU5YTIxNTdkYmE5NmRlNTYyZDk3YmZjMzg2ZTIwMTg3NDMwZjJjNGI0ZGYxNTY4NDM3ZDBhIiwidWlkIjoiOTM1OGJiYzkxYjE1MTZmZWQyYjI2YzYzM2Y1YzVlMTkiLCJ1c2VybmFtZSI6InRvbGVkYW5vIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJ5by50b2xlZGFuby5vcmciLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yMiJ9LCJjdGltZSI6MTQ5NDc4MTM1MCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDk0NzgxMjg0LCJoYXNoIjoiMWQ3MTEyMTU2Nzc2NGVmMDYxMmVjYmU0NjNjYWUxMWE5YThiMzFjZDM4NGM2M2RiZDhhMzlmNWZkMDE5ZWIwNmE3NTZhYjkwNTMxZDcwMjI0NDkxY2I5NWIzMWVjYmNlMmUzNmZkY2Q1YjEzOGEzMzFiN2VkMTNmNzM1ZWQ1ZGIiLCJzZXFubyI6MTA4MTg2NX0sInByZXYiOiI3OTgzNWM5M2QxY2EyMDkyMWZjN2M0YzQxODVmYWQ5NGI5MzlmNTI1NThhNjZmYWE4MTFjYjMzMmQ1NjUwZTlkIiwic2Vxbm8iOjI4LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQK05SGqy6RuWCm8qpwKf/QvykFmO8NhUnmuqvel6v3KPzcljsbNLI0RiatLg80Tdfy5pNTPYCTsLktQdqmng4Qaoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCAKNz8bF8PfkluBBO0GPqlwcb3zUS+EwBYVL+kLG2SuJ6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/toledano
+
+==================================================================
