@@ -6,6 +6,8 @@ blogPosts.json
 assets
 media//
 \#*\#
+blog.sock
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
