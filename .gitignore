@@ -1,8 +1,11 @@
 .idea/
 .env
 db.sqlite3
+blog.db
+blogPosts.json
 assets
 media//
+\#*\#
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
