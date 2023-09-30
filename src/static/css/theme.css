@@ -6,6 +6,14 @@ body {
 	overflow-x:hidden;
 	padding-top:69.75px;
 }
+/* Referencias en formato APA 7 */
+.references {
+	font-size: 0.8rem;
+}
+/* Formato de entradas individuales en formato APA */
+.references .csl-entry {
+	
+}
 .site-content {
 	margin-top:30px;
 	min-height:400px;
