@@ -29,6 +29,6 @@ urlpatterns = [
     path('<str:category>/<str:slug>', views.EntryDetail.as_view(), name='entry'),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('archivo.html', views.Archivo.as_view(), name='sitemap'),
-    path('cv/', views.IndexView.as_view(), name='cv'),
+    path('cv/', views.CVView.as_view(), name='cv'),
     path('', views.BlogIndex.as_view(), name='index'),
 ]

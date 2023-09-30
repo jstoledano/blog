@@ -13,10 +13,8 @@ from django.views.generic import ListView, DetailView, TemplateView
 from . import models
 
 
-class IndexView(ListView):
-    template_name = 'blog/index.html'
-    queryset = models.Entry.objects.all().order_by('-pub_date')[:4]
-    context_object_name = 'entries'
+class CVView(TemplateView):
+    template_name = 'resume.html'
 
 
 class BlogIndex(ListView):

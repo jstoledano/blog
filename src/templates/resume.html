@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block metadata %}
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<link href="{% static 'css/resume.css' %}" rel="stylesheet" type="text/css" />
+<link rel="canonical" href="/cv/" />
+{% endblock %}
+
+{% block title %}Resume Javier Sanchez{% endblock title %}
+
+{% block content %}
+<div class="box">
+  <div class="resume">
+    <div class="header">
+      <div class="full-name">
+        <span class="first-name">Javier</span>
+        <span class="last-name">Sanchez Toledano</span>
+      </div><!-- ./full-name -->
+      <div class="contact-info">
+        <span class="email">Email: </span>
+        <span class="email-val">js.toledano@outlook.com</span>
+        <!-- span class="separator"></span>
+        <span class="phone">Phone: </span>
+        <span class="phone-val">+52 246 177 6996</span -->
+        <span class="separator"></span>
+        <span class="phone"><i class="fa-brands fa-linkedin"></i> </span>
+        <span class="phone-val"><a href="https://www.linkedin.com/in/javier-sanchez-toledano/" target="_blank"> LinkedIn</a></span><span class="separator"></span>
+        <span class="phone"><i class="fa-brands fa-github"></i> </span>
+        <span class="phone-val"><a href="https://github.com/jstoledano" target="_blank"> GitHub</a></span>
+      </div><!-- ./contact-info -->
+      <div class="about">
+        <span class="position">Front-End Developer </span>
+        <span class="desc">
+          Soy Licenciado en Informática e Ingeniero en Sistemas Computacionales.<br>
+          Soy auditor líder certificado por ICA en la Norma ISO 9000, desarrollo
+          sistemas de gestión de la calidad con un enfoque de mejora continua,
+          creo tableros de control con indicadores clave para mejorar la toma
+          de decisiones basadas en datos.
+        </span>
+      </div><!-- ./about -->
+    </div><!-- ./header -->
+    <div class="details">
+      <div class="section"><!-- sectionExperience -->
+        <div class="section__title">Experience</div>
+        <div class="section__list">
+          <div class="section__list-item"><!-- cecpe -->
+            <div class="left">
+              <div class="name">Instituto Nacional Electoral</div>
+              <div class="addr">Tlaxcala, Mexico</div>
+              <div class="duration">Jan 2018 - Present</div>
+            </div>
+            <div class="right">
+              <div class="name">Head of CECPE</div>
+              <div class="desc">I attend the requests of political parties in compliance with federal regulations on electoral matters generat-ing queries in the electors’ lists. Use of the Oracle database in virtual environments of Red Hat Linux.</div>
+            </div>
+          </div><!-- ./ cecpe -->
+          <div class="section__list-item"><!-- cartographer -->
+            <div class="left">
+              <div class="name">Instituto Nacional Electoral</div>
+              <div class="addr">Tlaxcala, Mexico</div>
+              <div class="duration">Jan 2015 - Dec 2017</div>
+            </div>
+            <div class="right">
+              <div class="name">Cartographer</div>
+              <div class="desc">Using GIS, I keep the electoral cartography of Tlaxcala updated. Use of Geomedia, QGIS, MS SQL and Post-GIS.</div>
+            </div>
+          </div><!-- ./ cartographer -->
+          <div class="section__list-item"><!-- sgc -->
+            <div class="left">
+              <div class="name">Instituto Nacional Electoral</div>
+              <div class="addr">Tlaxcala, Mexico</div>
+              <div class="duration">Jan 2012 - Dec 2014</div>
+            </div>
+            <div class="right">
+              <div class="name">Cartographer</div>
+              <div class="desc">I successfully implemented a Quality Management System based on the ISO 9001 standard. I developed a Balanced Scorecard using Python, Django, PostgreSQL, Nginx on Linux for document control and key per-formance indicators (KPI).</div>
+            </div>
+          </div><!-- ./sgc -->
+        </div><!-- ./section__list -->
+      </div><!-- ./sectionExperience -->
+      <div class="section"><!-- sectionEducation -->
+        <div class="section__title">Education</div>
+        <div class="section_list">
+          <div class="section__list-item">
+            <div class="left">
+              <div class="name">Universidad Virtual del Estado de Guanajuato</div>
+              <div class="addr">Guanajuato, Mexico</div>
+              <div class="duration">2019-2023</div>
+            </div>
+            <div class="right">
+              <div class="name">Engineering in Computer Systems</div>
+              <div class="desc">Big Data Especialization</div>
+            </div>
+          </div><!--./UVEG-->
+          <div class="section__list-item">
+            <div class="left">
+              <div class="name">Universidad Nacional Autónoma de México</div>
+              <div class="addr">CDMX</div>
+              <div class="duration">2019-Present</div>
+            </div>
+            <div class="right">
+              <div class="name">Bachelor of Computer Science</div>
+              <div class="desc"></div>
+            </div>
+          </div><!-- ./UNAM -->
+        </div>
+      </div><!-- ./sectionEducation -->
+      <div class="section"><!-- sectionProjects -->
+        <div class="section__title">Projects</div>
+        <div class="section__list">
+          <div class="section__list-item"><!-- cerebro -->
+            <div class="name"><a href="https://github.com/jstoledano/cerebro" target="_blank">Balanced Scorecard</a></div>
+            <div class="text">
+              A Datawarehouse and Data Marts to control a Quality Management System. Link to GitHub.
+              <ul>
+                <li>Design and model KPI for objectives and process</li>
+                <li>Using Python, Django, PostgreSQL, Nginx, Bootstrap and Linux</li>
+                <li>Manage and control documentation and its changes in accordance with ISO 9001</li>
+              </ul>
+            </div>
+          </div><!-- ./cerebro -->
+          <div class="section__list-item"><!-- pusinex -->
+            <div class="name"><a href="https://github.com/jstoledano/pusinex" target="_blank">Control of maps</a></div>
+            <div class="text">
+              Map Control is an API and frontend application that allows you to manage versioning maps with advanced query capabilities.
+              <ul>
+                <li>User-friendly control form with the ability to search across multiple fields.</li>
+                <li>Ability to generate zip archives on demand based on query criteria.</li>
+                <li>Built using Python, Django, PostgreSQL, Nginx, Bootstrap, jQuery and Linux.</li>
+                <li>Advanced use of Django's ORM.</li>
+              </ul>
+            </div>
+          </div><!-- ./pusinex -->
+        </div><!-- ./sectionProjectsList -->
+      </div><!-- ./sectionProjects -->
+      <div class="section">
+        <div class="section__title">Skills</div>
+        <div class="skills">
+          <div class="skills__item"><!-- Linux -->
+            <div class="left" style="width: 59%;">Linux System Administration <strong>(20 years)</strong></div>
+            <div class="right" style="width: 40%;">
+              <input id="ck1" type="checkbox" checked/><label for="ck1"></label>
+              <input id="ck2" type="checkbox" checked/><label for="ck2"></label>
+              <input id="ck3" type="checkbox" checked/><label for="ck3"></label>
+              <input id="ck4" type="checkbox" checked/><label for="ck4"></label>
+              <input id="ck5" type="checkbox" checked/><label for="ck5"></label>
+            </div>
+          </div><!-- ./Linux -->
+          <div class="skills__item"><!-- PostgreSQL -->
+            <div class="left" style="width: 59%;">DB Administration (PostgreSQL & MySQL) <strong>(10 years)</strong></div>
+            <div class="right" style="width: 40%;">
+              <input id="ck1" type="checkbox" checked/><label for="ck1"></label>
+              <input id="ck2" type="checkbox" checked/><label for="ck2"></label>
+              <input id="ck3" type="checkbox" checked/><label for="ck3"></label>
+              <input id="ck4" type="checkbox" checked/><label for="ck4"></label>
+              <input id="ck5" type="checkbox"/><label for="ck5"></label>
+            </div>
+          </div><!-- ./PostgreSQL -->
+          <div class="skills__item"><!-- Django -->
+            <div class="left" style="width: 59%;">Backend development with Python & Django <strong>(6 years)</strong></div>
+            <div class="right" style="width: 40%;">
+              <input id="ck1" type="checkbox" checked/><label for="ck1"></label>
+              <input id="ck2" type="checkbox" checked/><label for="ck2"></label>
+              <input id="ck3" type="checkbox" checked/><label for="ck3"></label>
+              <input id="ck4" type="checkbox" checked/><label for="ck4"></label>
+              <input id="ck5" type="checkbox"/><label for="ck5"></label>
+            </div>
+          </div><!-- ./Django -->
+          <div class="skills__item"><!-- Frontend -->
+            <div class="left" style="width: 59%;">Frontend development with Bootstrap, jQuery & React <strong>(6 years)</strong></div>
+            <div class="right" style="width: 40%;">
+              <input id="ck1" type="checkbox" checked/><label for="ck1"></label>
+              <input id="ck2" type="checkbox" checked/><label for="ck2"></label>
+              <input id="ck3" type="checkbox" checked/><label for="ck3"></label>
+              <input id="ck4" type="checkbox" checked/><label for="ck4"></label>
+              <input id="ck5" type="checkbox"/><label for="ck5"></label>
+            </div>
+          </div><!-- ./FrontEnd -->
+        </div>
+      </div>
+    </div><!-- ./details -->
+  </div><!-- ./resume -->
+</div>
+{% endblock content %}

@@ -15,7 +15,7 @@
           {% if page == page_obj.number %}
             <li class="page-item disabled"><span class="webjeda page-link">{{ page }}</span></li>
           {% elif page == 1 %}
-            <li class="page-item"><a class="page-link" href="{% url 'blog:blogIndex' %}">{{ page }}</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'blog:index' %}">{{ page }}</a></li>
           {% else %}
             <li class="page-item">
               <a href="?page={{ page }}" class="page-link">{{ page }}</a>
