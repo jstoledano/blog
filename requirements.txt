@@ -6,3 +6,4 @@ django-taggit
 pytz
 psycopg2
 pygments
+gunicorn
