@@ -10,6 +10,10 @@ DEBUG = env.bool('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS')
 
+CSRF_TRUSTED_ORIGINS = ['https://toledano.org', 'https://www.toledano.org'] 
+CORS_ORIGIN_WHITELIST = ['https://toledano.org', 'https://www.toledano.org']
+
+
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
