@@ -4,6 +4,9 @@
 {% block title %}{{ entry.title }} - toledano.org{% endblock title %}
 
 {% block metadata %}
+  <meta name="description" property="og:description" content="{{ entry.resumen }}">
+  <meta name="author" content="Javier Sanchez Toledano">
+  <meta pubdate="{{ entry.pub_date|date:"c" }}" scheme="YYYY-MM-DD">
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
