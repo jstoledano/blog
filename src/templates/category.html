@@ -8,9 +8,11 @@
 	<div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
     <div class="h-100 tofront">
       <div class="col-md-8 pr-0 pr-md-4 pt-4 pb-4 align-self-center">
-        <h1 class="display-3 mb-3 article-headline"><i class="fa fa-{{ entries.icon }}"></i> {{ entries.name }}</h1>
+        <h1 class="display-3 mb-3 article-headline">
+          <i class="fa fa-{{ category.icon }}"></i> {{ category.name }}
+        </h1>
         <div class="lead">
-          {{ entries.description_html | safe }}
+          {{ category.description_html | safe }}
         </div>
       </div>
     </div>
@@ -19,7 +21,7 @@
   <div class="row mt-3">
     <div class="col-md-8 main-loop">
       <h4 class="font-weight-bold spanborder"><span>Todas las historias</span></h4>
-      {% for post in entries.entry_category.all %}
+      {% for post in entries %}
   <div class="mb-5 d-flex justify-content-between main-loop-card">
     <div class="pr-3">
       <h2 class="mb-1 h4 font-weight-bold">

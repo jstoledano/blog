@@ -9,6 +9,7 @@
 
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
+from django.db.models import Model
 
 from . import models
 
@@ -40,16 +41,23 @@ class CategoryList(ListView):
 
 
 class CategoryDetail(ListView):
-    model = models.Entry
-    template_name = 'category.html'
-    context_object_name = 'entries'
-    paginate_by = 3
-    allow_empty = True
-    slug_field = 'slug'
+    model: Model = models.Entry
+    template_name: str = 'category.html'
+    context_object_name: str = 'entries'
+    paginate_by: int = 6
+    allow_empty: bool = True
+    slug_field: str = 'slug'
+
+    def get_queryset(self):
+        return models.Entry.objects\
+            .filter(category__slug=self.kwargs['slug'], status=models.Entry.LIVE_STATUS)\
+            .select_related('category')\
+            .order_by('-pub_date', '-id')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['featured'] = models.Entry.objects.filter(featured=True)[:5]
+        context['category'] = models.Category.objects.get(slug=self.kwargs['slug'])
         return context
 
 
