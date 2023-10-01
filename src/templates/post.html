@@ -5,7 +5,8 @@
 
 {% block metadata %}
   <meta name="author" content="Javier Sanchez Toledano">
-  <meta pubdate="{{ entry.pub_date|date:"c" }}" scheme="YYYY-MM-DD">
+  <meta pubdate="{{ entry.pub_date|date:'c' }} scheme="YYYY-MM-DD">
+  <meta name="publish_date" property="og:publish_date" content="{{ entry.pub_date|date:'c' }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="{{ entry.get_absolute_url }}">
