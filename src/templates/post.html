@@ -4,24 +4,23 @@
 {% block title %}{{ entry.title }} - toledano.org{% endblock title %}
 
 {% block metadata %}
-  <meta name="description" property="og:description" content="{{ entry.resumen }}">
   <meta name="author" content="Javier Sanchez Toledano">
   <meta pubdate="{{ entry.pub_date|date:"c" }}" scheme="YYYY-MM-DD">
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://toledano.org/desarrollo/el-patron-de-diseno-decorator">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="El patrón de diseño Decorator - toledano.org">
-  <meta property="og:description" content="El patrón de diseño Decorator se utiliza cuando se desea añadir funcionalidades adicionales a un objeto de forma dinámica, sin modificar su estructura. Esto permite extender las capacid…">
-  <meta property="og:image" content="">
+  <meta property="og:url" content="{{ entry.get_absolute_url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ entry.title }}">
+  <meta property="og:description" content="{{ entry.resumen }}">
+  <meta property="og:image" content="{{ entry.cover }}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="toledano.org">
-  <meta property="twitter:url" content="https://toledano.org/desarrollo/el-patron-de-diseno-decorator">
-  <meta name="twitter:title" content="El patrón de diseño Decorator - toledano.org">
-  <meta name="twitter:description" content="El patrón de diseño Decorator se utiliza cuando se desea añadir funcionalidades adicionales a un objeto de forma dinámica, sin modificar su estructura. Esto permite extender las capacid…">
-  <meta name="twitter:image" content="">
+  <meta property="twitter:url" content="{{ entry.get_absolute_url }}">
+  <meta name="twitter:title" content="{{ entry.title }}">
+  <meta name="twitter:description" content="{{ entry.resumen }}">
+  <meta name="twitter:image" content="{{ entry.cover }}">
 
   <script type="application/ld+json">
     {
