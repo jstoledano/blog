@@ -87,7 +87,7 @@
 						<small>
               <span class="text-muted d-block">
                 <strong>Publicado el</strong> 
-                  <i class="fa fa-calendar" aria-hidden="true"></i> {{ entry.pub_date }}
+                  <i class="fa fa-calendar" aria-hidden="true"></i> <time datetime="{{ entry.pub_date|date:"c" }}">{{ entry.pub_date }}</time>
               </span>
               <!-- Tags -->
               <div class="mb-4 text-muted d-block">
