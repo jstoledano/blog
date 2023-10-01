@@ -64,11 +64,21 @@
               <a class="sscroll text-danger" href="{% url 'blog:category' entry.category.slug %}"><i class="fa-regular fa-folder-open" aria-hidden="true"></i> {{ entry.category }}</a>
 						</span>
 					</p>
-					<h1 class="display-4 mb-4 article-headline">{{ entry.title }}</h1>
+					<h1 class="display-4 mb-1 article-headline">{{ entry.title }}</h1>
 					<div class="d-flex align-items-center">
-						<img class="rounded-circle" src="https://media.toledano.org/images/yo.jpg" alt="Javier Sanchez Toledano" width="70" />
-						<small class="ml-3"> {{ entry.author.first_name }} {{ entry.author.last_name }}<span><a target="_blank" href="{{ entry.author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-1">Twitter</a></span>
-              <span class="text-muted d-block mt-1"><i class="fa fa-calendar" aria-hidden="true"></i> {{ entry.pub_date }}</span>
+						<small>
+              <span class="text-muted d-block">
+                <strong>Publicado el</strong> 
+                  <i class="fa fa-calendar" aria-hidden="true"></i> {{ entry.pub_date }}
+              </span>
+              <!-- Tags -->
+              <div class="mb-4 text-muted d-block">
+                <span class="taglist"><strong>Etiquetas: </strong>
+                  {% for tag in entry.tags.all %}
+                    <i class="fa fa-tag" aria-hidden="true"></i>{{ tag }}
+                  {% endfor %}
+                </span>
+              </div>
 						</small>
 					</div>
 				</div>
@@ -103,31 +113,18 @@
 			</div>
 		</div>
 
-		<div class="col-md-12 col-lg-8">
-
+		<div id='post-{{entry.id}}' class="col-md-12 col-lg-8">
 			<!-- Article -->
 			<article class="article-post">
 				{{ entry.body_html | safe }}
         {{ entry.extend_html | safe }}
 			</article>
 
-			<!-- Tags -->
-			<div class="mb-4">
-				<span class="taglist"><strong>Etiquetas: </strong>
-					{% for tag in entry.tags.all %}
-					  <i class="fa fa-tag" aria-hidden="true"></i>{{ tag }}
-					{% endfor %}
-				</span>
-			</div>
-
       {% include 'partials/_author_box.html' %}
       {% include 'partials/_comments.html' %}
-
-		</div>
+		</div><!-- ./#post -->
 	</div>
 </div>
-
-
 
 <!-- Aletbar Prev/Next -->
 <div class="alertbar">
